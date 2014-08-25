@@ -7,6 +7,11 @@ p{
 text-indent: 2em;
 } 
 
-.header {
-	/*background: #fff url("../Images/bg-top.png") no-repeat scroll top center;*/
+.header, body{
+	background: #fff url("../Images/bg-pattern2.png") repeat scroll top center;
+}
+
+.site-logo {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
