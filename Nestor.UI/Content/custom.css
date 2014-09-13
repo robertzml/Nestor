@@ -1,5 +1,5 @@
 /* here you can put your own css to customize and override the theme */
-body, h1, h2, h3, h4, h5, h6, .header-navigation {
+body, h1, h2, h3, h4, h5, h6, .header-navigation, .page-title {
 	font-family: '微软雅黑';
 }
 
@@ -9,6 +9,10 @@ text-indent: 2em;
 
 .header, body{
 	background: #fff url("../Images/bg-pattern2.png") repeat scroll top center;
+}
+
+body#admin {
+	background: #3d3d3d none;
 }
 
 .site-logo {
