@@ -46,7 +46,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -275,6 +274,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout_Admin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Menu.cshtml" />
+    <Content Include="Areas\Admin\Views\Column\Create.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -310,12 +310,21 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Column\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nestor.Business\Nestor.Business.csproj">
+      <Project>{42ae2c71-7a7f-4b34-8659-fd9838244925}</Project>
+      <Name>Nestor.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nestor.Models\Nestor.Models.csproj">
+      <Project>{654bb244-eb9b-40aa-8edf-39c9ca9b0aca}</Project>
+      <Name>Nestor.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

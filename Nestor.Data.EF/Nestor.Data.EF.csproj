@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42AE2C71-7A7F-4B34-8659-FD9838244925}</ProjectGuid>
+    <ProjectGuid>{536E9A49-29B2-4C9D-9E29-0E3DBD57BA46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nestor.Business</RootNamespace>
-    <AssemblyName>Nestor.Business</AssemblyName>
+    <RootNamespace>Nestor.Data.EF</RootNamespace>
+    <AssemblyName>Nestor.Data.EF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,14 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColumnBusiness.cs" />
+    <Compile Include="ColumnRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nestor.Data.EF\Nestor.Data.EF.csproj">
-      <Project>{536e9a49-29b2-4c9d-9e29-0e3dbd57ba46}</Project>
-      <Name>Nestor.Data.EF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nestor.Data\Nestor.Data.csproj">
       <Project>{e2437466-3e10-41c8-94c7-3b40ed50e0a0}</Project>
       <Name>Nestor.Data</Name>
@@ -55,6 +58,10 @@
       <Project>{654bb244-eb9b-40aa-8edf-39c9ca9b0aca}</Project>
       <Name>Nestor.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

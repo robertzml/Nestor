@@ -42,6 +42,12 @@
     <Compile Include="IColumnRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nestor.Models\Nestor.Models.csproj">
+      <Project>{654bb244-eb9b-40aa-8edf-39c9ca9b0aca}</Project>
+      <Name>Nestor.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
