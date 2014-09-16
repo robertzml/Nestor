@@ -7,24 +7,65 @@ using Nestor.Models.Entities;
 
 namespace Nestor.Models.Concrete
 {
+    /// <summary>
+    /// 栏目Repository
+    /// </summary>
     public class ColumnRepository
     {
+        #region Field
+        /// <summary>
+        /// 数据库连接
+        /// </summary>
+        private NestorEntities context;
+        #endregion //Field
+
+        #region Constructor
+        /// <summary>
+        /// 栏目Repository
+        /// </summary>
+        public ColumnRepository()
+        {
+            this.context = new NestorEntities();
+        }
+        #endregion //Constructor
+
         #region Method
-        public Column Create(Column data)
+        /// <summary>
+        /// 获取所有栏目
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Column> Get()
+        {
+            return this.context.Columns;
+        }
+
+        /// <summary>
+        /// 获取栏目
+        /// </summary>
+        /// <param name="id">栏目ID</param>
+        /// <returns></returns>
+        public Column Get(int id)
+        {
+            return this.context.Columns.SingleOrDefault(r => r.Id == id);
+        }
+
+        /// <summary>
+        /// 添加栏目
+        /// </summary>
+        /// <param name="data">栏目对象</param>
+        /// <returns></returns>
+        public ErrorCode Create(Column data)
         {
             try
             {
-                NestorEntities context = new NestorEntities();
-
                 Column result = context.Columns.Add(data);
+                this.context.SaveChanges();
 
-                return result;
-                //return ErrorCode.Success;
+                return ErrorCode.Success;
             }
             catch (Exception e)
             {
-                //return ErrorCode.Exception;
-                return null;
+                return ErrorCode.Exception;               
             }
         }
         #endregion //Method

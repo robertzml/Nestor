@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnType.cs" />
     <Compile Include="Concrete\ColumnRepository.cs" />
+    <Compile Include="Entities\ColumnMetadata.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="Entities\Article.cs">
       <DependentUpon>NestorModel.tt</DependentUpon>

@@ -32,7 +32,31 @@ namespace Nestor.Business
         #endregion //Constructor
 
         #region Method
-        public Column Create(Column data)
+        /// <summary>
+        /// 获取所有栏目
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Column> Get()
+        {
+            return this.columnRepository.Get();
+        }
+
+        /// <summary>
+        /// 获取栏目
+        /// </summary>
+        /// <param name="id">栏目ID</param>
+        /// <returns></returns>
+        public Column Get(int id)
+        {
+            return this.columnRepository.Get(id);
+        }
+
+        /// <summary>
+        /// 添加栏目
+        /// </summary>
+        /// <param name="data">栏目对象</param>
+        /// <returns></returns>
+        public ErrorCode Create(Column data)
         {
             return this.columnRepository.Create(data);
         }

@@ -25,6 +25,8 @@ namespace Nestor.Models.Entities
         public bool ShowTop { get; set; }
         public string Remark { get; set; }
         public int Status { get; set; }
+        public int ParentId { get; set; }
+        public string Link { get; set; }
     
         public virtual ICollection<Article> Articles { get; set; }
     }

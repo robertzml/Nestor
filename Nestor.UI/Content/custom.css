@@ -4,8 +4,12 @@ body, h1, h2, h3, h4, h5, h6, .header-navigation, .page-title {
 }
 
 p{
-text-indent: 2em;
+	text-indent: 2em;
 } 
+
+body#admin p {
+	text-indent: 0;
+}
 
 .header, body{
 	background: #fff url("../Images/bg-pattern2.png") repeat scroll top center;
@@ -18,4 +22,8 @@ body#admin {
 .site-logo {
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	vertical-align: middle;
 }

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Nestor.Business;
+using Nestor.Models;
 using Nestor.Models.Entities;
+using Nestor.Common;
 
 namespace Nestor.UI.Areas.Admin.Controllers
 {
@@ -28,10 +30,25 @@ namespace Nestor.UI.Areas.Admin.Controllers
         #endregion //Constructor
 
         #region Action
-        // GET: Admin/Column
-        public ActionResult Index()
+        /// <summary>
+        /// 栏目列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult List()
         {
-            return View();
+            var data = this.columnBusiness.Get();
+            return View(data);
+        }
+
+        /// <summary>
+        /// 栏目信息
+        /// </summary>
+        /// <param name="id">栏目ID</param>
+        /// <returns></returns>
+        public ActionResult Details(int id)
+        {
+            var data = this.columnBusiness.Get(id);
+            return View(data);
         }
 
         /// <summary>
@@ -55,11 +72,20 @@ namespace Nestor.UI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrEmpty(model.Remark))
+                    model.Remark = "";
                 model.Status = 0;
 
-                Column column = this.columnBusiness.Create(model);
-
-
+                ErrorCode result = this.columnBusiness.Create(model);
+                if (result == ErrorCode.Success)
+                {
+                    TempData["Message"] = "添加栏目成功";
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "添加栏目失败, " + result.DisplayName());
+                }
             }
 
             return View(model);

@@ -275,6 +275,11 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Menu.cshtml" />
     <Content Include="Areas\Admin\Views\Column\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Column\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ColumnTypeList.cshtml" />
+    <Content Include="Areas\Admin\Views\Column\Details.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -287,6 +292,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\nestor.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -320,6 +326,10 @@
     <ProjectReference Include="..\Nestor.Business\Nestor.Business.csproj">
       <Project>{42ae2c71-7a7f-4b34-8659-fd9838244925}</Project>
       <Name>Nestor.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nestor.Common\Nestor.Common.csproj">
+      <Project>{9a2fe340-6042-424f-9fa6-1406a0cdea7d}</Project>
+      <Name>Nestor.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nestor.Models\Nestor.Models.csproj">
       <Project>{654bb244-eb9b-40aa-8edf-39c9ca9b0aca}</Project>

@@ -14,6 +14,11 @@ namespace Nestor.UI
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/noty").Include(
+                      "~/assets/global/plugins/noty/jquery.noty.js",
+                      "~/assets/global/plugins/noty/layouts/top.js",
+                      "~/assets/global/plugins/noty/themes/default.js"));
+
             // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
