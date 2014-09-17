@@ -280,6 +280,8 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ColumnTypeList.cshtml" />
     <Content Include="Areas\Admin\Views\Column\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ColumnCascadeList.cshtml" />
+    <Content Include="Areas\Admin\Views\Column\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

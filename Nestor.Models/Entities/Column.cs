@@ -17,6 +17,7 @@ namespace Nestor.Models.Entities
         public Column()
         {
             this.Articles = new HashSet<Article>();
+            this.ChildrenColumns = new HashSet<Column>();
         }
     
         public int Id { get; set; }
@@ -25,9 +26,12 @@ namespace Nestor.Models.Entities
         public bool ShowTop { get; set; }
         public string Remark { get; set; }
         public int Status { get; set; }
-        public int ParentId { get; set; }
+        public Nullable<int> ParentId { get; set; }
         public string Link { get; set; }
+        public int Sort { get; set; }
     
         public virtual ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Column> ChildrenColumns { get; set; }
+        public virtual Column ParentColumn { get; set; }
     }
 }

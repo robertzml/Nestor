@@ -20,6 +20,7 @@ namespace Nestor.Models.Entities
         public string Summary { get; set; }
         public string MainContent { get; set; }
         public int ColumnId { get; set; }
+        public System.DateTime PublishDate { get; set; }
     
         public virtual Column Column { get; set; }
     }

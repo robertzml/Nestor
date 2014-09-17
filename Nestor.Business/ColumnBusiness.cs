@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nestor.Data;
 using Nestor.Models;
-using Nestor.Models.Concrete;
 using Nestor.Models.Entities;
 
 namespace Nestor.Business
@@ -42,6 +42,16 @@ namespace Nestor.Business
         }
 
         /// <summary>
+        /// 获取顶级栏目
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Column> GetTop()
+        {
+            var data = this.columnRepository.Get().Where(r => r.ParentColumn == null);
+            return data;
+        }
+
+        /// <summary>
         /// 获取栏目
         /// </summary>
         /// <param name="id">栏目ID</param>
@@ -59,6 +69,16 @@ namespace Nestor.Business
         public ErrorCode Create(Column data)
         {
             return this.columnRepository.Create(data);
+        }
+
+        /// <summary>
+        /// 编辑栏目
+        /// </summary>
+        /// <param name="data">栏目对象</param>
+        /// <returns></returns>
+        public ErrorCode Update(Column data)
+        {
+            return this.columnRepository.Update(data);
         }
         #endregion //Method
 

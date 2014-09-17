@@ -34,10 +34,17 @@ namespace Nestor.Models.Entities
         /// </summary>
         [Display(Name = "是否在菜单显示")]
         public bool ShowTop { get; set; }
-        
+
+        /// <summary>
+        /// 排序
+        /// </summary>
+        [Display(Name = "排序")]
+        public int Sort { get; set; }
+
         /// <summary>
         /// 父级栏目ID
         /// </summary>
+        [UIHint("ColumnCascadeList")]
         [Display(Name = "父级栏目")]
         public int ParentId { get; set; }
 

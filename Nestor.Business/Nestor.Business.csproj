@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nestor.Data\Nestor.Data.csproj">
+      <Project>{6cec380d-f470-4ffd-af6e-78f153569f43}</Project>
+      <Name>Nestor.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nestor.Models\Nestor.Models.csproj">
       <Project>{654bb244-eb9b-40aa-8edf-39c9ca9b0aca}</Project>
       <Name>Nestor.Models</Name>

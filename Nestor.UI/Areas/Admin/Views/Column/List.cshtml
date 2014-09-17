@@ -88,7 +88,6 @@
                                     <td>
                                         <a href="@Url.Action("Details", new { controller = "Column", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
                                         <a href="@Url.Action("Edit", new { controller = "Column", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                                     </td>
                                 </tr>
                             }

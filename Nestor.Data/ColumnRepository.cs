@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Nestor.Models;
+using Nestor.Models.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nestor.Models.Entities;
 
-namespace Nestor.Models.Concrete
+namespace Nestor.Data
 {
     /// <summary>
     /// 栏目Repository
@@ -65,7 +67,26 @@ namespace Nestor.Models.Concrete
             }
             catch (Exception e)
             {
-                return ErrorCode.Exception;               
+                return ErrorCode.Exception;
+            }
+        }
+
+        /// <summary>
+        /// 编辑栏目
+        /// </summary>
+        /// <param name="data">栏目对象</param>
+        /// <returns></returns>
+        public ErrorCode Update(Column data)
+        {
+            try
+            {
+                this.context.Entry(data).State = EntityState.Modified;
+                this.context.SaveChanges();
+                return ErrorCode.Success;
+            }
+            catch(Exception)
+            {
+                return ErrorCode.Exception;
             }
         }
         #endregion //Method

@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="NestorModel.Article" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="NestorModel.Column" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="NestorModel.FK_Article_Column" ManuallyRouted="false" />
+        <AssociationConnector Association="NestorModel.FK_Column_Column" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

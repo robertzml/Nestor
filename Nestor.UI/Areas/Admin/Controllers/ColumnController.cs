@@ -90,6 +90,50 @@ namespace Nestor.UI.Areas.Admin.Controllers
 
             return View(model);
         }
+
+        /// <summary>
+        /// 编辑栏目
+        /// </summary>
+        /// <param name="id">栏目ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {            
+            var data = this.columnBusiness.Get(id);
+            if (data == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(data);
+        }
+
+        /// <summary>
+        /// 编辑栏目
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Edit(Column model)
+        {
+            if (ModelState.IsValid)
+            {
+                ErrorCode result = this.columnBusiness.Update(model);
+
+                if (result == ErrorCode.Success)
+                {
+                    TempData["Message"] = "编辑栏目成功";
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "编辑栏目失败, " + result.DisplayName());
+                }
+            }
+
+            return View(model);
+        }
         #endregion //Action
     }
 }

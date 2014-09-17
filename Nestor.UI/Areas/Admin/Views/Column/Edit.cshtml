@@ -1,9 +1,10 @@
 ﻿@model Nestor.Models.Entities.Column
 
 @{
-    ViewBag.Title = "栏目添加";
+    ViewBag.Title = "栏目编辑";
     Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
 }
+
 
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
@@ -32,7 +33,7 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-plus-circle"></i>栏目添加
+                    <i class="fa fa-edit"></i>&nbsp;栏目编辑
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -49,9 +50,12 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-horizontal">
-                        <h4>栏目信息</h4>
+                        <h4>Column</h4>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.Status)
+
                         <div class="form-group">
                             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-6">
@@ -71,8 +75,8 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ShowTop, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-6">
-                                <div class="checkbox-list">
-                                    @Html.EditorFor(model => model.ShowTop, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.ShowTop)
                                     @Html.ValidationMessageFor(model => model.ShowTop, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -81,10 +85,8 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Sort, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-6">
-                                <div class="checkbox-list">
-                                    @Html.EditorFor(model => model.Sort, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Sort, "", new { @class = "text-danger" })
-                                </div>
+                                @Html.EditorFor(model => model.Sort, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Sort, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -113,14 +115,13 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-6">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;添加</button>
-                                <a href="@Url.Action("List", new { controller = "Column" })" class="btn btn-default" role="button"><i class="fa fa-list"></i>&nbsp;回到列表</a>
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <a href="@Url.Action("Details", new { controller = "Column", id = Model.Id })" class="btn btn-default" role="button"><i class="fa fa-reply"></i>&nbsp;取消</a>
                             </div>
                         </div>
                     </div>
                 }
-
             </div>
         </div>
     </div>
