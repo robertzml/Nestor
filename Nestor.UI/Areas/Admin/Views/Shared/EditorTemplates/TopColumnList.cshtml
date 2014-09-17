@@ -1,0 +1,14 @@
+﻿@model int?
+
+@{
+    ColumnBusiness business = new ColumnBusiness();
+    var columns = business.GetTop();
+}
+
+<select class="form-control" id="ParentId" name="ParentId">
+    <option value="">-- 请选择 --</option>
+    @foreach (var item in columns)
+    {
+        <option value="@Convert.ToInt32(item.Id)" @(Model == (int)item.Id ? "selected='selected'" : "")>@item.Title</option>
+    }
+</select>

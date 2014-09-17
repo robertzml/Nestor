@@ -44,7 +44,7 @@ namespace Nestor.Models.Entities
         /// <summary>
         /// 父级栏目ID
         /// </summary>
-        [UIHint("ColumnCascadeList")]
+        [UIHint("TopColumnList")]
         [Display(Name = "父级栏目")]
         public int ParentId { get; set; }
 

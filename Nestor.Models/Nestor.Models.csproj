@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColumnType.cs" />
+    <Compile Include="Entities\ArticleMetadata.cs" />
     <Compile Include="Entities\ColumnMetadata.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="Entities\Article.cs">

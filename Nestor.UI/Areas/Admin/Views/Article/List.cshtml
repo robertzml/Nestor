@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Nestor.Models.Entities.Column>
+﻿@model IEnumerable<Nestor.Models.Entities.Article>
 
 @{
-    ViewBag.Title = "栏目列表";
+    ViewBag.Title = "文章列表";
     Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
 }
 
@@ -17,7 +17,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">栏目管理</a>
+            <a href="#">文章管理</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -29,10 +29,10 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        <div class="portlet box blue">
+        <div class="portlet box purple">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-table"></i>栏目列表
+                    <i class="fa fa-table"></i>&nbsp;文章列表
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -45,7 +45,7 @@
             </div>
             <div class="portlet-body">
                 <div class="table-scrollable">
-                    <table class="table table-hover table-striped">
+                    <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>
@@ -55,13 +55,10 @@
                                     @Html.DisplayNameFor(model => model.Title)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Type)
+                                    @Html.DisplayNameFor(model => model.Author)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.ShowTop)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Remark)
+                                    @Html.DisplayNameFor(model => model.PublishDate)
                                 </th>
                                 <th></th>
                             </tr>
@@ -77,17 +74,14 @@
                                         @Html.DisplayFor(modelItem => item.Title)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Type)
+                                        @Html.DisplayFor(modelItem => item.Author)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.ShowTop)
+                                        @Html.DisplayFor(modelItem => item.PublishDate)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Remark)
-                                    </td>
-                                    <td>
-                                        <a href="@Url.Action("Details", new { controller = "Column", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
-                                        <a href="@Url.Action("Edit", new { controller = "Column", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a href="@Url.Action("Details", new { controller = "Article", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
+                                        <a href="@Url.Action("Edit", new { controller = "Article", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
                                     </td>
                                 </tr>
                             }
@@ -96,15 +90,7 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 <!-- END PAGE CONTENT-->
 
-@section scripts {
-    <script type="text/javascript">
-        $(function () {
-            nestor.leftNavActive($('#column-list'));
-        });
-    </script>
-}

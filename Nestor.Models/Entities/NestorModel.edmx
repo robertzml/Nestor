@@ -16,6 +16,7 @@
           <Property Name="MainContent" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ColumnId" Type="int" Nullable="false" />
           <Property Name="PublishDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Column">
           <Key>
@@ -83,6 +84,7 @@
           <Property Name="ColumnId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Column" Relationship="Self.FK_Article_Column" FromRole="Article" ToRole="Column" />
           <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Column">
           <Key>
@@ -150,6 +152,7 @@
           <EntitySetMapping Name="Articles">
             <EntityTypeMapping TypeName="NestorModel.Article">
               <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
