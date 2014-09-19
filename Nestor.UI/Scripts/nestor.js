@@ -47,6 +47,41 @@ var nestor = function () {
 		});	
 		return oTable;
 	}
+	
+	var handleFrontTable = function($dom) {
+		var oTable = $dom.dataTable({
+			
+			"lengthMenu": [
+				[5, 10, 20, -1],
+				[5, 10, 20, "All"] // change per page values here
+			],
+			// set the initial value
+			"pageLength": 15,
+			
+			"ordering": false,
+			
+			"pagingType": "bootstrap_full_number",
+
+			"language": {
+					"lengthMenu": "  _MENU_ 记录",
+					"sLengthMenu": "每页 _MENU_ 条记录",
+					"sInfo": "显示 _START_ 至 _END_ 共有 _TOTAL_ 条记录",
+					"sInfoEmpty": "记录为空",
+					"sInfoFiltered": " - 从 _MAX_ 条记录中",
+					"sZeroRecords": "结果为空",
+					"sSearch": "搜索:",
+					"paginate": {
+						"previous":"Prev",
+						"next": "Next",
+						"last": "Last",
+						"first": "First"
+					}
+				},
+
+			"dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12' p>>"
+		});	
+		return oTable;
+	}
 		
 	return {
 		showMessage: function(text) {
@@ -61,6 +96,10 @@ var nestor = function () {
 			handleLeftNavActive($dom);
 		},
 		
+		topNavActive: function(id) {
+			$('ul#top-menu').find('li[data-id=' + id +']').addClass('active');
+		},
+		
 		initDatepicker: function($dom) {
 			$dom.datepicker({
                 format: "yyyy-mm-dd",
@@ -72,6 +111,10 @@ var nestor = function () {
 		
 		initDatatable: function($dom) {
 			handleInitDatatable($dom);
+		},
+		
+		initFrontTable: function($dom) {
+			handleFrontTable($dom);
 		}
 	};
 

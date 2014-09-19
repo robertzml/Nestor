@@ -34,5 +34,20 @@ namespace Nestor.Common
 
             return outString;
         }
+
+        /// <summary>
+        /// 显示DateTime
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ToDateString(this DateTime value)
+        {
+            if (value == null)
+                return "";
+            else
+            {
+                return value.ToString("yyyy-MM-dd");
+            }
+        }
     }
 }

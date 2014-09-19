@@ -1,0 +1,68 @@
+﻿@model Nestor.Models.Entities.Column
+
+@{
+    ViewBag.Title = Model.Title;    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    bool isTop = Model.ParentColumn == null;
+    var parent = Model.ParentColumn == null ? Model : Model.ParentColumn;
+}
+
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">主页</a></li>
+    @if (!isTop)
+    {
+        <li><a href="@Url.Action("Index", new { controller = "Column", id = Model.ParentColumn.Id })">@Model.ParentColumn.Title</a></li>
+    }    
+    <li class="active">@Model.Title</li>
+</ul>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2 class="no-top-space">栏目</h2>
+        <ul class="nav sidebar-categories margin-bottom-40">
+            @foreach (var item in parent.ChildrenColumns)
+            {
+                <li><a href="#">@item.Title</a></li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <table class="table table-hover table-striped" id="article-table">
+            <thead>
+                <tr>
+                    <th>
+                        标题
+                    </th>
+                    <th class="text-right" width="40px">
+                        发布时间
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Articles)
+                {
+                    <tr>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td class="text-right">
+                            @item.PublishDate.ToDateString()
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            nestor.topNavActive('@Model.Id');
+            nestor.initFrontTable($('#article-table'));
+        });
+    </script>
+}

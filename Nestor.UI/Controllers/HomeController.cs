@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Nestor.Business;
+using Nestor.Models.Entities;
 
 namespace Nestor.UI.Controllers
 {
@@ -21,7 +23,9 @@ namespace Nestor.UI.Controllers
         [ChildActionOnly]
         public ActionResult Menu()
         {
-            return View();
+            ColumnBusiness business = new ColumnBusiness();
+            var data = business.GetTop().Where(r => r.ShowTop == true);
+            return View(data);
         }
         #endregion //Action
     }
