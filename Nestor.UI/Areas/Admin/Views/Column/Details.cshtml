@@ -13,7 +13,7 @@
     <ul class="page-breadcrumb">
         <li>
             <i class="fa fa-home"></i>
-            <a href="@Url.Action("Index", "Home")">主页</a>
+            <a href="@Url.Action("Index", "Home")">后台管理</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -124,3 +124,11 @@
     </div>
 </div>
 <!-- END PAGE CONTENT-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            nestor.leftNavActive($('#column-list'));
+        });
+    </script>
+}

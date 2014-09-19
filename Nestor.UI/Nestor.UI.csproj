@@ -675,6 +675,7 @@
     <Content Include="assets\global\plugins\kindeditor\README.md" />
     <Content Include="assets\global\plugins\uniform\css\uniform.default.scss" />
     <Content Include="assets\global\plugins\uniform\README.md" />
+    <Content Include="Areas\Admin\Views\Article\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

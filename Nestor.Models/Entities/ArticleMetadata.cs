@@ -51,7 +51,14 @@ namespace Nestor.Models.Entities
         /// <summary>
         /// 发布日期
         /// </summary>
+        [DataType(DataType.Date)]
         [Display(Name = "发布日期")]
         public System.DateTime PublishDate { get; set; }
+
+        /// <summary>
+        /// 添加时间
+        /// </summary>
+        [Display(Name = "添加时间")]
+        public System.DateTime AddTime { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,25 @@ namespace Nestor.Data
                 return ErrorCode.Success;
             }
             catch(Exception)
+            {
+                return ErrorCode.Exception;
+            }
+        }
+
+        /// <summary>
+        /// 编辑文章
+        /// </summary>
+        /// <param name="data">文章对象</param>
+        /// <returns></returns>
+        public ErrorCode Update(Article data)
+        {
+            try
+            {
+                this.context.Entry(data).State = EntityState.Modified;
+                this.context.SaveChanges();
+                return ErrorCode.Success;
+            }
+            catch (Exception)
             {
                 return ErrorCode.Exception;
             }

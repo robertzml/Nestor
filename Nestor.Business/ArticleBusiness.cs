@@ -38,7 +38,7 @@ namespace Nestor.Business
         /// <returns></returns>
         public IEnumerable<Article> Get()
         {
-            return this.articleRepository.Get();
+            return this.articleRepository.Get().OrderByDescending(r => r.PublishDate);
         }
 
         /// <summary>
@@ -69,6 +69,16 @@ namespace Nestor.Business
         public ErrorCode Create(Article data)
         {
             return this.articleRepository.Create(data);
+        }
+
+        /// <summary>
+        /// 编辑文章
+        /// </summary>
+        /// <param name="data">文章对象</param>
+        /// <returns></returns>
+        public ErrorCode Update(Article data)
+        {
+            return this.articleRepository.Update(data);
         }
         #endregion //Method
     }

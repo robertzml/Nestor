@@ -22,6 +22,7 @@ namespace Nestor.Models.Entities
         public int ColumnId { get; set; }
         public System.DateTime PublishDate { get; set; }
         public int Status { get; set; }
+        public Nullable<System.DateTime> AddTime { get; set; }
     
         public virtual Column Column { get; set; }
     }

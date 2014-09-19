@@ -71,8 +71,11 @@ namespace Nestor.UI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //model.MainContent = 
+                model.AddTime = DateTime.Now;
                 model.Status = 0;
+                model.MainContent = HttpUtility.HtmlEncode(model.MainContent);
+                if (string.IsNullOrEmpty(model.Summary))
+                    model.Summary = "";
 
                 ErrorCode result = this.articleBusiness.Create(model);
                 if (result == ErrorCode.Success)
@@ -83,6 +86,50 @@ namespace Nestor.UI.Areas.Admin.Controllers
                 else
                 {
                     ModelState.AddModelError("", "添加文章失败, " + result.DisplayName());
+                }
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 文章编辑
+        /// </summary>
+        /// <param name="id">文章ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var data = this.articleBusiness.Get(id);
+            return View(data);
+        }
+
+        /// <summary>
+        /// 文章编辑
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Edit(Article model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.AddTime = DateTime.Now;
+                model.MainContent = HttpUtility.HtmlEncode(model.MainContent);
+                if (string.IsNullOrEmpty(model.Summary))
+                    model.Summary = "";
+
+                ErrorCode result = this.articleBusiness.Update(model);
+                if (result == ErrorCode.Success)
+                {
+                    TempData["Message"] = "编辑文章成功";
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "编辑文章失败, " + result.DisplayName());
                 }
             }
 

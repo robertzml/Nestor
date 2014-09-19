@@ -7,7 +7,7 @@
 
 <select class="form-control" id="ColumnId" name="ColumnId">
     <option value="">-- 请选择 --</option>
-    @foreach (var item in columns.Where(r => r.ParentId == null))
+    @foreach (var item in columns.Where(r => r.ParentId == null && (r.Type == 1 || r.Type == 2)))
     {
         <option value="@Convert.ToInt32(item.Id)" @(Model == (int)item.Id ? "selected='selected'" : "")>@item.Title</option>
         foreach (var child in item.ChildrenColumns)

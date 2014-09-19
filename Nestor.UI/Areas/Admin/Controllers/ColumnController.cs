@@ -36,7 +36,7 @@ namespace Nestor.UI.Areas.Admin.Controllers
         /// <returns></returns>
         public ActionResult List()
         {
-            var data = this.columnBusiness.Get();
+            var data = this.columnBusiness.Get().OrderBy(r => r.Sort);
             return View(data);
         }
 
