@@ -25,5 +25,53 @@ namespace Nestor.Models
         /// </summary>
         [Display(Name = "异常")]
         Exception = 2,
+
+        /// <summary>
+        /// 未实现程序
+        /// </summary>
+        [Display(Name = "未实现程序")]
+        NotImplement = 3,
+
+        /// <summary>
+        /// 对象已删除
+        /// </summary>
+        [Display(Name = "对象已删除")]
+        ObjectDeleted = 4,
+
+        /// <summary>
+        /// 对象未找到
+        /// </summary>
+        [Display(Name = "对象未找到")]
+        ObjectNotFound = 5,
+
+        /// <summary>
+        /// 数据库写入失败
+        /// </summary>
+        [Display(Name = "数据库写入失败")]
+        DatabaseWriteError = 6,
+
+        /// <summary>
+        /// 用户名称重复
+        /// </summary>
+        [Display(Name = "用户名称重复")]
+        DuplicateUserName = 11,
+
+        /// <summary>
+        /// 密码错误
+        /// </summary>
+        [Display(Name = "密码错误")]
+        WrongPassword = 12,
+
+        /// <summary>
+        /// 用户不存在
+        /// </summary>
+        [Display(Name = "用户不存在")]
+        UserNotExist = 13,
+
+        /// <summary>
+        /// 用户已禁用
+        /// </summary>
+        [Display(Name = "用户已禁用")]
+        UserDisabled = 14
     }
 }

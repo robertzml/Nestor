@@ -27,5 +27,6 @@ namespace Nestor.Models.Entities
     
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Column> Columns { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
