@@ -77,6 +77,9 @@ namespace Nestor.UI.Areas.Admin.Controllers
                 if (string.IsNullOrEmpty(model.Summary))
                     model.Summary = "";
 
+                if (string.IsNullOrEmpty(model.Author))
+                    model.Author = "";
+
                 ErrorCode result = this.articleBusiness.Create(model);
                 if (result == ErrorCode.Success)
                 {
@@ -120,6 +123,9 @@ namespace Nestor.UI.Areas.Admin.Controllers
                 model.MainContent = HttpUtility.HtmlEncode(model.MainContent);
                 if (string.IsNullOrEmpty(model.Summary))
                     model.Summary = "";
+
+                if (string.IsNullOrEmpty(model.Author))
+                    model.Author = "";
 
                 ErrorCode result = this.articleBusiness.Update(model);
                 if (result == ErrorCode.Success)

@@ -80,6 +80,7 @@ namespace Nestor.UI.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             if (ModelState.IsValid)
             {
                 formsService.SignOut();

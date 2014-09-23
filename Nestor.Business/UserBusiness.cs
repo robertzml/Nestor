@@ -38,9 +38,9 @@ namespace Nestor.Business
         /// </summary>
         /// <param name="isRoot">是否Root</param>
         /// <returns></returns>
-        public IEnumerable<User> Get(bool isRoot)
+        public IEnumerable<User> GetList(int userType)
         {
-            if (isRoot)
+            if (userType == (int)UserType.Root)
             {
                 return this.userRepository.Get();
             }
@@ -87,7 +87,15 @@ namespace Nestor.Business
         /// <returns></returns>
         public ErrorCode Update(User user)
         {
-            return this.userRepository.Update(user);
+            User current = this.userRepository.Get(user.Id);
+
+            if (!string.IsNullOrEmpty(user.Password))
+                current.Password = Hasher.SHA1Encrypt(user.Password);
+                        
+            current.Name = user.Name;
+            current.UserType = user.UserType;
+
+            return this.userRepository.Update(current);
         }
 
         /// <summary>

@@ -1,0 +1,12 @@
+﻿@model int?
+
+<select class="form-control" id="UserType" name="UserType">
+    <option value="">-- 请选择 --</option>
+    @foreach (UserType o in Enum.GetValues(typeof(UserType)))
+    {
+        if (o != UserType.Root)
+        {
+            <option value="@Convert.ToInt32(o)" @(Model == (int)o ? "selected='selected'" : "")>@o.DisplayName()</option>
+        }
+    }
+</select>

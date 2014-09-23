@@ -98,35 +98,21 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="left-nav-first">
                 <a href="javascript:;">
-                    <i class="icon-docs"></i>
-                    <span class="title">Pages</span>
+                    <i class="fa fa-users"></i>
+                    <span class="title">用户管理</span>
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="page_portfolio.html">
-                            <i class="icon-feed"></i>
-                            <span class="badge badge-warning badge-roundless">new</span>Portfolio
+                        <a href="@Url.Action("List", "User")" id="user-list">
+                            用户列表
                         </a>
                     </li>
                     <li>
-                        <a href="page_timeline.html">
-                            <i class="icon-clock"></i>
-                            <span class="badge badge-info">4</span>Timeline
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_coming_soon.html">
-                            <i class="icon-flag"></i>
-                            Coming Soon
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_blog.html">
-                            <i class="icon-speech"></i>
-                            Blog
+                        <a href="@Url.Action("Create", "User")" id="user-create">
+                           添加用户
                         </a>
                     </li>
                 </ul>

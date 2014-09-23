@@ -25,6 +25,7 @@ namespace Nestor.Models.Entities
         /// 密码
         /// </summary>
         [Required]
+        [DataType(DataType.Password)]
         [Display(Name = "密码")]
         public string Password { get; set; }
 
@@ -39,6 +40,7 @@ namespace Nestor.Models.Entities
         /// 用户类型
         /// </summary>
         [Required]
+        [UIHint("UserTypeList")]
         [Display(Name = "用户类型")]
         public int UserType { get; set; }
     }

@@ -105,6 +105,7 @@ var nestor = function () {
                 format: "yyyy-mm-dd",
                 weekStart: 7,
                 language: "zh-CN",
+				todayHighlight: true,
                 autoclose: true
             });
 		},

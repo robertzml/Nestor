@@ -127,10 +127,15 @@
             nestor.leftNavActive($('#article-create'));
 
             KindEditor.ready(function (K) {
-                window.editor = K.create('#MainContent');
+                window.editor = K.create('#MainContent', {
+                    uploadJson: '/Services/UploadJson.ashx',
+                    fileManagerJson: '/Services/FileManagerJson.ashx',
+                    allowFileManager: true
+                });
             });
 
             nestor.initDatepicker($('#PublishDate'));
+            $('#PublishDate').datepicker('setDate', new Date());
         });
     </script>
 }
