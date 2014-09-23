@@ -54,6 +54,8 @@
     <Compile Include="Entities\User.cs">
       <DependentUpon>NestorModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\UserMetadata.cs" />
+    <Compile Include="EntityStatus.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="Entities\Article.cs">
       <DependentUpon>NestorModel.tt</DependentUpon>

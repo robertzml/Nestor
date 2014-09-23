@@ -22,9 +22,9 @@ namespace Nestor.Models
         Administrator = 2,
 
         /// <summary>
-        /// 用户
+        /// 普通用户
         /// </summary>
-        [Display(Name = "用户")]
+        [Display(Name = "普通用户")]
         User = 3
     }
 }

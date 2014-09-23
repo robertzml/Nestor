@@ -132,23 +132,10 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;">
-                    <i class="icon-user"></i>
-                    <span class="title">Login Options</span>
-                    <span class="arrow "></span>
+                <a href="@Url.Action("Logout", new { controller = "Account", area = "" })">
+                    <i class="fa fa-power-off"></i>
+                    <span class="title">退出</span>
                 </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="login.html">
-                            Login Form 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login_soft.html">
-                            Login Form 2
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="last ">
                 <a href="@Url.Action("Index", new { controller = "Home", area = ""})" target="_blank">
