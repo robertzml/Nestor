@@ -28,7 +28,7 @@
         </ul>
     </div>
     <div class="col-md-9">
-        <table class="table table-hover table-striped" id="article-table">
+        <table class="table table-hover table-striped table-article" id="article-table">
             <thead>
                 <tr>
                     <th>
@@ -44,7 +44,7 @@
                 {
                     <tr>
                         <td>
-                            @item.Title
+                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
                         </td>
                         <td class="text-right">
                             @item.PublishDate.ToDateString()
