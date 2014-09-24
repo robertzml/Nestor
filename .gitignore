@@ -155,4 +155,6 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 /packages
-/Nestor.UI/assets
+/Nestor.UI/assets/frontend
+/Nestor.UI/assets/global
+/Nestor.UI/Attachment

@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nestor.UI", "Nestor.UI\Nestor.UI.csproj", "{4C036843-D7C9-49BC-9E84-232BA24C0F3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nestor.Business", "Nestor.Business\Nestor.Business.csproj", "{42AE2C71-7A7F-4B34-8659-FD9838244925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nestor.Models", "Nestor.Models\Nestor.Models.csproj", "{654BB244-EB9B-40AA-8EDF-39C9CA9B0ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nestor.Common", "Nestor.Common\Nestor.Common.csproj", "{9A2FE340-6042-424F-9FA6-1406A0CDEA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nestor.Data", "Nestor.Data\Nestor.Data.csproj", "{6CEC380D-F470-4FFD-AF6E-78F153569F43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4C036843-D7C9-49BC-9E84-232BA24C0F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C036843-D7C9-49BC-9E84-232BA24C0F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C036843-D7C9-49BC-9E84-232BA24C0F3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AE2C71-7A7F-4B34-8659-FD9838244925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AE2C71-7A7F-4B34-8659-FD9838244925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AE2C71-7A7F-4B34-8659-FD9838244925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AE2C71-7A7F-4B34-8659-FD9838244925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654BB244-EB9B-40AA-8EDF-39C9CA9B0ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654BB244-EB9B-40AA-8EDF-39C9CA9B0ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654BB244-EB9B-40AA-8EDF-39C9CA9B0ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654BB244-EB9B-40AA-8EDF-39C9CA9B0ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A2FE340-6042-424F-9FA6-1406A0CDEA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A2FE340-6042-424F-9FA6-1406A0CDEA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A2FE340-6042-424F-9FA6-1406A0CDEA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A2FE340-6042-424F-9FA6-1406A0CDEA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEC380D-F470-4FFD-AF6E-78F153569F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEC380D-F470-4FFD-AF6E-78F153569F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEC380D-F470-4FFD-AF6E-78F153569F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEC380D-F470-4FFD-AF6E-78F153569F43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

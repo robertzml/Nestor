@@ -1,0 +1,18 @@
+﻿@model int?
+
+@{
+    ColumnBusiness business = new ColumnBusiness();
+    var columns = business.Get();
+}
+
+<select class="form-control" id="ColumnId" name="ColumnId">
+    <option value="">-- 请选择 --</option>
+    @foreach (var item in columns.Where(r => r.ParentId == null))
+    {
+        <option value="@Convert.ToInt32(item.Id)" @(Model == (int)item.Id ? "selected='selected'" : "")>@item.Title</option>
+        foreach (var child in item.ChildrenColumns)
+        {
+            <option value="@Convert.ToInt32(child.Id)" @(Model == (int)child.Id ? "selected='selected'" : "")>---@child.Title</option>
+        }
+    }
+</select>

@@ -6,21 +6,21 @@
 
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-    Blank Page <small>blank page</small>
+    @ViewBag.Title
 </h3>
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
             <i class="fa fa-home"></i>
-            <a href="index.html">Home</a>
+            <a href="@Url.Action("Index", "Home")">后台管理</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">Page Layouts</a>
+            <a href="#">后台管理</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">Blank Page</a>
+            <a href="#">@ViewBag.Title</a>
         </li>
     </ul>
     <div class="page-toolbar">
@@ -51,7 +51,24 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        Page content goes here
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-table"></i>&nbsp;主页
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+
+            </div>
+        </div>
     </div>
 </div>
 <!-- END PAGE CONTENT-->
