@@ -48,6 +48,9 @@ namespace Nestor.UI.Areas.Admin.Controllers
         public ActionResult Details(int id)
         {
             var data = this.columnBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
             return View(data);
         }
 
@@ -119,6 +122,8 @@ namespace Nestor.UI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrEmpty(model.Remark))
+                    model.Remark = "";
                 ErrorCode result = this.columnBusiness.Update(model);
 
                 if (result == ErrorCode.Success)

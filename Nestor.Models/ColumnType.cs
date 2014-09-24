@@ -19,10 +19,13 @@ namespace Nestor.Models
         General = 1,
 
         /// <summary>
-        /// 子栏目
+        /// 父栏目
         /// </summary>
-        [Display(Name = "子栏目")]
-        Children = 2,
+        /// <remarks>
+        /// 父栏目下不能发文章
+        /// </remarks>
+        [Display(Name = "父栏目")]
+        Parent = 2,
 
         /// <summary>
         /// 链接栏目

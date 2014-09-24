@@ -49,7 +49,7 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-horizontal">
-                        <h4>Article</h4>
+                        <h4>文章信息</h4>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.HiddenFor(model => model.Id)
@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                             </div>
@@ -65,7 +65,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
                             </div>
@@ -73,7 +73,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.ColumnId, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 @Html.EditorFor(model => model.ColumnId, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.ColumnId, "", new { @class = "text-danger" })
                             </div>
@@ -89,7 +89,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
                             </div>
@@ -97,7 +97,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.MainContent, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 <textarea id="MainContent" name="MainContent" style="height:300px;width:100%;">@HttpUtility.HtmlDecode(Model.MainContent)</textarea>
                                 @Html.ValidationMessageFor(model => model.MainContent, "", new { @class = "text-danger" })
                             </div>
@@ -106,7 +106,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-6">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;保存</button>
-                                <a href="@Url.Action("Details", new { controller = "Column", id = Model.Id })" class="btn btn-default" role="button"><i class="fa fa-reply"></i>&nbsp;取消</a>
+                                <a href="@Url.Action("List", new { controller = "Article" })" class="btn btn-default" role="button"><i class="fa fa-reply"></i>&nbsp;取消</a>
                             </div>
                         </div>
                     </div>
@@ -130,10 +130,15 @@
             nestor.leftNavActive($('#article-list'));
 
             KindEditor.ready(function (K) {
-                window.editor = K.create('#MainContent');
+                window.editor = K.create('#MainContent', {
+                    uploadJson: '/Services/UploadJson.ashx',
+                    fileManagerJson: '/Services/FileManagerJson.ashx',
+                    allowFileManager: true
+                });
             });
 
             nestor.initDatepicker($('#PublishDate'));
+            $('#PublishDate').datepicker('setDate', new Date('@Model.PublishDate'));
         });
     </script>
 }

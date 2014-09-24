@@ -72,6 +72,18 @@ namespace Nestor.Models
         /// 用户已禁用
         /// </summary>
         [Display(Name = "用户已禁用")]
-        UserDisabled = 14
+        UserDisabled = 14,
+
+        /// <summary>
+        /// 链接栏目不能发文章
+        /// </summary>
+        [Display(Name = "链接栏目不能发文章")]
+        LinkColumnNoArticle = 15,
+
+        /// <summary>
+        /// 父级栏目不能发文章
+        /// </summary>
+        [Display(Name = "父级栏目不能发文章")]
+        ParentColumnNoArticle = 16
     }
 }

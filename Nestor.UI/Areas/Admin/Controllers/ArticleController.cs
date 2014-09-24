@@ -104,6 +104,9 @@ namespace Nestor.UI.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var data = this.articleBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
             return View(data);
         }
 

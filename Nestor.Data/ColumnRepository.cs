@@ -84,7 +84,7 @@ namespace Nestor.Data
                 this.context.SaveChanges();
                 return ErrorCode.Success;
             }
-            catch(Exception)
+            catch(Exception e)
             {
                 return ErrorCode.Exception;
             }

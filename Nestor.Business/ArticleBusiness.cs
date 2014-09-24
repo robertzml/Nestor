@@ -68,6 +68,13 @@ namespace Nestor.Business
         /// <returns></returns>
         public ErrorCode Create(Article data)
         {
+            ColumnBusiness columnBusiness = new ColumnBusiness();
+            var column = columnBusiness.Get(data.ColumnId);
+            if (column.Type == (int)ColumnType.Link)
+                return ErrorCode.LinkColumnNoArticle;
+            if (column.Type == (int)ColumnType.Parent)
+                return ErrorCode.ParentColumnNoArticle;
+
             return this.articleRepository.Create(data);
         }
 
@@ -78,6 +85,13 @@ namespace Nestor.Business
         /// <returns></returns>
         public ErrorCode Update(Article data)
         {
+            ColumnBusiness columnBusiness = new ColumnBusiness();
+            var column = columnBusiness.Get(data.ColumnId);
+            if (column.Type == (int)ColumnType.Link)
+                return ErrorCode.LinkColumnNoArticle;
+            if (column.Type == (int)ColumnType.Parent)
+                return ErrorCode.ParentColumnNoArticle;
+
             return this.articleRepository.Update(data);
         }
         #endregion //Method

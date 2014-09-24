@@ -58,6 +58,9 @@
                                     @Html.DisplayNameFor(model => model.Type)
                                 </th>
                                 <th>
+                                    父级栏目
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.ShowTop)
                                 </th>
                                 <th>
@@ -80,6 +83,14 @@
                                         @{
                                             var type = (ColumnType)item.Type;
                                             @type.DisplayName();
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.ParentColumn == null) { 
+                                            <span>无</span>
+                                        }
+                                        else { 
+                                            <span>@item.ParentColumn.Title</span>
                                         }
                                     </td>
                                     <td>
