@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Nestor.Business;
 using Nestor.Models;
 using Nestor.Models.Entities;
+using Nestor.UI.Models;
 
 namespace Nestor.UI.Controllers
 {
@@ -36,9 +37,17 @@ namespace Nestor.UI.Controllers
         /// <returns></returns>
         public ActionResult Index(int id)
         {
-            var data = this.articleBusiness.Get(id);
-            if (data == null)
+            ArticleModel data = new ArticleModel();
+            var article = this.articleBusiness.Get(id);
+            if (article == null)
                 return HttpNotFound();
+
+            this.articleBusiness.IncreaseReadCount(id);
+            article.MainContent = HttpUtility.HtmlDecode(article.MainContent);
+
+            data.Article = article;
+            data.Recents = this.articleBusiness.GetLast(10).ToList();
+            data.Recommends = this.articleBusiness.GetRecommend(10).ToList();
 
             return View(data);
         }

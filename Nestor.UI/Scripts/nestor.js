@@ -111,7 +111,7 @@ var nestor = function () {
 		},
 		
 		initDatatable: function($dom) {
-			handleInitDatatable($dom);
+			return handleInitDatatable($dom);
 		},
 		
 		initFrontTable: function($dom) {

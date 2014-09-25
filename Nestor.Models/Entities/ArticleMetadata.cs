@@ -56,6 +56,18 @@ namespace Nestor.Models.Entities
         public System.DateTime PublishDate { get; set; }
 
         /// <summary>
+        /// 浏览次数
+        /// </summary>
+        [Display(Name = "浏览次数")]
+        public int ReadCount { get; set; }
+
+        /// <summary>
+        /// 推荐
+        /// </summary>
+        [Display(Name = "推荐")]
+        public bool IsRecommend { get; set; }
+
+        /// <summary>
         /// 添加时间
         /// </summary>
         [Display(Name = "添加时间")]

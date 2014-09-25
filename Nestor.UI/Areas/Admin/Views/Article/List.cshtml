@@ -103,7 +103,8 @@
         $(function () {
             nestor.leftNavActive($('#article-list'));
 
-            nestor.initDatatable($('#article-table'));
+            var oTable = nestor.initDatatable($('#article-table'));
+            oTable.api().order([4, 'desc']).draw();
         });
     </script>
 }

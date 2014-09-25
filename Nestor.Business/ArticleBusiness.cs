@@ -42,6 +42,26 @@ namespace Nestor.Business
         }
 
         /// <summary>
+        /// 获取近期文章
+        /// </summary>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
+        public IEnumerable<Article> GetLast(int count)
+        {
+            return this.articleRepository.Get().OrderByDescending(r => r.PublishDate).Take(count);
+        }
+
+        /// <summary>
+        /// 获取推荐文章
+        /// </summary>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
+        public IEnumerable<Article> GetRecommend(int count)
+        {
+            return this.articleRepository.Get().Where(r => r.IsRecommend).OrderByDescending(r => r.PublishDate).Take(count);
+        }
+
+        /// <summary>
         /// 按栏目获取文章
         /// </summary>
         /// <param name="columnId">栏目ID</param>
@@ -93,6 +113,17 @@ namespace Nestor.Business
                 return ErrorCode.ParentColumnNoArticle;
 
             return this.articleRepository.Update(data);
+        }
+
+        /// <summary>
+        /// 增加读取次数
+        /// </summary>
+        /// <param name="id">文章ID</param>
+        public void IncreaseReadCount(int id)
+        {
+            var data = this.articleRepository.Get(id);
+            data.ReadCount++;
+            this.articleRepository.Update(data);
         }
         #endregion //Method
     }

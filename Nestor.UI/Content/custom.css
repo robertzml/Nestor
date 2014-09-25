@@ -35,3 +35,58 @@ body#admin {
 .table-article tbody td{
 	border: none;
 }
+
+.blog-item .blog-info {
+	border: none;
+}
+
+div#article-title {
+	border-left:5px solid #91d9e8;
+	border-right:5px solid #91d9e8;
+	padding:6px 6px 6px;           
+	margin-bottom:10px;
+	margin-right: 5px;
+	/*background: url(../images/bg-title.png) repeat-x scroll 0 0; */	
+	background-color: #e9edef;
+	box-shadow: 10px -5px 2px #888;
+}
+
+div#article-title h1 {
+	margin: 0px;
+}
+
+div#article-content, div#column-content {
+	padding: 10px 20px 40px;
+	box-shadow: 10px -10px 5px #888;
+}
+
+div#article-content #main-content {
+	overflow-x: hidden;
+}
+
+div.blog-sidebar {
+	border-left: 4px solid #f0f0f0;
+}
+
+div#recent-news, div#recommend-news {
+	margin-top:15px;
+}
+
+div#recent-news h2, div#recommend-news h2 {
+	text-shadow: 2px 2px #f0f0f0;
+}
+
+ul#recent-list li, ul#recommend-list li{
+	padding: 5px 0;            
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px dotted #808080;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	padding-right: 2px;
+}
+
+ul#recent-list li a{
+   
+}

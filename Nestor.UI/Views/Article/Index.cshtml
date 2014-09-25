@@ -1,83 +1,84 @@
-﻿@model Nestor.Models.Entities.Article
+﻿@model Nestor.UI.Models.ArticleModel
 
 @{
-    ViewBag.Title = Model.Title;
+    ViewBag.Title = Model.Article.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">主页</a></li>
+    <li><a href="@Url.Action("Index", new { controller = "Column", id = Model.Article.ColumnId })">@Model.Article.Column.Title</a></li>
+    <li class="active">@Model.Article.Title</li>
+</ul>
 
-<div>
-    <h4>Article</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+<div class="row margin-bottom-40">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="article-title">
+                    <h1>@Model.Article.Title</h1>
+                </div>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+        <div class="content-page" id="article-content">
+            <div class="row">
+                <div class="col-md-8 blog-item">
+                    <ul class="blog-info">
+                        <li><i class="fa fa-user"></i> By @Model.Article.Author</li>
+                        <li><i class="fa fa-calendar"></i> @Model.Article.PublishDate.ToDateString()</li>
+                        <li><i class="fa fa-comments"></i> @Model.Article.ReadCount</li>
+                    </ul>
+                    @if (Model.Article.Summary != "")
+                    {
+                        <blockquote style="text-indent:2em;">
+                            @Model.Article.Summary
+                        </blockquote>
+                    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
+                    <div id="main-content">
+                        @Html.Raw(Model.Article.MainContent)
+                    </div>
+                </div>
+                <div class="col-md-4 blog-sidebar">
+                    <!-- BEGIN RECENT NEWS -->
+                    <div id="recent-news">
+                        <h2 class="font-blue-steel">近期新闻</h2>
+                        <div class="margin-bottom-10">                            
+                            <ul class="list-group" id="recent-list">
+                                @foreach (var item in Model.Recents)
+                                {
+                                    <li class="list-group-item">
+                                        <span class="fa fa-arrow-circle-right"></span>
+                                        <a href="/Article/@item.Id" title="@item.Title">@item.Title</a>
+                                        <i class="pull-right">@item.PublishDate.ToDateString()</i>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>                    
+                    <!-- END RECENT NEWS -->
 
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MainContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MainContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ColumnId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ColumnId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PublishDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AddTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AddTime)
-        </dd>
-
-    </dl>
+                    <!-- BEGIN RECOMMEND NEWS -->
+                    <div id="recommend-news">
+                        <h2 class="font-blue-madison">推荐新闻</h2>
+                        <div class="margin-bottom-10">
+                            <ul class="list-group" id="recent-list">
+                                @foreach (var item in Model.Recommends)
+                                {
+                                    <li class="list-group-item">
+                                        <span class="fa fa-arrow-circle-right"></span>
+                                        <a href="/Article/@item.Id" title="@item.Title">@item.Title</a>
+                                        <i class="pull-right">@item.PublishDate.ToDateString()</i>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END RECOMMEND NEWS -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

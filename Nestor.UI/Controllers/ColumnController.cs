@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Nestor.Business;
+using Nestor.Models;
 using Nestor.Models.Entities;
 
 namespace Nestor.UI.Controllers
@@ -39,7 +40,12 @@ namespace Nestor.UI.Controllers
             if (data == null)
                 return new HttpNotFoundResult();
 
-            return View(data);
+            if (data.Type == (int)ColumnType.Parent)
+                return View("Index", data);
+            else if (data.Type == (int)ColumnType.Link)
+                return View("Index", data);
+
+            return View("List", data);
         }
         #endregion //Action
     }

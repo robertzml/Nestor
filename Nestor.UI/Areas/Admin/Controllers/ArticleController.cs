@@ -7,6 +7,7 @@ using Nestor.Business;
 using Nestor.Common;
 using Nestor.Models;
 using Nestor.Models.Entities;
+using Nestor.UI.Services;
 
 namespace Nestor.UI.Areas.Admin.Controllers
 {
@@ -56,6 +57,7 @@ namespace Nestor.UI.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.UserName = PageService.GetCurrentUser(User.Identity.Name).Name;
             return View();
         }
 
@@ -72,6 +74,7 @@ namespace Nestor.UI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 model.AddTime = DateTime.Now;
+                model.ReadCount = 0;
                 model.Status = 0;
                 model.MainContent = HttpUtility.HtmlEncode(model.MainContent);
                 if (string.IsNullOrEmpty(model.Summary))

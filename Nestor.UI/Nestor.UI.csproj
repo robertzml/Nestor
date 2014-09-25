@@ -119,6 +119,7 @@
     <Compile Include="Areas\Admin\Controllers\ColumnController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ColumnController.cs" />
@@ -742,6 +743,7 @@
     <Content Include="Services\UploadJson.ashx" />
     <Content Include="Services\FileManagerJson.ashx" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Column\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
