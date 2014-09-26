@@ -51,6 +51,18 @@ namespace Nestor.UI.Controllers
 
             return View(data);
         }
+
+        /// <summary>
+        /// 推荐新闻
+        /// </summary>
+        /// <param name="count">文章数量</param>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Recommend(int count)
+        {
+            var data = this.articleBusiness.GetRecommend(count).ToList();
+            return View(data);
+        }
         #endregion //Action
     }
 }

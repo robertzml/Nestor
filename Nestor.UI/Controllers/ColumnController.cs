@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Nestor.Business;
 using Nestor.Models;
 using Nestor.Models.Entities;
+using Nestor.UI.Models;
 
 namespace Nestor.UI.Controllers
 {
@@ -36,16 +37,38 @@ namespace Nestor.UI.Controllers
         /// <returns></returns>
         public ActionResult Index(int id)
         {
-            var data = this.columnBusiness.Get(id);
-            if (data == null)
-                return new HttpNotFoundResult();
+            var column = this.columnBusiness.Get(id);
+            if (column == null)
+                return HttpNotFound();
 
-            if (data.Type == (int)ColumnType.Parent)
-                return View("Index", data);
-            else if (data.Type == (int)ColumnType.Link)
-                return View("Index", data);
+            if (column.Type == (int)ColumnType.Parent)
+            {
+                return View("Index", column);
+            }
+            else if (column.Type == (int)ColumnType.Link)
+                return View("Index", column);
+            else if (column.Type == (int)ColumnType.General)
+            {
+                GeneralColumnModel data = new GeneralColumnModel();
 
-            return View("List", data);
+                data.Column = column;
+                if (column.ParentColumn != null)
+                {
+                    data.Parent = column.ParentColumn;
+                    data.Sibling = data.Parent.ChildrenColumns.ToList();
+                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
+                }
+                else
+                {
+                    data.Parent = null;
+                    data.Sibling = new List<Column>();
+                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
+                }                
+
+                return View("List", data);
+            }
+
+            return HttpNotFound();
         }
         #endregion //Action
     }

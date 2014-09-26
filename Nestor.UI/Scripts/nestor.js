@@ -56,7 +56,7 @@ var nestor = function () {
 				[5, 10, 20, "All"] // change per page values here
 			],
 			// set the initial value
-			"pageLength": 15,
+			"pageLength": 10,
 			
 			"ordering": false,
 			

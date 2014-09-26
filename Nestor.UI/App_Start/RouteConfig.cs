@@ -14,12 +14,19 @@ namespace Nestor.UI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Column",
+                url: "Column/{id}",
+                defaults: new { controller = "Column", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Nestor.UI.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Article",
                 url: "Article/{id}",
                 defaults: new { controller = "Article", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "Nestor.UI.Controllers" }
-
             );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

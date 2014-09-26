@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Nestor.Models.Entities.Article>
+
+@{
+    Layout = null;
+}
+
+ <!-- BEGIN RECOMMEND NEWS -->
+<div id="recommend-news">
+    <h2 class="font-blue-madison">推荐新闻</h2>
+    <div class="margin-bottom-10">
+        <ul class="list-group" id="recent-list">
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item">
+                    <span class="fa fa-arrow-circle-right"></span>
+                    <a href="/Article/@item.Id" title="@item.Title">@item.Title</a>
+                    <i class="pull-right">@item.PublishDate.ToDateString()</i>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<!-- END RECOMMEND NEWS -->
+

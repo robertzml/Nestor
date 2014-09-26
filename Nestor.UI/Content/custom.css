@@ -28,17 +28,41 @@ body#admin {
 	vertical-align: middle;
 }
 
+.table-article thead tr {
+	background-color:#a6a6a6;
+}
+
+.table-article thead tr th {
+	height: 32px;
+	font-size: 16px;
+}
+
 .table-article tbody tr{
-	border-bottom: 1px dashed black;
+	/*border-bottom: 1px dashed black;*/
 }
 
 .table-article tbody td{
 	border: none;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	height:30px;
+}
+
+.table-article tbody td a {
+	font-size:14px;
 }
 
 .blog-item .blog-info {
 	border: none;
 }
+
+img#column-top-image {
+	margin-top: -23px;
+	margin-left: -15px;
+	width: 1170px;
+}
+
 
 div#article-title {
 	border-left:5px solid #91d9e8;
@@ -58,6 +82,7 @@ div#article-title h1 {
 div#article-content, div#column-content {
 	padding: 10px 20px 40px;
 	box-shadow: 10px -10px 5px #888;
+	border-radius: 5px !important;
 }
 
 div#article-content #main-content {
@@ -72,7 +97,7 @@ div#recent-news, div#recommend-news {
 	margin-top:15px;
 }
 
-div#recent-news h2, div#recommend-news h2 {
+div#recent-news h2, div#recommend-news h2, div#sibling-column h2 {
 	text-shadow: 2px 2px #f0f0f0;
 }
 
@@ -85,8 +110,4 @@ ul#recent-list li, ul#recommend-list li{
 	text-overflow:ellipsis;
 	white-space:nowrap;
 	padding-right: 2px;
-}
-
-ul#recent-list li a{
-   
 }

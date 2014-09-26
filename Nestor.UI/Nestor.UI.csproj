@@ -129,6 +129,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ColumnModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FileManagerJson.ashx.cs">
       <DependentUpon>FileManagerJson.ashx</DependentUpon>
@@ -744,6 +745,7 @@
     <Content Include="Services\FileManagerJson.ashx" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Column\List.cshtml" />
+    <Content Include="Views\Article\Recommend.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
