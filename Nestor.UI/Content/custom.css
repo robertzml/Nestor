@@ -29,12 +29,16 @@ body#admin {
 }
 
 .table-article thead tr {
-	background-color:#a6a6a6;
+	background-color:#26bea0;
 }
 
 .table-article thead tr th {
 	height: 32px;
 	font-size: 16px;
+}
+
+.table-article tfoot tr th a, .table-article tfoot tr th i{
+	color: #578ebe;
 }
 
 .table-article tbody tr{
@@ -55,6 +59,32 @@ body#admin {
 
 .blog-item .blog-info {
 	border: none;
+}
+
+.column-bar {
+	background: url(../Images/column-top.jpg) repeat scroll 0 0 #fff;
+	margin-top: -23px;
+	margin-bottom: 20px;
+	height: 62px;
+}
+
+.column-bar .page-title {
+	padding: 19px 0;
+}
+
+.column-bar .page-title > h1 {
+  color: #555555;
+  font-family: '黑体';
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.column-bar .page-title > h1 > small {
+  color: #2c3e50;
+  font-family: '微软雅黑';
+  font-size: 13px;
+  font-weight: 400;
 }
 
 img#column-top-image {

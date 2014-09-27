@@ -5,6 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section bars {
+<div class="column-bar">
+    <div class="container">
+        <div class="page-title">
+            <h1><span class="fa fa-tree" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
+        </div>
+    </div>
+</div>
+}
 
 <ul class="breadcrumb">
     <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">主页</a></li>
@@ -49,7 +58,7 @@
                     @if (Model.Sibling.Count != 0)
                     {
                         <div id="sibling-column">
-                            <h2 class="font-blue-hoki">@Model.Parent.Title</h2>
+                            <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Parent.Title</h2>
                             <ul class="nav sidebar-categories margin-bottom-40">
                                 @foreach (var item in Model.Sibling)
                                 {
@@ -72,6 +81,15 @@
 
 
 @section scripts {
+    @if (Model.Parent != null)
+    {
+        <script type="text/javascript">
+            $(function () {
+                nestor.topNavActive('@Model.Parent.Id');               
+            });
+        </script>
+    }
+
     <script type="text/javascript">
         $(function () {
             nestor.topNavActive('@Model.Column.Id');

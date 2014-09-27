@@ -43,25 +43,9 @@
                     <hr />
                 </div>
                 <div class="col-md-4 blog-sidebar">
-                    <!-- BEGIN RECENT NEWS -->
-                    <div id="recent-news">
-                        <h2 class="font-blue-steel">近期新闻</h2>
-                        <div class="margin-bottom-10">                            
-                            <ul class="list-group" id="recent-list">
-                                @foreach (var item in Model.Recents)
-                                {
-                                    <li class="list-group-item">
-                                        <span class="fa fa-arrow-circle-right"></span>
-                                        <a href="/Article/@item.Id" title="@item.Title">@item.Title</a>
-                                        <i class="pull-right">@item.PublishDate.ToDateString()</i>
-                                    </li>
-                                }
-                            </ul>
-                        </div>
-                    </div>                    
-                    <!-- END RECENT NEWS -->
+                    @Html.Action("Recent", new { controller = "Article", count = 10 })
 
-                   @Html.Action("Recommend", new { controller = "Article", count = 10 })
+                    @Html.Action("Recommend", new { controller = "Article", count = 10 })
                 </div>
             </div>
         </div>

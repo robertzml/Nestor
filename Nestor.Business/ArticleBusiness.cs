@@ -46,7 +46,7 @@ namespace Nestor.Business
         /// </summary>
         /// <param name="count">数量</param>
         /// <returns></returns>
-        public IEnumerable<Article> GetLast(int count)
+        public IEnumerable<Article> GetRecent(int count)
         {
             return this.articleRepository.Get().OrderByDescending(r => r.PublishDate).Take(count);
         }

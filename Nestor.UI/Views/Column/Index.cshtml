@@ -1,59 +1,84 @@
-﻿@model Nestor.Models.Entities.Column
+﻿@model Nestor.UI.Models.TopColumnModel
 
 @{
-    ViewBag.Title = Model.Title;    
+    ViewBag.Title = Model.Column.Title;    
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    bool isTop = Model.ParentColumn == null;
-    var parent = Model.ParentColumn == null ? Model : Model.ParentColumn;
+@section bars {
+    <div class="column-bar">
+        <div class="container">
+            <div class="page-title">
+                <h1><span class="fa fa-tree" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
+            </div>
+        </div>
+    </div>
 }
 
 <ul class="breadcrumb">
-    <li><a href="@Url.Action("Index", "Home")">主页</a></li>
-    @if (!isTop)
-    {
-        <li><a href="@Url.Action("Index", new { controller = "Column", id = Model.ParentColumn.Id })">@Model.ParentColumn.Title</a></li>
-    }    
-    <li class="active">@Model.Title</li>
+    <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">主页</a></li>    
+    <li class="active">@Model.Column.Title</li>
 </ul>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2 class="no-top-space">栏目</h2>
-        <ul class="nav sidebar-categories margin-bottom-40">
-            @foreach (var item in parent.ChildrenColumns)
-            {
-                <li><a href="#">@item.Title</a></li>
-            }
-        </ul>
-    </div>
-    <div class="col-md-9">
-        <table class="table table-hover table-striped table-article" id="article-table">
-            <thead>
-                <tr>
-                    <th>
-                        标题
-                    </th>
-                    <th class="text-right" width="40px">
-                        发布时间
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Articles)
-                {
-                    <tr>
-                        <td>
-                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
-                        </td>
-                        <td class="text-right">
-                            @item.PublishDate.ToDateString()
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="row margin-bottom-40">
+    <div class="col-md-12">
+        <div class="content-page" id="column-content">
+            <div class="row" style="padding-top:10px;">
+                <div class="col-md-8">
+                    @foreach (var child in Model.Children)
+                    {
+                        <table class="table table-hover table-article">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <i class="fa fa-bars" style="font-size:16px;"></i>&nbsp; @child.Title
+                                    </th>
+                                    <th style="width:40px;">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="2"><i class="fa fa-arrow-circle-o-right"></i>&nbsp;<a href="/Column/@child.Id">更多</a></th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @foreach (var item in child.Articles.OrderByDescending(r => r.PublishDate).Take(5))
+                                {
+                                    <tr>
+                                        <td>
+                                            <span class="fa fa-angle-double-right"></span> <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
+                                        </td>
+                                        <td class="text-right">
+                                            @item.PublishDate.ToDateString()
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        
+                        <hr />
+                    }
 
+                </div>
+
+                <div class="col-md-4 blog-sidebar">
+                    <div id="sibling-column">
+                        <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Column.Title</h2>
+                        <ul class="nav sidebar-categories margin-bottom-40">
+                            @foreach (var item in Model.Children)
+                            {
+                                <li @(item.Id == Model.Column.Id ? "class=active" : "")>
+                                    <a href="/Column/@item.Id">
+                                        @item.Title
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -61,8 +86,7 @@
 @section scripts {
     <script type="text/javascript">
         $(function () {
-            nestor.topNavActive('@Model.Id');
-            nestor.initFrontTable($('#article-table'));
+            nestor.topNavActive('@Model.Column.Id');
         });
     </script>
 }

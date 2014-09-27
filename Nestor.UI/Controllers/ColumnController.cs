@@ -43,10 +43,16 @@ namespace Nestor.UI.Controllers
 
             if (column.Type == (int)ColumnType.Parent)
             {
-                return View("Index", column);
+                TopColumnModel data = new TopColumnModel();
+                data.Column = column;
+                data.Children = column.ChildrenColumns.ToList();
+
+                return View("Index", data);
             }
             else if (column.Type == (int)ColumnType.Link)
+            {
                 return View("Index", column);
+            }
             else if (column.Type == (int)ColumnType.General)
             {
                 GeneralColumnModel data = new GeneralColumnModel();
@@ -63,7 +69,7 @@ namespace Nestor.UI.Controllers
                     data.Parent = null;
                     data.Sibling = new List<Column>();
                     data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
-                }                
+                }
 
                 return View("List", data);
             }

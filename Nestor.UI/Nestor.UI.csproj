@@ -746,6 +746,7 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Column\List.cshtml" />
     <Content Include="Views\Article\Recommend.cshtml" />
+    <Content Include="Views\Article\Recent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

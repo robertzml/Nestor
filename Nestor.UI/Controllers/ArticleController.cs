@@ -46,9 +46,19 @@ namespace Nestor.UI.Controllers
             article.MainContent = HttpUtility.HtmlDecode(article.MainContent);
 
             data.Article = article;
-            data.Recents = this.articleBusiness.GetLast(10).ToList();
-            data.Recommends = this.articleBusiness.GetRecommend(10).ToList();
 
+            return View(data);
+        }
+
+        /// <summary>
+        /// 近期新闻
+        /// </summary>
+        /// <param name="count">文章数量</param>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Recent(int count)
+        {
+            var data = this.articleBusiness.GetRecent(count).ToList();
             return View(data);
         }
 
