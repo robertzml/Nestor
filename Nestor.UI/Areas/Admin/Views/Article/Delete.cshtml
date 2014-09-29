@@ -1,0 +1,143 @@
+﻿@model Nestor.Models.Entities.Article
+
+@{
+    ViewBag.Title = "删除文章";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">后台管理</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">文章管理</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">@ViewBag.Title</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-table"></i>&nbsp;删除文章
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <h3>是否确认删除该文章？</h3>
+                <div>                   
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Author)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Author)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Summary)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Summary)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ColumnId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Column.Title)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PublishDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PublishDate)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AddTime)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AddTime)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ReadCount)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ReadCount)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IsRecommend)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.IsRecommend)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(model => model.Id)
+                        
+                        <div class="form-actions no-color">
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-minus-square-o"></i>&nbsp;删除</button>
+                            <a href="@Url.Action("List", new { controller = "Article" })" class="btn btn-default" role="button"><i class="fa fa-reply"></i>&nbsp;取消</a>                   
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            nestor.leftNavActive($('#article-list'));
+        });
+    </script>
+}

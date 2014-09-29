@@ -10,7 +10,7 @@ namespace Nestor.UI.Areas.Admin.Controllers
     /// <summary>
     /// 后台主页控制器
     /// </summary>
-    [EnhancedAuthorize]
+    [EnhancedAuthorize(Roles="Root,Administrator")]
     public class HomeController : Controller
     {
         #region Action

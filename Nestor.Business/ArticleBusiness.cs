@@ -116,6 +116,17 @@ namespace Nestor.Business
         }
 
         /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <param name="id">删除文章</param>
+        /// <returns></returns>
+        public ErrorCode Delete(int id)
+        {
+            var data = this.articleRepository.Get(id);
+            return this.articleRepository.Delete(data);
+        }
+
+        /// <summary>
         /// 增加读取次数
         /// </summary>
         /// <param name="id">文章ID</param>

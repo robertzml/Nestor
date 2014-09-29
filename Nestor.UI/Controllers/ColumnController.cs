@@ -41,6 +41,9 @@ namespace Nestor.UI.Controllers
             if (column == null)
                 return HttpNotFound();
 
+            if (column.IsAuth && !User.Identity.IsAuthenticated)
+                return RedirectToAction("Login", "Account");
+
             if (column.Type == (int)ColumnType.Parent)
             {
                 TopColumnModel data = new TopColumnModel();

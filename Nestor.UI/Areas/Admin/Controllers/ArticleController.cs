@@ -8,12 +8,14 @@ using Nestor.Common;
 using Nestor.Models;
 using Nestor.Models.Entities;
 using Nestor.UI.Services;
+using Nestor.UI.Filters;
 
 namespace Nestor.UI.Areas.Admin.Controllers
 {
     /// <summary>
     /// 文章控制器
     /// </summary>
+    [EnhancedAuthorize(Roles = "Root,Administrator")]
     public class ArticleController : Controller
     {
         #region Field
@@ -146,6 +148,44 @@ namespace Nestor.UI.Areas.Admin.Controllers
             }
 
             return View(model);
+        }
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <param name="id">文章ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var data = this.articleBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
+        }
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirm()
+        {
+            int id = Convert.ToInt32(Request.Form["Id"]);
+
+            ErrorCode result = this.articleBusiness.Delete(id);
+            if (result == ErrorCode.Success)
+            {
+                TempData["Message"] = "删除文章成功";
+                return RedirectToAction("List");
+            }
+            else
+            {
+                TempData["Message"] = "删除文章失败";
+                return RedirectToAction("Delete", new { id = id });
+            }
         }
         #endregion //Field
     }

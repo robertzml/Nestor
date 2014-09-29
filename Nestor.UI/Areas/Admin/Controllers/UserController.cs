@@ -15,7 +15,7 @@ namespace Nestor.UI.Areas.Admin.Controllers
     /// <summary>
     /// 用户控制器
     /// </summary>
-    [EnhancedAuthorize]
+    [EnhancedAuthorize(Roles = "Root,Administrator")]
     public class UserController : Controller
     {
         #region Field

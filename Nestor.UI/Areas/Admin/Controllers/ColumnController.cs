@@ -7,12 +7,14 @@ using Nestor.Business;
 using Nestor.Models;
 using Nestor.Models.Entities;
 using Nestor.Common;
+using Nestor.UI.Filters;
 
 namespace Nestor.UI.Areas.Admin.Controllers
 {
     /// <summary>
     /// 栏目管理控制器
     /// </summary>
+    [EnhancedAuthorize(Roles = "Root,Administrator")]
     public class ColumnController : Controller
     {
         #region Field

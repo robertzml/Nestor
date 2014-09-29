@@ -29,6 +29,7 @@ namespace Nestor.Models.Entities
         public Nullable<int> ParentId { get; set; }
         public string Link { get; set; }
         public int Sort { get; set; }
+        public bool IsAuth { get; set; }
     
         public virtual ICollection<Article> Articles { get; set; }
         public virtual ICollection<Column> ChildrenColumns { get; set; }

@@ -31,6 +31,6 @@ namespace Nestor.Models
         /// 链接栏目
         /// </summary>
         [Display(Name = "链接栏目")]
-        Link = 3
+        Link = 3       
     }
 }

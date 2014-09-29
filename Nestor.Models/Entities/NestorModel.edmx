@@ -31,6 +31,7 @@
           <Property Name="ShowTop" Type="bit" Nullable="false" />
           <Property Name="ParentId" Type="int" />
           <Property Name="Link" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsAuth" Type="bit" Nullable="false" />
           <Property Name="Sort" Type="int" Nullable="false" />
           <Property Name="Remark" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
@@ -124,6 +125,7 @@
           <NavigationProperty Name="ChildrenColumns" Relationship="NestorModel.FK_Column_Column" FromRole="Column" ToRole="Column1" />
           <NavigationProperty Name="ParentColumn" Relationship="NestorModel.FK_Column_Column" FromRole="Column1" ToRole="Column" />
           <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="IsAuth" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Article_Column">
           <End Role="Column" Type="Self.Column" Multiplicity="1" />
@@ -199,6 +201,7 @@
           <EntitySetMapping Name="Columns">
             <EntityTypeMapping TypeName="NestorModel.Column">
               <MappingFragment StoreEntitySet="Column">
+                <ScalarProperty Name="IsAuth" ColumnName="IsAuth" />
                 <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="ParentId" ColumnName="ParentId" />

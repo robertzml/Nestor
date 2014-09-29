@@ -36,6 +36,12 @@ namespace Nestor.Models.Entities
         public bool ShowTop { get; set; }
 
         /// <summary>
+        /// 是否验证
+        /// </summary>
+        [Display(Name = "是否验证")]
+        public bool IsAuth { get; set; }
+
+        /// <summary>
         /// 排序
         /// </summary>
         [Display(Name = "排序")]

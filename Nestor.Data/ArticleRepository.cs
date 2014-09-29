@@ -99,6 +99,26 @@ namespace Nestor.Data
                 return ErrorCode.Exception;
             }
         }
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <param name="data">文章对象</param>
+        /// <returns></returns>
+        public ErrorCode Delete(Article data)
+        {
+            try
+            {
+                this.context.Articles.Remove(data);
+                this.context.SaveChanges();
+
+                return ErrorCode.Success;
+            }
+            catch(Exception)
+            {
+                return ErrorCode.Exception;
+            }
+        }
         #endregion //Method
     }
 }

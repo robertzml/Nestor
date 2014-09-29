@@ -87,6 +87,7 @@
                                 <td>
                                     <a href="@Url.Action("Details", new { controller = "Article", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
                                     <a href="@Url.Action("Edit", new { controller = "Article", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                                    <a href="@Url.Action("Delete", new { controller = "Article", id = item.Id })" class="btn btn-danger btn-sm" role="button"><i class="fa fa-minus-square"></i>&nbsp;删除</a>
                                 </td>
                             </tr>
                         }
