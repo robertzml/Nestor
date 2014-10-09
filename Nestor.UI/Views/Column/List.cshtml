@@ -55,6 +55,11 @@
                 </div>
 
                 <div class="col-md-4 blog-sidebar">
+                    @if (Model.Column.IsAuth)
+                    {                        
+                        @Html.Action("Info", "Account")
+                    }
+                    
                     @if (Model.Sibling.Count != 0)
                     {
                         <div id="sibling-column">

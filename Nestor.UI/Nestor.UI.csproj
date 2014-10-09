@@ -149,8 +149,6 @@
     <Content Include="assets\admin\layout\css\themes\darkblue.css" />
     <Content Include="assets\admin\layout\css\themes\default.css" />
     <Content Include="assets\admin\layout\css\themes\grey.css" />
-    <Content Include="assets\admin\layout\css\themes\light.css" />
-    <Content Include="assets\admin\layout\css\themes\light2.css" />
     <Content Include="assets\admin\layout\img\ajax-loading.gif" />
     <Content Include="assets\admin\layout\img\ajax-modal-loading.gif" />
     <Content Include="assets\admin\layout\img\arrow-down.png" />
@@ -651,21 +649,10 @@
     <Content Include="assets\global\plugins\uniform\jquery.uniform.min.js" />
     <Content Include="assets\global\scripts\datatable.js" />
     <Content Include="assets\global\scripts\metronic.js" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\login-soft.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="assets\global\plugins\bootstrap\css\bootstrap.css.map" />
     <Content Include="assets\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -709,8 +696,6 @@
     <Content Include="Areas\Admin\Views\Article\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -721,10 +706,6 @@
     <Content Include="Scripts\login-soft.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\nestor.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -748,6 +729,8 @@
     <Content Include="Views\Column\List.cshtml" />
     <Content Include="Views\Article\Recommend.cshtml" />
     <Content Include="Views\Article\Recent.cshtml" />
+    <Content Include="Views\Account\Info.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

@@ -33,4 +33,33 @@ namespace Nestor.UI.Models
         public bool RememberMe { get; set; }
     }
 
+    /// <summary>
+    /// 修改密码模型
+    /// </summary>
+    public class ChangePasswordModel
+    {
+        /// <summary>
+        /// 原密码
+        /// </summary>
+        [Required(ErrorMessage = "原密码不能为空")]
+        [DataType(DataType.Password)]
+        [Display(Name = "原密码")]
+        public string OldPassword { get; set; }
+
+        /// <summary>
+        /// 新密码
+        /// </summary>
+        [Required(ErrorMessage = "新密码不能为空")]      
+        [DataType(DataType.Password)]
+        [Display(Name = "新密码")]
+        public string NewPassword { get; set; }
+
+        /// <summary>
+        /// 确认新密码
+        /// </summary>
+        [DataType(DataType.Password)]
+        [Display(Name = "确认新密码")]
+        [Compare("NewPassword", ErrorMessage = "两次输入密码不一致")]
+        public string ConfirmPassword { get; set; }
+    }
 }

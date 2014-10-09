@@ -118,6 +118,27 @@ namespace Nestor.Business
 
             return ErrorCode.Success;
         }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="userName">用户名</param>
+        /// <param name="oldPassword">原密码</param>
+        /// <param name="newPassword">新密码</param>
+        /// <returns></returns>
+        public ErrorCode ChangePassword(string userName, string oldPassword, string newPassword)
+        {
+            var user = this.userRepository.Get(userName);
+            if (user == null)
+                return ErrorCode.UserNotExist;
+
+            if (user.Password != Hasher.SHA1Encrypt(oldPassword))
+                return ErrorCode.WrongPassword;
+
+            user.Password = Hasher.SHA1Encrypt(newPassword);
+
+            return this.userRepository.Update(user);
+        }
         #endregion //Method
     }
 }

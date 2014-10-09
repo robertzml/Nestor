@@ -141,3 +141,12 @@ ul#recent-list li, ul#recommend-list li{
 	white-space:nowrap;
 	padding-right: 2px;
 }
+
+div#user-info dt {
+	font-size: 14px;
+}
+
+div#user-info dd {
+	font-size: 14px;
+	margin-bottom: 10px;
+}

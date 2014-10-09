@@ -42,7 +42,7 @@ namespace Nestor.UI.Controllers
                 return HttpNotFound();
 
             if (column.IsAuth && !User.Identity.IsAuthenticated)
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "Account", new { returnUrl = "/Column/" + id.ToString() });
 
             if (column.Type == (int)ColumnType.Parent)
             {

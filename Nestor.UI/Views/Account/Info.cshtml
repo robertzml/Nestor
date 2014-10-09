@@ -1,0 +1,26 @@
+﻿@model Nestor.Models.Entities.User
+
+@{
+    Layout = null;
+}
+
+<!-- BEGIN USER INFO -->
+<div id="user-info">
+    <h2 class="font-blue-steel"><i class="fa fa-user" style="font-size:25px;"></i>&nbsp;用户信息</h2>
+    <div class="margin-bottom-10">
+        <dl>
+            <dt>用户名</dt>
+            <dd>@Model.UserName</dd>
+
+            <dt>姓名</dt>
+            <dd>@Model.Name</dd>
+
+            <dt>操作</dt>
+            <dd>
+                <a href="@Url.Action("ChangePassword", "Account")" class="btn btn-sm default red-stripe">修改密码</a>
+                <a href="@Url.Action("Logout", "Account")" class="btn btn-sm default blue-stripe">注销</a>
+            </dd>
+        </dl>
+    </div>
+</div>
+<!-- END USER INFO -->

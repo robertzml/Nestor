@@ -10,6 +10,7 @@ using Nestor.Models;
 using Nestor.Models.Entities;
 using Nestor.UI.Models;
 using Nestor.UI.Services;
+using Nestor.UI.Filters;
 
 namespace Nestor.UI.Controllers
 {
@@ -84,7 +85,7 @@ namespace Nestor.UI.Controllers
             if (ModelState.IsValid)
             {
                 formsService.SignOut();
-                HttpContext.Session.Clear();             
+                HttpContext.Session.Clear();
 
                 ErrorCode result = this.userBusiness.Login(model.UserName, model.Password);
                 if (result == ErrorCode.Success)
@@ -114,6 +115,56 @@ namespace Nestor.UI.Controllers
             HttpContext.Session.Clear();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        /// <summary>
+        /// 用户信息
+        /// </summary>
+        /// <returns></returns>
+        [EnhancedAuthorize]
+        public ActionResult Info()
+        {
+            var user = this.userBusiness.Get(User.Identity.Name);
+            return View(user);
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <returns></returns>
+        [EnhancedAuthorize]
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [EnhancedAuthorize]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                ErrorCode result = this.userBusiness.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+
+                if (result == ErrorCode.Success)
+                {
+                    TempData["Message"] = "修改密码成功";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "修改密码失败，" + result.DisplayName());
+                }
+            }
+
+            return View(model);
         }
         #endregion //Action
     }

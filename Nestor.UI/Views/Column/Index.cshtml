@@ -62,6 +62,11 @@
                 </div>
 
                 <div class="col-md-4 blog-sidebar">
+                    @if (Model.Column.IsAuth)
+                    {
+                        @Html.Action("Info", "Account")
+                    }
+
                     <div id="sibling-column">
                         <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Column.Title</h2>
                         <ul class="nav sidebar-categories margin-bottom-40">
@@ -75,7 +80,6 @@
                             }
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
