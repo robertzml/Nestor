@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Nestor.Models.Entities.Article>
+
+@{
+    ViewBag.Title = "搜索结果";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">主页</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ul>
+
+<div class="row margin-bottom-40">
+    <div class="col-md-12">
+        <h1>搜索结果</h1>
+
+        <div class="content-page">
+            <form action="/Search/Index" method="get" class="content-search-view2">
+                <div class="input-group">
+                    <input type="text" name="t" class="form-control" value="@ViewBag.Text">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </span>
+                </div>
+            </form>
+            @foreach (var item in Model)
+            {
+                <div class="search-result-item">
+                    <h4><a href="#">@item.Title</a></h4>
+                    @if (string.IsNullOrEmpty(item.Summary))
+                    {
+                        var text = Html.StripHtml(item.MainContent);
+                        if (text.Length < 100)
+                        {
+                            <p>@text</p>
+                        }
+                        else
+                        {
+                            <p>@text.Substring(0, 100)</p>
+                        }
+                    }
+                    else
+                    {
+                        <p>@item.Summary</p>
+                    }
+                    <span class="search-link">@item.PublishDate.ToDateString()</span>
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 items-info" style="padding-left:20px;">搜索结果共 @Model.Count() 条</div>
+            </div>
+        </div>
+    </div>
+</div>

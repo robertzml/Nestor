@@ -150,3 +150,10 @@ div#user-info dd {
 	font-size: 14px;
 	margin-bottom: 10px;
 }
+
+.content-search-view2 {
+	background-color: #95a5a6;
+}
+.search-result-item {
+	padding-left: 20px;
+}

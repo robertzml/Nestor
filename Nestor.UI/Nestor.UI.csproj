@@ -119,6 +119,8 @@
     <Compile Include="Areas\Admin\Controllers\ColumnController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="HtmlHelpers\ContentHelper.cs" />
     <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
@@ -145,10 +147,7 @@
     <Content Include="App_Data\LitJSON.dll" />
     <Content Include="assets\admin\layout\css\custom.css" />
     <Content Include="assets\admin\layout\css\layout.css" />
-    <Content Include="assets\admin\layout\css\themes\blue.css" />
-    <Content Include="assets\admin\layout\css\themes\darkblue.css" />
     <Content Include="assets\admin\layout\css\themes\default.css" />
-    <Content Include="assets\admin\layout\css\themes\grey.css" />
     <Content Include="assets\admin\layout\img\ajax-loading.gif" />
     <Content Include="assets\admin\layout\img\ajax-modal-loading.gif" />
     <Content Include="assets\admin\layout\img\arrow-down.png" />
@@ -731,6 +730,7 @@
     <Content Include="Views\Article\Recent.cshtml" />
     <Content Include="Views\Account\Info.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
