@@ -6,10 +6,10 @@ var Login = function () {
 	            errorClass: 'help-block', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
-	                username: {
+	                UserName: {
 	                    required: true
 	                },
-	                password: {
+	                Password: {
 	                    required: true
 	                },
 	                remember: {
@@ -18,10 +18,10 @@ var Login = function () {
 	            },
 
 	            messages: {
-	                username: {
+	                UserName: {
 	                    required: "用户名不能为空."
 	                },
-	                password: {
+	                Password: {
 	                    required: "密码不能为空."
 	                }
 	            },

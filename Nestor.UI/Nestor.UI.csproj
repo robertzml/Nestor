@@ -358,8 +358,7 @@
     <Content Include="assets\global\plugins\font-awesome\css\font-awesome.min.css" />
     <Content Include="assets\global\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\global\plugins\holder.js" />
-    <Content Include="assets\global\plugins\jquery-1.11.0.min.js" />
-    <Content Include="assets\global\plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="assets\global\plugins\jquery-migrate.min.js" />
     <Content Include="assets\global\plugins\jquery-ui\images\animated-overlay.gif" />
     <Content Include="assets\global\plugins\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="assets\global\plugins\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -393,6 +392,7 @@
     <Content Include="assets\global\plugins\jquery.cokie.min.js" />
     <Content Include="assets\global\plugins\jquery.easing.js" />
     <Content Include="assets\global\plugins\jquery.input-ip-address-control-1.0.min.js" />
+    <Content Include="assets\global\plugins\jquery.min.js" />
     <Content Include="assets\global\plugins\jquery.mockjax.js" />
     <Content Include="assets\global\plugins\jquery.parallax.js" />
     <Content Include="assets\global\plugins\jquery.pulsate.min.js" />
@@ -660,7 +660,6 @@
     <Content Include="assets\global\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="assets\global\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\global\plugins\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="assets\global\plugins\jquery-1.11.0.min.map" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout_Admin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -693,6 +692,7 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\UserTypeList.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Article\Delete.cshtml" />
+    <Content Include="assets\global\plugins\jquery.min.map" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

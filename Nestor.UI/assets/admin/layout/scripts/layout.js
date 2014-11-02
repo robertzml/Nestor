@@ -44,12 +44,63 @@ var Layout = function () {
             }
             content.attr('style', 'min-height:' + height + 'px');
         }
-    }
+    };
+
+    // Handle sidebar menu links
+    var handleSidebarMenuActiveLink = function(mode, el) {
+        var url = location.hash.toLowerCase();    
+
+        var menu = $('.page-sidebar-menu');
+
+        if (mode === 'click' || mode === 'set') {
+            el = $(el);
+        } else {
+            menu.find("li > a").each(function() {
+                var path = $(this).attr("href").toLowerCase();                
+                //alert(url.substr(1, path.length - 1) + '-' + path.substr(1));
+                if (path.length > 1 && url.substr(1, path.length - 1) == path.substr(1)) {
+                    el = $(this);
+                    return; 
+                }
+            });
+        }
+
+        if (el && (el.attr('href').toLowerCase() === 'javascript:;' || el.attr('href').toLowerCase() === '#')) {
+            return;
+        }
+
+        if (!el || el.size() == 0) {
+            return;
+        }
+
+        Metronic.scrollTop();
+
+        // disable current active nodes
+        menu.find('li.active').removeClass('active');
+        menu.find('li.open').removeClass('open');
+        menu.find('arrow.open').removeClass('open');
+        menu.find('li > a > .selected').remove();
+
+        el.parents('li').each(function () {
+            $(this).addClass('active');
+            $(this).find('> a > span.arrow').addClass('open');
+            if ($(this).parent('ul').size() === 1) {
+                $(this).addClass('open');
+                $(this).find('> a').append('<span class="selected"></span>');
+            }
+        });
+
+        if (mode === 'click') {
+            if (Metronic.getViewPort().width < 992 && $('.page-sidebar').hasClass("in")) { // close the menu on mobile view while laoding a page 
+                $('.page-header .responsive-toggler').click();
+            }
+        }
+    };
 
     // Handle sidebar menu
     var handleSidebarMenu = function () {
+        // handle sidebar link click
         jQuery('.page-sidebar').on('click', 'li > a', function (e) {
-
             if (Metronic.getViewPort().width >= 992 && $(this).parents('.page-sidebar-menu-hover-submenu').size() === 1) { // exit of hover sidebar menu
                 return;
             }
@@ -72,10 +123,13 @@ var Layout = function () {
 
             var autoScroll = menu.data("auto-scroll");
             var slideSpeed = parseInt(menu.data("slide-speed"));
+            var keepExpand = menu.data("keep-expanded");
 
-            parent.children('li.open').children('a').children('.arrow').removeClass('open');
-            parent.children('li.open').children('.sub-menu:not(.always-open)').slideUp(slideSpeed);
-            parent.children('li.open').removeClass('open');
+            if (keepExpand !== true) {
+                parent.children('li.open').children('a').children('.arrow').removeClass('open');
+                parent.children('li.open').children('.sub-menu:not(.always-open)').slideUp(slideSpeed);
+                parent.children('li.open').removeClass('open');
+            }
 
             var slideOffeset = -200;
 
@@ -83,7 +137,7 @@ var Layout = function () {
                 jQuery('.arrow', jQuery(this)).removeClass("open");
                 jQuery(this).parent().removeClass("open");
                 sub.slideUp(slideSpeed, function () {
-                    if (autoScroll == true && $('body').hasClass('page-sidebar-closed') == false) {
+                    if (autoScroll === true && $('body').hasClass('page-sidebar-closed') === false) {
                         if ($('body').hasClass('page-sidebar-fixed')) {
                             menu.slimScroll({
                                 'scrollTo': (the.position()).top
@@ -98,7 +152,7 @@ var Layout = function () {
                 jQuery('.arrow', jQuery(this)).addClass("open");
                 jQuery(this).parent().addClass("open");
                 sub.slideDown(slideSpeed, function () {
-                    if (autoScroll == true && $('body').hasClass('page-sidebar-closed') == false) {
+                    if (autoScroll === true && $('body').hasClass('page-sidebar-closed') === false) {
                         if ($('body').hasClass('page-sidebar-fixed')) {
                             menu.slimScroll({
                                 'scrollTo': (the.position()).top
@@ -137,7 +191,7 @@ var Layout = function () {
                 $('.page-header .responsive-toggler').click();
             }
 
-            Metronic.startPageLoading();
+            Metronic.startPageLoading({animate: true});
 
             var the = $(this);
 
@@ -173,7 +227,7 @@ var Layout = function () {
             var pageContent = $('.page-content');
             var pageContentBody = $('.page-content .page-content-body');
 
-            Metronic.startPageLoading();
+            Metronic.startPageLoading({animate: true});
 
             if (Metronic.getViewPort().width < 992 && $('.page-sidebar').hasClass("in")) { // close the menu on mobile view while laoding a page 
                 $('.page-header .responsive-toggler').click();
@@ -196,7 +250,54 @@ var Layout = function () {
                 }
             });
         });
-    }
+     
+        // handle sidebar hover effect        
+        handleFixedSidebarHoverEffect();
+
+        // handle the search bar close
+        $('.page-sidebar').on('click', '.sidebar-search .remove', function (e) {
+            e.preventDefault();
+            $('.sidebar-search').removeClass("open");
+        });
+
+        // handle the search query submit on enter press
+        $('.page-sidebar .sidebar-search').on('keypress', 'input.form-control', function (e) {
+            if (e.which == 13) {
+                $('.sidebar-search').submit();
+                return false; //<---- Add this line
+            }
+        });
+
+        // handle the search submit(for sidebar search and responsive mode of the header search)
+        $('.sidebar-search .submit').on('click', function (e) {
+            e.preventDefault();
+            if ($('body').hasClass("page-sidebar-closed")) {
+                if ($('.sidebar-search').hasClass('open') === false) {
+                    if ($('.page-sidebar-fixed').size() === 1) {
+                        $('.page-sidebar .sidebar-toggler').click(); //trigger sidebar toggle button
+                    }
+                    $('.sidebar-search').addClass("open");
+                } else {
+                    $('.sidebar-search').submit();
+                }
+            } else {
+                $('.sidebar-search').submit();
+            }
+        });
+
+        // handle close on body click
+        if ($('.sidebar-search').size() !== 0) {
+            $('.sidebar-search .input-group').on('click', function(e){
+                e.stopPropagation();
+            });
+
+            $('body').on('click', function() {
+                if ($('.sidebar-search').hasClass('open')) {
+                    $('.sidebar-search').removeClass("open");
+                }
+            });
+        }
+    };
 
     // Helper function to calculate sidebar height for fixed sidebar layout.
     var _calculateFixedSidebarViewportHeight = function () {
@@ -206,7 +307,7 @@ var Layout = function () {
         }
 
         return sidebarHeight;
-    }
+    };
 
     // Handles fixed sidebar
     var handleFixedSidebar = function () {
@@ -224,23 +325,23 @@ var Layout = function () {
             Metronic.initSlimScroll(menu);
             handleSidebarAndContentHeight();
         }
-    }
+    };
 
     // Handles sidebar toggler to close/hide the sidebar.
     var handleFixedSidebarHoverEffect = function () {
         var body = $('body');
         if (body.hasClass('page-sidebar-fixed')) {
-            $('.page-sidebar-menu').on('mouseenter', function () {
+            $('.page-sidebar').on('mouseenter', function () {
                 if (body.hasClass('page-sidebar-closed')) {
-                    $(this).removeClass('page-sidebar-menu-closed');
+                    $(this).find('.page-sidebar-menu').removeClass('page-sidebar-menu-closed');
                 }
             }).on('mouseleave', function () {
                 if (body.hasClass('page-sidebar-closed')) {
-                    $(this).addClass('page-sidebar-menu-closed');
+                    $(this).find('.page-sidebar-menu').addClass('page-sidebar-menu-closed');
                 }
             });
         }
-    }
+    };
 
     // Hanles sidebar toggler
     var handleSidebarToggler = function () {
@@ -275,53 +376,7 @@ var Layout = function () {
 
             $(window).trigger('resize');
         });
-
-        handleFixedSidebarHoverEffect();
-
-        // handle the search bar close
-        $('.page-sidebar').on('click', '.sidebar-search .remove', function (e) {
-            e.preventDefault();
-            $('.sidebar-search').removeClass("open");
-        });
-
-        // handle the search query submit on enter press
-        $('.page-sidebar .sidebar-search').on('keypress', 'input.form-control', function (e) {
-            if (e.which == 13) {
-                $('.sidebar-search').submit();
-                return false; //<---- Add this line
-            }
-        });
-
-        // handle the search submit(for sidebar search and responsive mode of the header search)
-        $('.sidebar-search .submit').on('click', function (e) {
-            e.preventDefault();
-            if ($('body').hasClass("page-sidebar-closed")) {
-                if ($('.sidebar-search').hasClass('open') == false) {
-                    if ($('.page-sidebar-fixed').size() === 1) {
-                        $('.page-sidebar .sidebar-toggler').click(); //trigger sidebar toggle button
-                    }
-                    $('.sidebar-search').addClass("open");
-                } else {
-                    $('.sidebar-search').submit();
-                }
-            } else {
-                $('.sidebar-search').submit();
-            }
-        });
-
-        // handle close on body click
-        if ($('.sidebar-search').size() != 0) {
-            $('.sidebar-search .input-group').on('click', function(e){
-                e.stopPropagation();
-            });
-
-            $('body').on('click', function() {
-                if ($('.sidebar-search').hasClass('open')) {
-                    $('.sidebar-search').removeClass("open");
-                }
-            });
-        }
-    }
+    };
 
     // Handles the horizontal menu
     var handleHorizontalMenu = function () {
@@ -363,10 +418,16 @@ var Layout = function () {
             $(this).closest('.search-form').submit();
         });
 
+        // handle hover dropdown menu for desktop devices only
+        $('[data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
+            $(this).dropdownHover(); 
+            $(this).addClass('hover-initialized'); 
+        });
+        
         $(document).on('click', '.mega-menu-dropdown .dropdown-menu', function (e) {
             e.stopPropagation();
         });
-    }
+    };
 
     // Handles Bootstrap Tabs.
     var handleTabs = function () {
@@ -374,16 +435,37 @@ var Layout = function () {
         $('body').on('shown.bs.tab', 'a[data-toggle="tab"]', function () {
             handleSidebarAndContentHeight();
         });
-    }
+    };
 
     // Handles the go to top button at the footer
     var handleGoTop = function () {
-        /* set variables locally for increased performance */
-        jQuery('.page-footer').on('click', '.go-top', function (e) {
-            Metronic.scrollTo();
+        var offset = 300;
+        var duration = 500;
+
+        if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {  // ios supported
+            $(window).bind("touchend touchcancel touchleave", function(e){
+               if ($(this).scrollTop() > offset) {
+                    $('.scroll-to-top').fadeIn(duration);
+                } else {
+                    $('.scroll-to-top').fadeOut(duration);
+                }
+            });
+        } else {  // general 
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > offset) {
+                    $('.scroll-to-top').fadeIn(duration);
+                } else {
+                    $('.scroll-to-top').fadeOut(duration);
+                }
+            });
+        }
+        
+        $('.scroll-to-top').click(function(e) {
             e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, duration);
+            return false;
         });
-    }
+    };
 
     // Hanlde 100% height elements(block, portlet, etc)
     var handle100HeightContent = function () {
@@ -431,29 +513,43 @@ var Layout = function () {
                 target.css('min-height', height);
             }
         }
-    }
-
+    };
     //* END:CORE HANDLERS *//
 
     return {
+        // Main init methods to initialize the layout
+        //IMPORTANT!!!: Do not modify the core handlers call order.
 
-        //main function to initiate the theme
-        init: function () {
-            //IMPORTANT!!!: Do not modify the core handlers call order.
+        initHeader: function() {
+            handleHorizontalMenu(); // handles horizontal menu    
+        },
 
+        initSidebar: function() {
             //layout handlers
             handleFixedSidebar(); // handles fixed sidebar menu
             handleSidebarMenu(); // handles main menu
-            handleHorizontalMenu(); // handles horizontal menu
             handleSidebarToggler(); // handles sidebar hide/show
-            handle100HeightContent(); // handles 100% height elements(block, portlet, etc)            
-            handleGoTop(); //handles scroll to top functionality in the footer
+            
+            Metronic.addResizeHandler(handleFixedSidebar); // reinitialize fixed sidebar on window resize
+        },
+
+        initContent: function() {
+            handle100HeightContent(); // handles 100% height elements(block, portlet, etc)
             handleTabs(); // handle bootstrah tabs
 
-            // reinitialize the layout on window resize
             Metronic.addResizeHandler(handleSidebarAndContentHeight); // recalculate sidebar & content height on window resize
-            Metronic.addResizeHandler(handleFixedSidebar); // reinitialize fixed sidebar on window resize
             Metronic.addResizeHandler(handle100HeightContent); // reinitialize content height on window resize 
+        },
+
+        initFooter: function() {
+            handleGoTop(); //handles scroll to top functionality in the footer
+        },
+
+        init: function () {            
+            this.initHeader();
+            this.initSidebar();
+            this.initContent();
+            this.initFooter();
         },
 
         //public function to fix the sidebar and content height accordingly
