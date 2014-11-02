@@ -731,6 +731,7 @@
     <Content Include="Views\Account\Info.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Article\HomeRecent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

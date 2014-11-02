@@ -44,6 +44,17 @@ namespace Nestor.Business
         /// <summary>
         /// 获取近期文章
         /// </summary>
+        /// <param name="columnId">所属栏目ID</param>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
+        public IEnumerable<Article> GetRecent(int columnId, int count)
+        {
+            return this.articleRepository.Get().Where(r => r.ColumnId == columnId).OrderByDescending(r => r.PublishDate).Take(count);
+        }
+
+        /// <summary>
+        /// 获取近期文章
+        /// </summary>
         /// <param name="count">数量</param>
         /// <returns></returns>
         public IEnumerable<Article> GetRecent(int count)

@@ -1,5 +1,10 @@
 /* here you can put your own css to customize and override the theme */
-body, h1, h2, h3, h4, h5, h6, .header-navigation, .page-title, .breadcrumb {
+body, h1, h2, h3, h4, h5, h6{
+	font-family: '微软雅黑';
+}
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown > .dropdown-menu, .page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li > a,
+.page-header .page-header-menu .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content .mega-menu-submenu li > a,
+.dropdown-menu {
 	font-family: '微软雅黑';
 }
 
@@ -11,17 +16,13 @@ body#admin p {
 	text-indent: 0;
 }
 
-.header, body{
-	background: #fff url("../Images/bg-pattern2.png") repeat scroll top center;
-}
-
 body#admin {
 	background: #3d3d3d none;
 }
 
-.site-logo {
-	padding-top: 20px;
-	padding-bottom: 20px;
+
+.page-header .page-header-top .page-logo .logo-default {
+	margin: 10px 0;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -115,7 +116,8 @@ div#article-content, div#column-content {
 	border-radius: 5px !important;
 }
 
-div#article-content #main-content {
+#main-content {
+	display:block;
 	overflow-x: hidden;
 }
 

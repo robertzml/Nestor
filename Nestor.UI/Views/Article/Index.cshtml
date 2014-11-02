@@ -5,47 +5,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<ul class="breadcrumb">
-    <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">主页</a></li>
-    <li><a href="@Url.Action("Index", new { controller = "Column", id = Model.Article.ColumnId })">@Model.Article.Column.Title</a></li>
-    <li class="active">@Model.Article.Title</li>
-</ul>
+@section styles {
+    <link href="/assets/admin/pages/css/blog.css" rel="stylesheet" type="text/css" />
+}
 
-<div class="row margin-bottom-40">
+@section pagehead {
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1><span class="fa fa-tree theme-font" style="font-size:24px;"></span> @Model.Article.Title</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+}
+
+@section breadcrumb {
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <i class="fa fa-home" style="font-size: 14px;"></i><a href="@Url.Action("Index", "Home")">主页</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", new { controller = "Column", id = Model.Article.ColumnId })">@Model.Article.Column.Title</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li class="active">
+            @Model.Article.Title
+        </li>
+    </ul>
+}
+
+<div class="row">
     <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="article-title">
-                    <h1>@Model.Article.Title</h1>
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-bullhorn theme-font"></i>
+                    <span class="caption-subject bold uppercase" style="font-size:22px;">&nbsp; @Model.Article.Title</span>
+                    <span class="caption-helper"></span>
+                </div>
+                <div class="actions">
+                    <a href="#" class="btn btn-circle btn-default btn-icon-only fullscreen"></a>
                 </div>
             </div>
-        </div>
+            <div class="portlet-body">               
+                <div class="row blog-page">
+                    <div class="col-md-8 article-block">
+                        <div class="blog-tag-data">                           
+                            <ul class="list-inline">
+                                <li><i class="fa fa-user"></i> By @Model.Article.Author</li>
+                                <li><i class="fa fa-calendar"></i> @Model.Article.PublishDate.ToDateString()</li>
+                                <li><i class="fa fa-comments"></i> @Model.Article.ReadCount</li>
+                            </ul>
+                        </div>                        
+                        @if (Model.Article.Summary != "")
+                        {
+                            <blockquote style="text-indent:2em;">
+                                @Model.Article.Summary
+                            </blockquote>
+                        }
 
-        <div class="content-page" id="article-content">
-            <div class="row">
-                <div class="col-md-8 blog-item">
-                    <ul class="blog-info">
-                        <li><i class="fa fa-user"></i> By @Model.Article.Author</li>
-                        <li><i class="fa fa-calendar"></i> @Model.Article.PublishDate.ToDateString()</li>
-                        <li><i class="fa fa-comments"></i> @Model.Article.ReadCount</li>
-                    </ul>
-                    @if (Model.Article.Summary != "")
-                    {
-                        <blockquote style="text-indent:2em;">
-                            @Model.Article.Summary
-                        </blockquote>
-                    }
+                        <div id="main-content">
+                            @Html.Raw(Model.Article.MainContent)
+                        </div>
 
-                    <div id="main-content">
-                        @Html.Raw(Model.Article.MainContent)
+                        <hr />
                     </div>
 
-                    <hr />
-                </div>
-                <div class="col-md-4 blog-sidebar">
-                    @Html.Action("Recent", new { controller = "Article", count = 10 })
+                    <div class="col-md-4 blog-sidebar">
+                        @Html.Action("Recent", new { controller = "Article", count = 10 })
 
-                    @Html.Action("Recommend", new { controller = "Article", count = 10 })
+                        @Html.Action("Recommend", new { controller = "Article", count = 10 })
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,85 +5,98 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section bars {
-<div class="column-bar">
-    <div class="container">
-        <div class="page-title">
-            <h1><span class="fa fa-tree" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
+@section pagehead {
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1><span class="fa fa-tree theme-font" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
+            </div>
+            <!-- END PAGE TITLE -->
         </div>
     </div>
-</div>
 }
 
-<ul class="breadcrumb">
-    <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">主页</a></li>
-    @if (Model.Parent != null)
-    {
-        <li><a href="/Column/@Model.Parent.Id">@Model.Parent.Title</a></li>
-    }
-    <li class="active">@Model.Column.Title</li>
-</ul>
+@section breadcrumb {
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <i class="fa fa-home" style="font-size: 14px;"></i><a href="@Url.Action("Index", "Home")">主页</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        @if (Model.Parent != null)
+        {
+            <li>
+                <a href="/Column/@Model.Parent.Id">@Model.Parent.Title</a>
+                <i class="fa fa-circle"></i>
+            </li>
+        }
+        <li class="active">
+            @Model.Column.Title
+        </li>
+    </ul>
+}
 
-<div class="row margin-bottom-40">
+<div class="row">
     <div class="col-md-12">
-        <div class="content-page" id="column-content">
-            <div class="row">
-                <div class="col-md-8">
-                    <table class="table table-hover table-article" id="article-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <i class="fa fa-bars" style="font-size:16px;"></i>&nbsp; @Model.Column.Title
-                                </th>
-                                <th style="width:40px;">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.Articles)
-                            {
+        <div class="portlet light bordered">
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <table class="table table-hover table-article" id="article-table">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <span class="fa fa-angle-double-right"></span> <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
-                                    </td>
-                                    <td class="text-right">
-                                        @item.PublishDate.ToDateString()
-                                    </td>
+                                    <th>
+                                        <i class="fa fa-bars" style="font-size:16px;"></i>&nbsp; @Model.Column.Title
+                                    </th>
+                                    <th style="width:40px;">&nbsp;</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="col-md-4 blog-sidebar">
-                    @if (Model.Column.IsAuth)
-                    {                        
-                        @Html.Action("Info", "Account")
-                    }
-                    
-                    @if (Model.Sibling.Count != 0)
-                    {
-                        <div id="sibling-column">
-                            <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Parent.Title</h2>
-                            <ul class="nav sidebar-categories margin-bottom-40">
-                                @foreach (var item in Model.Sibling)
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Articles)
                                 {
-                                    <li @(item.Id == Model.Column.Id ? "class=active" : "")>
-                                        <a href="/Column/@item.Id">
-                                            @item.Title
-                                        </a>
-                                    </li>
+                                    <tr>
+                                        <td>
+                                            <span class="fa fa-angle-double-right"></span> <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
+                                        </td>
+                                        <td class="text-right">
+                                            @item.PublishDate.ToDateString()
+                                        </td>
+                                    </tr>
                                 }
-                            </ul>
-                        </div>
-                    }
+                            </tbody>
+                        </table>
+                    </div>
 
-                    @Html.Action("Recommend", new { controller = "Article", count = 10 })
+                    <div class="col-md-4 blog-sidebar">
+                        @if (Model.Column.IsAuth)
+                        {
+                            @Html.Action("Info", "Account")
+                        }
+
+                        @if (Model.Sibling.Count != 0)
+                        {
+                            <div id="sibling-column">
+                                <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Parent.Title</h2>
+                                <ul class="nav sidebar-categories margin-bottom-40">
+                                    @foreach (var item in Model.Sibling)
+                                    {
+                                        <li @(item.Id == Model.Column.Id ? "class=active" : "")>
+                                            <a href="/Column/@item.Id">
+                                                @item.Title
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+
+                        @Html.Action("Recommend", new { controller = "Article", count = 10 })
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 @section scripts {
     @if (Model.Parent != null)

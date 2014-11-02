@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-@section slider {
+@* section slider {
 <!-- BEGIN SLIDER -->
 <div class="page-slider margin-bottom-40">
     <div class="fullwidthbanner-container revolution-slider">
@@ -45,8 +45,69 @@
     </div>
 </div>
 <!-- END SLIDER -->
-}
+}*@
 
+<div class="row">
+    <div class="col-md-6">
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption caption-md">
+                    <i class="fa fa-coffee theme-font"></i>
+                    <span class="caption-subject theme-font bold uppercase">最新通知</span>
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-circle btn-default">
+                        <i class="fa fa-pencil"></i> 更多
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">                       
+                        <tr>                            
+                            <td>
+                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                            </td>
+                            <td>
+                                <span class="bold theme-font">2014-10-15</span>
+                            </td>
+                        </tr>
+                        <tr>                            
+                            <td>
+                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                            </td>
+                            <td>
+                                <span class="bold theme-font">2014-10-15</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                            </td>
+                            <td>
+                                <span class="bold theme-font">2014-10-15</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                            </td>
+                            <td>
+                                <span class="bold theme-font">2014-10-15</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        @Html.Action("HomeRecent", new { controller = "Article", columnId = 2, count = 5 })
+    </div>
+</div>
+
+@*
 <!-- BEGIN SERVICE BOX -->
 <div class="row service-box margin-bottom-40">
     <div class="col-md-4 col-sm-4">
@@ -72,106 +133,7 @@
     </div>
 </div>
 <!-- END SERVICE BOX -->
-<!-- BEGIN RECENT WORKS -->
-<div class="row recent-work margin-bottom-40">
-    <div class="col-md-3">
-        <h2><a href="#">最新成果</a></h2>
-        <p>学校办学涵盖理、工、农、医、文、法、经济、管理、教育、艺术等学科门类10个；建有博士后流动站5个，一级学科博士点5个，一级学科硕士点24个，国家一级重点学科1个、二级重点学科5个；4个学科进入第三轮全国学科评估前五名，其中食品科学与工程蝉联第一，轻工技术与工程排名第二。</p>
-    </div>
-    <div class="col-md-9">
-        <div class="owl-carousel owl-carousel3">
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work1.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work1.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目1</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work2.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目2</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work3.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目3</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work4.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目4</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work5.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目5</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work6.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目6</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work7.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work7.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目7</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="/Images/work8.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="#"><i class="fa fa-link"></i></a>
-                    <a href="/Images/work9.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>项目8</strong>
-                    <b>江南大学</b>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END RECENT WORKS -->
+
 <!-- BEGIN TABS AND TESTIMONIALS -->
 <div class="row mix-block margin-bottom-40">
     <!-- TABS -->
@@ -285,65 +247,7 @@
     </div>
 </div>
 <!-- END STEPS -->
-<!-- BEGIN CLIENTS -->
-<div class="row margin-bottom-40 our-clients">
-    <div class="col-md-3">
-        <h2><a href="#">合作伙伴</a></h2>
-    </div>
-    <div class="col-md-9">
-        <div class="owl-carousel owl-carousel6-brands">
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_1_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_1.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_2_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_2.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_3_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_3.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_4_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_4.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_5_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_5.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_6_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_6.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_7_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_7.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="/assets/frontend/pages/img/clients/client_8_gray.png" class="img-responsive" alt="">
-                    <img src="/assets/frontend/pages/img/clients/client_8.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END CLIENTS -->
+*@
 
 @section scripts {
     <script type="text/javascript">

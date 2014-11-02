@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Nestor.Models.Entities.Article>
+
+@{
+    Layout = null;
+}
+
+<div class="portlet light">
+    <div class="portlet-title" style="margin-bottom: 0px;">
+        <div class="caption caption-md">
+            <i class="fa fa-coffee theme-font"></i>
+            <span class="caption-subject theme-font bold uppercase">@ViewBag.Title</span>
+        </div>
+        <div class="actions">
+            <a href="javascript:;" class="btn btn-circle btn-default">
+                <i class="fa fa-ellipsis-h"></i> 更多
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable table-scrollable-borderless">
+            <table class="table table-hover table-light">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })" class="primary-link">@item.Title</a>
+                        </td>
+                        <td>
+                            <span class="bold theme-font">@item.PublishDate.ToDateString()</span>
+                        </td>
+                    </tr>
+                }                
+            </table>
+        </div>
+    </div>
+</div>

@@ -51,6 +51,23 @@ namespace Nestor.UI.Controllers
         }
 
         /// <summary>
+        /// 主页最新文章
+        /// </summary>
+        /// <param name="columnId">栏目ID</param>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
+        public ActionResult HomeRecent(int columnId, int count)
+        {
+            ColumnBusiness columnBusiness = new ColumnBusiness();
+            var column = columnBusiness.Get(columnId);
+
+            ViewBag.Title = column.Title;
+
+            var data = this.articleBusiness.GetRecent(columnId, count);
+            return View(data);
+        }
+
+        /// <summary>
         /// 近期新闻
         /// </summary>
         /// <param name="count">文章数量</param>
