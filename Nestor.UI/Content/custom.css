@@ -20,6 +20,13 @@ body#admin {
 	background: #3d3d3d none;
 }
 
+body#front {
+	background: url("../Images/bg-pattern10.jpg") repeat fixed center top #fff;
+}
+
+.page-content, .page-header {
+	background: none;
+}
 
 .page-header .page-header-top .page-logo .logo-default {
 	margin: 10px 0;

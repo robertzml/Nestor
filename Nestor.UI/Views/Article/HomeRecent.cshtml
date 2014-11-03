@@ -4,7 +4,7 @@
     Layout = null;
 }
 
-<div class="portlet light">
+<div class="portlet light bordered">
     <div class="portlet-title" style="margin-bottom: 0px;">
         <div class="caption caption-md">
             <i class="fa fa-coffee theme-font"></i>
@@ -17,15 +17,15 @@
         </div>
     </div>
     <div class="portlet-body">
-        <div class="table-scrollable table-scrollable-borderless">
-            <table class="table table-hover table-light">
+        <div class="">
+            <table class="table table-hover table-light" style="table-layout:fixed;">
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
-                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })" class="primary-link">@item.Title</a>
+                        <td style="overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">
+                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })" title="@item.Title" class="primary-link">@item.Title</a>
                         </td>
-                        <td>
+                        <td style="width:80px;">
                             <span class="bold theme-font">@item.PublishDate.ToDateString()</span>
                         </td>
                     </tr>

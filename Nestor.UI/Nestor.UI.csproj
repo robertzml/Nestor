@@ -650,6 +650,7 @@
     <Content Include="assets\global\scripts\metronic.js" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\login-soft.css" />
+    <Content Include="Content\style-revolution-slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="assets\global\plugins\bootstrap\css\bootstrap.css.map" />
@@ -705,6 +706,7 @@
     <Content Include="Scripts\login-soft.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\nestor.js" />
+    <Content Include="Scripts\revo-slider-init.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
