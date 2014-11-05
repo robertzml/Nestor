@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>App_Data\LitJSON.dll</HintPath>
@@ -185,7 +193,6 @@
     <Content Include="assets\admin\layout\img\sidebar_toggler_icon_grey.png" />
     <Content Include="assets\admin\layout\img\sidebar_toggler_icon_light.png" />
     <Content Include="assets\admin\layout\img\sidebar_toggler_icon_light2.png" />
-    <Content Include="assets\admin\layout\scripts\demo.js" />
     <Content Include="assets\admin\layout\scripts\layout.js" />
     <Content Include="assets\admin\layout\scripts\quick-sidebar.js" />
     <Content Include="assets\frontend\layout\css\custom.css" />
@@ -648,7 +655,9 @@
     <Content Include="assets\global\plugins\uniform\jquery.uniform.min.js" />
     <Content Include="assets\global\scripts\datatable.js" />
     <Content Include="assets\global\scripts\metronic.js" />
+    <Content Include="Content\about-us.css" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\custom2.css" />
     <Content Include="Content\login-soft.css" />
     <Content Include="Content\style-revolution-slider.css" />
     <Content Include="favicon.ico" />
@@ -734,6 +743,7 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Article\HomeRecent.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

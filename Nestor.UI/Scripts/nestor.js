@@ -116,6 +116,31 @@ var nestor = function () {
 		
 		initFrontTable: function($dom) {
 			handleFrontTable($dom);
+		},
+		
+		initCamera: function($dom) {
+			$dom.camera({
+				height: 'auto',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: false,
+				hover: false,
+				opacityOnGrid: false,
+				pauseOnClick: false,
+				imagePath: '../assets/global/plugins/camera/images'
+			});
+		},
+		
+		initBackstretch: function() {
+			$.backstretch([                
+                "../images/slider2.jpg",
+                "../images/slider3.jpg",
+                "../images/slider4.jpg",
+				"../images/slider5.jpg"
+            ], {
+                fade: 1000,
+                duration: 7000
+            });
 		}
 	};
 

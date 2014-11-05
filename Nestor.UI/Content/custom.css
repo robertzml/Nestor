@@ -21,7 +21,7 @@ body#admin {
 }
 
 body#front {
-	background: url("../Images/bg-pattern10.jpg") repeat fixed center top #fff;
+	background: url("../Images/bg-pattern7.jpg") repeat fixed center top #fff;
 }
 
 .page-content, .page-header {
@@ -34,6 +34,16 @@ body#front {
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	vertical-align: middle;
+}
+
+.table-recent {
+	table-layout: fixed;
+}
+
+.table-recent tbody td:first-child{	
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;	
 }
 
 .table-article thead tr {
