@@ -4,9 +4,8 @@
 }
 
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
+<!--[if IE 8]> <html lang="zh-cn" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="zh-cn" class="ie9"> <![endif]-->
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
@@ -31,7 +30,7 @@
     <link href="/Content/custom2.css" rel="stylesheet" type="text/css" />
     <!-- Theme styles END -->
 </head>
-<body id="front" class="page-footer-fixed">
+<body id="front" class="page-header-fixed page-footer-fixed">
     <!-- BEGIN HEADER -->
     <div class="page-header">
         <!-- BEGIN HEADER TOP -->
@@ -39,7 +38,7 @@
             <div class="container">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
-                    <a href="index.html"><img src="/Images/logo.png" alt="logo" class="logo-default"></a>
+                    <a href="/"><img src="/Images/logo.png" alt="logo" class="logo-default"></a>
                 </div>
                 <!-- END LOGO -->
             </div>
@@ -59,143 +58,263 @@
                 </form>
 
                 <!-- END HEADER SEARCH BOX -->
-                @Html.Action("Menu", "Home")
+                <div class="hor-menu ">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/">主页</a>
+                        </li>
+                        <li data-id="1">
+                            <a href="/">基地概况</a>
+                        </li>
+                        <li data-id="1">
+                            <a href="/">通知公告</a>
+                        </li>
+                        <li data-id="1">
+                            <a href="/">科研成果</a>
+                        </li>
+                        <li data-id="1">
+                            <a href="/">人才培养</a>
+                        </li>
+                        <li data-id="1">
+                            <a href="/">下载专区</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MEGA MENU -->
             </div>
         </div>
         <!-- END HEADER MENU -->
     </div>
     <!-- END HEADER -->
 
-    <div class="home-container">
-        <!-- BEGIN PAGE CONTAINER -->
-        <div class="container-fluid">
+    <!-- BEGIN PAGE CONTAINER -->
+    <div class="home-container container-fluid">
+        <div class="row empty-row">
+            <div class="col-md-12">
 
-            <div class="row">                
-                <div class="col-md-4">
-                    <div class="meet-our-team">
-                        <h3>张三 <small>首席专家</small></h3>
-                        <img src="../../assets/admin/pages/media/pages/2.jpg" alt="" class="img-responsive" />
-                        <div class="team-info">
-                            <p>
-                                男，江苏省南京市人，管理学硕士，高级经济师；担任一级支行行长、省分行国际业务部总经理等职务。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="portlet light bordered">
-                        <div class="portlet-title" style="margin-bottom: 0px;">
-                            <div class="caption caption-md">
-                                <i class="fa fa-coffee font-blue-steel"></i>
-                                <span class="caption-subject font-blue-steel bold uppercase">最新消息</span>
-                            </div>
-                            <div class="actions">
-                                <a href="javascript:;" class="btn btn-circle btn-default">
-                                    <i class="fa fa-ellipsis-h"></i> 更多
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portlet-body">
-                            <div class="">
-                                <table class="table table-hover table-light table-recent">
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">首届太平洋优化国际学术会议召开</a>
-                                        </td>
-                                        <td style="width:80px;">
-                                            <span class="bold theme-font">2014-10-15</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                        </td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-15</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                        </td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-15</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                        </td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-15</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="primary-link">11月5日商学院“半月坛”</a></td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-10</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="primary-link">11月5日商学院“半月坛”</a></td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-10</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="primary-link">设计学院获国家自然科学基金资助</a></td>
-                                        <td>
-                                            <span class="bold theme-font">2014-10-10</span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="top-news">
-                        <a href="#" class="btn red">
-                            <span>
-                                最新会议
-                            </span>
-                            <div class="news-info">重点实验室第一届学术委员第二次会议</div>
-                            <em>
-                                <i class="fa fa-tags"></i>
-                                2014-10-15
-                            </em>
-                            <i class="fa fa-briefcase top-news-icon"></i>
-                        </a>
-                        <a href="#" class="btn green">
-                            <span>
-                                最新成果
-                            </span>
-                            <div class="news-info">大米蛋白研究</div>
-                            <em>
-                                <i class="fa fa-tags"></i>
-                                2014-10-15
-                            </em>
-                            <i class="fa fa-graduation-cap top-news-icon"></i>
-                        </a>
-                        <a href="#" class="btn blue">
-                            <span>
-                                最近讲座
-                            </span>
-                            <div class="news-info">交互媒体设计的新趋势</div>                           
-                            <em>
-                                <i class="fa fa-tags"></i>
-                                2014-11-15
-                            </em>
-                            <i class="fa fa-globe top-news-icon"></i>
-                        </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="meet-our-team">
+                    <h3 class="blue-light">张三 <small>首席专家</small></h3>
+                    <img src="/Images/zp.jpg" alt="" class="img-responsive" style="width: 255px; height: 180px;" />
+                    <div class="team-info">
+                        <p>
+                            男，江苏省南京市人，管理学硕士，高级经济师；担任一级支行行长、省分行国际业务部总经理等职务。
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- BEGIN PAGE CONTENT INNER -->
-            <!-- END PAGE CONTENT INNER -->
+            <div class="col-md-4">
+                <div class="portlet light bordered">
+                    <div class="portlet-title tabbable-line" style="margin-bottom: 0px;">
+                        <div class="caption">
+                            <i class="fa fa-weixin" style="color:#00a1f1;"></i>
+                            <span class="caption-subject bold blue-light uppercase">
+                                最新消息
+                            </span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#portlet_tab1" data-toggle="tab">
+                                    通知公告
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#portlet_tab2" data-toggle="tab">
+                                    基地新闻
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="portlet_tab1">
+                                <div class="scroller" style="height: 220px;">
+                                    <table class="table table-hover table-light table-recent">
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">首届太平洋优化国际学术会议召开</a>
+                                            </td>
+                                            <td style="width:80px;">
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">我校开展党员发展质量情况专题调研</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">江南大学举行2014年金秋体育节暨第十四届田径运动会</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">11月5日商学院“半月坛”</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">苏州市姑苏区科技镇长团一行赴我校考察</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">设计学院获国家自然科学基金资助</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="portlet_tab2">
+                                <div class="scroller" style="height: 220px;">
+                                    <table class="table table-hover table-light table-recent">
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">2014年全国胶体与界面化学博士生学术论坛在我校成功召开</a>
+                                            </td>
+                                            <td style="width:80px;">
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">我校首场2014级新生转型教育报告会成功举办</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
+                                            </td>
+                                            <td>
+                                                <span>10-15</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">王存玉院士报告会暨客座教授授聘仪式举行</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">11月5日商学院“半月坛”</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-angle-double-right blue-light"></span>
+                                                <a href="#" class="primary-link">设计学院获国家自然科学基金资助</a>
+                                            </td>
+                                            <td>
+                                                <span>10-10</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="top-news">
+                    <a href="#" class="btn bg-blue-light">
+                        <span>
+                            最新会议
+                        </span>
+                        <div class="news-info">重点实验室第一届学术委员第二次会议</div>
+                        <em>
+                            <i class="fa fa-calendar"></i>
+                            2014-10-15
+                        </em>
+                        <i class="fa fa-briefcase top-news-icon"></i>
+                    </a>
+                    <a href="#" class="btn bg-blue-light">
+                        <span>
+                            最新成果
+                        </span>
+                        <div class="news-info">大米蛋白研究</div>
+                        <em>
+                            <i class="fa fa-calendar"></i>
+                            2014-10-15
+                        </em>
+                        <i class="fa fa-graduation-cap top-news-icon"></i>
+                    </a>
+                    <a href="#" class="btn bg-blue-light">
+                        <span>
+                            最近讲座
+                        </span>
+                        <div class="news-info">交互媒体设计的新趋势</div>
+                        <em>
+                            <i class="fa fa-calendar"></i>
+                            2014-11-15
+                        </em>
+                        <i class="fa fa-globe top-news-icon"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <!-- END PAGE CONTAINER -->
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <!-- END PAGE CONTENT INNER -->
     </div>
+    <!-- END PAGE CONTAINER -->
     
     <!-- BEGIN PRE-FOOTER -->
     <div class="page-prefooter">
@@ -217,7 +336,7 @@
                     <h2>联系我们</h2>
                     <address class="margin-bottom-40">
                         Phone: 800 123 3456<br>
-                        Email: <a href="mailto:info@metronic.com">info@metronic.com</a>
+                        Email: info@jiangnan.edu.cn
                     </address>
                 </div>
             </div>

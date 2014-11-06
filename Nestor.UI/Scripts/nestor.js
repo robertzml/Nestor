@@ -133,13 +133,14 @@ var nestor = function () {
 		
 		initBackstretch: function() {
 			$.backstretch([                
-                "../images/slider2.jpg",
-                "../images/slider3.jpg",
-                "../images/slider4.jpg",
-				"../images/slider5.jpg"
+                "../images/slides/slider1.jpg",
+                "../images/slides/slider2.jpg",
+                "../images/slides/slider3.jpg",
+				"../images/slides/slider4.jpg",
+				"../images/slides/slider5.jpg"
             ], {
                 fade: 1000,
-                duration: 7000
+                duration: 5000
             });
 		}
 	};
