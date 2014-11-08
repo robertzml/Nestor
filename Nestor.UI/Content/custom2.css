@@ -56,8 +56,8 @@ body#front .full-bg-slider .container-fluid {
 
 body#front .page-header {
 	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
-	/*background-color: #00a1f1;*/
 	opacity: 0.8;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
 }
 
 .page-header .page-header-top {
@@ -209,15 +209,17 @@ body#front .tabbable-line > .nav-tabs > li.active {
 }
 
 .page-footer-fixed .page-prefooter, .page-footer-fixed .page-footer {
+	background: none;
 	bottom: 0;
 	left: 0;
 	position: fixed;
 	right: 0;
 	z-index: 10000;
-	padding: 12px 0;
-	opacity: 0.8;
+	padding: 12px 0;	
 	color: #fff;
 	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	opacity: 0.8;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
 }
 
 .page-content, .page-header {
