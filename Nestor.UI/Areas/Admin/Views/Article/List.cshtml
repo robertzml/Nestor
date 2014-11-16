@@ -65,6 +65,26 @@
                             <th></th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th data-filter="true">
+                                栏目
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Author)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PublishDate)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
                     <tbody>
                         @foreach (var item in Model)
                         {
@@ -104,7 +124,7 @@
         $(function () {
             nestor.leftNavActive($('#article-list'));
 
-            var oTable = nestor.initDatatable($('#article-table'));
+            var oTable = nestor.initDatatable($('#article-table'), true);
             oTable.api().order([4, 'desc']).draw();
         });
     </script>

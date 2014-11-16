@@ -1,0 +1,196 @@
+body, h1, h2, h3, h4, h5, h6{
+	font-family: '微软雅黑';
+}
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown > .dropdown-menu, .page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li > a,
+.page-header .page-header-menu .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content .mega-menu-submenu li > a,
+.dropdown-menu {
+	font-family: '微软雅黑';
+}
+
+html, body#front {
+	height: 100%;
+	width: 100%;
+}
+
+body#front .home-container {
+	height: 100%;
+}
+
+p{
+	text-indent: 2em;
+}
+
+.blue-light {
+	color: #00a1f1;
+}
+
+.bg-blue-light {
+	background-color: #00a1f1;
+}
+
+.navbar-fixed-top, .page-header {
+  left: 0;
+  position: fixed;
+  right: 0;
+  transform: translate3d(0px, 0px, 0px);
+  z-index: 1030;
+}
+
+.page-header {
+	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	opacity: 0.8;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
+}
+
+.page-header .page-header-top .page-logo .logo-default {
+	margin: 10px 0;
+}
+
+.page-header .page-header-menu {
+	background: none;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a {
+	color: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li.open > a,
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a:hover {
+  color: white;
+  background: #00a1f1 !important;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li:hover > a {
+  color: white;
+  background: #00a1f1 !important;
+}
+
+.page-header .page-header-menu .search-form .input-group .input-group-btn .btn.submit {
+	top: 7px;
+}
+
+body#front .empty-row {
+	height: 42%;
+}
+
+body#front .home-container .col-md-4 {
+	padding: 0 5px;	
+}
+
+body#front .portlet.light {
+	height: 300px;
+	margin-bottom: 0;
+	padding: 10px 20px;
+}
+
+body#front .portlet.light > .portlet-title > .caption > .caption-subject {
+	font-size: 18px;
+}
+
+body#front .portlet.light > .portlet-title > .caption > .caption-subject {
+	font-size: 18px;
+}
+
+body#front .table.table-light > tbody > tr > td {
+	color: #333;
+}
+
+body#front .primary-link {
+	color: #333;
+	font-weight: 300;
+}
+
+body#front  .portlet.light {
+	background: none repeat scroll 0 0 #fff;
+	opacity: 0.9;
+}
+
+body#front .portlet.light > .portlet-title > .caption.caption-md > .caption-subject {
+	font-size: 20px;
+}
+
+body#front .tabbable-line > .nav-tabs > li.active {
+	border-bottom: 4px solid #00a1f1;
+}
+
+.meet-our-team {
+	float: right;
+	width: 255px;
+	height: 300px;
+	background: none repeat scroll 0 0 #f5f5f5;
+	opacity: 0.9;
+}
+
+.meet-our-team h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 10px;
+	background: #f9f9f9;
+}
+
+.meet-our-team small { 
+	font-size: 12px;
+	color: #999;
+	margin-top: 5px;
+}
+
+.meet-our-team .team-info {
+	padding: 10px 10px 5px;
+	overflow: hidden;
+	background: #f5f5f5;
+}
+
+.meet-our-team .team-info p{
+	text-indent: 0;
+	margin:0;
+}
+
+
+.top-news {
+	margin: 0;
+	width: 250px;
+}
+
+.top-news a{
+	height: 98.5px;
+	margin-bottom: 2px;
+	color:#fff;
+}
+
+.top-news a.btn:hover {
+	opacity: 1;
+	color: #fff;
+}
+
+.top-news a.btn {
+	opacity: 0.8;
+}
+
+.top-news span {
+	font-size: 16px;
+}
+
+.top-news div.news-info {
+	font-size: 14px;
+	display: block;	
+	height: 38px;
+	word-wrap: break-word;
+}
+
+.page-prefooter h2 {
+	color: #e9edef;
+}
+
+.page-footer-fixed .page-prefooter, .page-footer-fixed .page-footer {
+	background: none;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 10000;
+	padding: 12px 0;	
+	color: #fff;
+	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	opacity: 0.8;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
+}

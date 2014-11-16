@@ -27,15 +27,6 @@ namespace Nestor.UI.Controllers
             var data = business.GetTop().Where(r => r.ShowTop == true);
             return View(data);
         }
-
-        /// <summary>
-        /// 首页2
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult Index2()
-        {
-            return View();
-        }
         #endregion //Action
     }
 }

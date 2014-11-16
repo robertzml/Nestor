@@ -1,0 +1,12 @@
+body, h1, h2, h3, h4, h5, h6{
+	font-family: '微软雅黑';
+}
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown > .dropdown-menu, .page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li > a,
+.page-header .page-header-menu .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content .mega-menu-submenu li > a,
+.dropdown-menu, .page-title {
+	font-family: '微软雅黑';
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	vertical-align: middle;
+}

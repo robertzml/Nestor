@@ -79,6 +79,11 @@ body#front .page-header .page-header-menu {
   background: #00a1f1 !important;
 }
 
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li:hover > a {
+  color: white;
+  background: #00a1f1 !important;
+}
+
 .page-header .page-header-menu .search-form .input-group .input-group-btn .btn.submit {
 	top: 7px;
 }

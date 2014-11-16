@@ -14,7 +14,7 @@ var nestor = function () {
 	}
 	
 	
-	var handleInitDatatable = function($dom) {
+	var handleInitDatatable = function($dom, filter) {
 
 		var oTable = $dom.dataTable({
 			
@@ -24,6 +24,8 @@ var nestor = function () {
 			],
 			// set the initial value
 			"pageLength": 10,
+
+			"order": [],
 
 			"pagingType": "bootstrap_full_number",
 
@@ -44,9 +46,32 @@ var nestor = function () {
 				},
 
 			"dom": "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12' p>>", // horizobtal scrollable datatable
-		});	
+		});
+		
+		if (filter) {
+			$dom.find("tfoot th").each(function (i) {
+			if ($(this).attr('data-filter') == 'true') {
+				var select = $('<select class="form-control"><option value=""></option></select>')
+					.appendTo($(this).empty())
+					.on('change', function () {
+						var val = $(this).val();
+						oTable.api().column(i)
+							.search(val ? '^' + $(this).val() + '$' : val, true, false)
+							.draw();
+					});
+					
+					oTable.api().column(i).data().unique().sort().each(function (d, j) {
+						if ($(d).html()) {
+							select.append('<option value="' + $(d).html() + '">' + $(d).html() + '</option>')
+						} else {
+							select.append('<option value="' + d + '">' + d + '</option>')
+						}
+					});
+				}
+			});
+		}
 		return oTable;
-	}
+	}	
 	
 	var handleFrontTable = function($dom) {
 		var oTable = $dom.dataTable({
@@ -110,25 +135,12 @@ var nestor = function () {
             });
 		},
 		
-		initDatatable: function($dom) {
-			return handleInitDatatable($dom);
+		initDatatable: function($dom, filter) {
+			return handleInitDatatable($dom, filter);
 		},
 		
 		initFrontTable: function($dom) {
 			handleFrontTable($dom);
-		},
-		
-		initCamera: function($dom) {
-			$dom.camera({
-				height: 'auto',
-				loader: 'bar',
-				pagination: false,
-				thumbnails: false,
-				hover: false,
-				opacityOnGrid: false,
-				pauseOnClick: false,
-				imagePath: '../assets/global/plugins/camera/images'
-			});
 		},
 		
 		initBackstretch: function() {

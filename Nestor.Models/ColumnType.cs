@@ -28,9 +28,15 @@ namespace Nestor.Models
         Parent = 2,
 
         /// <summary>
-        /// 链接栏目
+        /// 内部链接
         /// </summary>
-        [Display(Name = "链接栏目")]
-        Link = 3       
+        [Display(Name = "内部链接")]
+        Link = 3,
+
+        /// <summary>
+        /// 外部链接
+        /// </summary>
+        [Display(Name = "外部链接")]
+        Outter = 4
     }
 }

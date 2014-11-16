@@ -44,71 +44,69 @@
                 </div>
             </div>
             <div class="portlet-body">
-                <div class="table-scrollable">
-                    <table class="table table-hover table-striped">
-                        <thead>
+                <table class="table table-hover table-striped" id="column-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                父级栏目
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ShowTop)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Remark)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
                             <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Title)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Type)
-                                </th>
-                                <th>
-                                    父级栏目
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ShowTop)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Remark)
-                                </th>
-                                <th></th>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @{
+                                        var type = (ColumnType)item.Type;
+                                        @type.DisplayName();
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.ParentColumn == null) { 
+                                        <span>无</span>
+                                    }
+                                    else { 
+                                        <span>@item.ParentColumn.Title</span>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShowTop)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Remark)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("List", new { controller = "Article", id = item.Id })" class="btn btn-primary btn-sm" role="button"><i class="fa fa-file-excel-o"></i>&nbsp;文章</a>
+                                    <a href="@Url.Action("Details", new { controller = "Column", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
+                                    <a href="@Url.Action("Edit", new { controller = "Column", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Title)
-                                    </td>
-                                    <td>
-                                        @{
-                                            var type = (ColumnType)item.Type;
-                                            @type.DisplayName();
-                                        }
-                                    </td>
-                                    <td>
-                                        @if (item.ParentColumn == null) { 
-                                            <span>无</span>
-                                        }
-                                        else { 
-                                            <span>@item.ParentColumn.Title</span>
-                                        }
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ShowTop)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Remark)
-                                    </td>
-                                    <td>
-                                        <a href="@Url.Action("List", new { controller = "Article", id = item.Id })" class="btn btn-primary btn-sm" role="button"><i class="fa fa-file-excel-o"></i>&nbsp;文章</a>
-                                        <a href="@Url.Action("Details", new { controller = "Column", id = item.Id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
-                                        <a href="@Url.Action("Edit", new { controller = "Column", id = item.Id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
         
@@ -120,6 +118,7 @@
     <script type="text/javascript">
         $(function () {
             nestor.leftNavActive($('#column-list'));
+            var oTable = nestor.initDatatable($('#column-table'), false);
         });
     </script>
 }
