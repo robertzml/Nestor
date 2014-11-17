@@ -65,7 +65,7 @@ namespace Nestor.Data
 
                 return ErrorCode.Success;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return ErrorCode.Exception;
             }

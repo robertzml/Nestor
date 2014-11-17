@@ -6,15 +6,14 @@
 
  <!-- BEGIN RECOMMEND NEWS -->
 <div id="recommend-news">
-    <h2 class="font-blue-madison"><i class="fa fa-leaf" style="font-size:25px;"></i>&nbsp;推荐新闻</h2>
+    <h2 class="font-blue-madison"><i class="fa fa-leaf" style="font-size:20px;"></i>&nbsp;推荐新闻</h2>
     <div class="margin-bottom-10">
-        <ul class="list-group" id="recent-list">
+        <ul class="list-group" id="recommend-list">
             @foreach (var item in Model)
             {
                 <li class="list-group-item">
                     <span class="fa fa-arrow-circle-right"></span>
                     <a href="/Article/@item.Id" title="@item.Title">@item.Title</a>
-                    <i class="pull-right">@item.PublishDate.ToDateString()</i>
                 </li>
             }
         </ul>

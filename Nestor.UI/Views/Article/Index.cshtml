@@ -50,16 +50,16 @@
                     <a href="#" class="btn btn-circle btn-default btn-icon-only fullscreen"></a>
                 </div>
             </div>
-            <div class="portlet-body">               
+            <div class="portlet-body">
                 <div class="row blog-page">
-                    <div class="col-md-8 article-block">
-                        <div class="blog-tag-data">                           
+                    <div class="col-md-9 article-block">
+                        <div class="blog-tag-data">
                             <ul class="list-inline">
                                 <li><i class="fa fa-user"></i> By @Model.Article.Author</li>
                                 <li><i class="fa fa-calendar"></i> @Model.Article.PublishDate.ToDateString()</li>
                                 <li><i class="fa fa-comments"></i> @Model.Article.ReadCount</li>
                             </ul>
-                        </div>                        
+                        </div>
                         @if (Model.Article.Summary != "")
                         {
                             <blockquote style="text-indent:2em;">
@@ -74,7 +74,7 @@
                         <hr />
                     </div>
 
-                    <div class="col-md-4 blog-sidebar">
+                    <div class="col-md-3 blog-sidebar">
                         @Html.Action("Recent", new { controller = "Article", count = 10 })
 
                         @Html.Action("Recommend", new { controller = "Article", count = 10 })

@@ -76,17 +76,15 @@
                         @if (Model.Sibling.Count != 0)
                         {
                             <div id="sibling-column">
-                                <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:25px;"></i>&nbsp;@Model.Parent.Title</h2>
-                                <ul class="nav sidebar-categories margin-bottom-40">
+                                <h3 class="block font-blue-hoki"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Parent.Title</h3>
+                                <div class="list-group">
                                     @foreach (var item in Model.Sibling)
                                     {
-                                        <li @(item.Id == Model.Column.Id ? "class=active" : "")>
-                                            <a href="/Column/@item.Id">
-                                                @item.Title
-                                            </a>
-                                        </li>
+                                        <a href="/Column/@item.Id" class="list-group-item list-group-item-info">
+                                            @item.Title
+                                        </a>
                                     }
-                                </ul>
+                                </div>
                             </div>
                         }
 

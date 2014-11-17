@@ -28,7 +28,7 @@ p{
 	background-color: #00a1f1;
 }
 
-.navbar-fixed-top, .page-header {
+body#front .page-header-fixed .page-header {
   left: 0;
   position: fixed;
   right: 0;
@@ -36,10 +36,14 @@ p{
   z-index: 1030;
 }
 
-.page-header {
+body#front .page-header {
 	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
 	opacity: 0.8;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
+}
+
+.page-header {
+	background: none #00a1f1;
 }
 
 .page-header .page-header-top .page-logo .logo-default {
@@ -193,4 +197,55 @@ body#front .tabbable-line > .nav-tabs > li.active {
 	background: url("../Images/sub_nav.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
 	opacity: 0.8;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF9F9F9F,endColorstr=#BF9F9F9F);
+}
+
+
+.page-head {
+	
+}
+
+
+/* article page */
+div#article-content, div#column-content {
+	padding: 10px 20px 40px;
+	box-shadow: 10px -10px 5px #888;
+	border-radius: 5px !important;
+}
+
+#main-content {
+	display:block;
+}
+
+div.blog-sidebar {
+	border-left: 4px solid #f0f0f0;
+}
+
+
+div#recent-news, div#recommend-news {
+	margin-top:15px;
+}
+
+div#recent-news h2, div#recommend-news h2, div#sibling-column h2 {
+	text-shadow: 2px 2px #f0f0f0;
+	font-size:25px;
+}
+
+ul#recent-list li, ul#recommend-list li{
+	padding: 5px 0;            
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px dotted #808080;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	padding-right: 2px;
+}
+
+div#user-info dt {
+	font-size: 14px;
+}
+
+div#user-info dd {
+	font-size: 14px;
+	margin-bottom: 10px;
 }
