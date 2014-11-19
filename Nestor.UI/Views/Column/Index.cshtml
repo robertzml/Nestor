@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = Model.Column.Title;    
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var cindex = 1;
 }
 
 @section pagehead {
@@ -77,18 +78,21 @@
                             @Html.Action("Info", "Account")
                         }
 
-                        <div id="sibling-column">
-                            <h2 class="font-blue-hoki"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Column.Title</h2>
-                            <ul class="nav sidebar-categories margin-bottom-40">
-                                @foreach (var item in Model.Children)
-                                {
-                                    <li @(item.Id == Model.Column.Id ? "class=active" : "")>
-                                        <a href="/Column/@item.Id">
-                                            @item.Title
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
+                        <div class="side-content">
+                            <div id="sibling-column">
+                                <h3 class="block font-blue-hoki"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Column.Title</h3>
+                                <hr />
+                                <ul class="nav nav-pills nav-stacked">
+                                    @foreach (var item in Model.Children)
+                                    {
+                                        <li @(item.Id == Model.Column.Id ? "class=active" : "")>
+                                            <a href="/Column/@item.Id">
+                                                <span class="badge badge-success"> @(cindex++) </span> @item.Title
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,10 @@
         <option value="@Convert.ToInt32(item.Id)" @(Model == (int)item.Id ? "selected='selected'" : "")>@item.Title</option>
         foreach (var child in item.ChildrenColumns)
         {
+            if (child.Type != (int)ColumnType.Link && child.Type != (int)ColumnType.Outter)
+            {
             <option value="@Convert.ToInt32(child.Id)" @(Model == (int)child.Id ? "selected='selected'" : "")>---@child.Title</option>
+            }
         }
     }
 </select>

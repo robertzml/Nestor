@@ -678,14 +678,9 @@
     <Content Include="assets\global\plugins\uniform\jquery.uniform.min.js" />
     <Content Include="assets\global\scripts\datatable.js" />
     <Content Include="assets\global\scripts\metronic.js" />
-    <Content Include="Content\about-us.css" />
     <Content Include="Content\admin.css" />
-    <Content Include="Content\custom - 副本.css" />
-    <Content Include="Content\custom.css" />
-    <Content Include="Content\custom2.css" />
     <Content Include="Content\login-soft.css" />
     <Content Include="Content\site.css" />
-    <Content Include="Content\style-revolution-slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="assets\global\plugins\bootstrap\css\bootstrap.css.map" />

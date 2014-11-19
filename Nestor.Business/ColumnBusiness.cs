@@ -38,7 +38,7 @@ namespace Nestor.Business
         /// <returns></returns>
         public IEnumerable<Column> Get()
         {
-            return this.columnRepository.Get();
+            return this.columnRepository.Get().OrderBy(r => r.Sort);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Nestor.Business
         /// <returns></returns>
         public IEnumerable<Column> GetTop()
         {
-            var data = this.columnRepository.Get().Where(r => r.ParentColumn == null);
+            var data = this.columnRepository.Get().Where(r => r.ParentColumn == null).OrderBy(r => r.Sort);
             return data;
         }
 

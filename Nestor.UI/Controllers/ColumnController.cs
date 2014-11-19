@@ -44,6 +44,7 @@ namespace Nestor.UI.Controllers
             if (column.IsAuth && !User.Identity.IsAuthenticated)
                 return RedirectToAction("Login", "Account", new { returnUrl = "/Column/" + id.ToString() });
 
+
             if (column.Type == (int)ColumnType.Parent)
             {
                 TopColumnModel data = new TopColumnModel();
@@ -54,7 +55,7 @@ namespace Nestor.UI.Controllers
             }
             else if (column.Type == (int)ColumnType.Link)
             {
-                return View("Index", column);
+                return RedirectToAction("Index", new { controller = "Article", id = column.Link });
             }
             else if (column.Type == (int)ColumnType.General)
             {
@@ -64,7 +65,7 @@ namespace Nestor.UI.Controllers
                 if (column.ParentColumn != null)
                 {
                     data.Parent = column.ParentColumn;
-                    data.Sibling = data.Parent.ChildrenColumns.ToList();
+                    data.Sibling = data.Parent.ChildrenColumns.OrderBy(r => r.Sort).ToList();
                     data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
                 }
                 else
