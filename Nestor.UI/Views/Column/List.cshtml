@@ -56,7 +56,7 @@
                         <table class="table table-hover table-article" id="article-table">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th style="font-size:18px;">
                                         <i class="fa fa-bars" style="font-size:16px;"></i>&nbsp; @Model.Column.Title
                                     </th>
                                     <th style="width:40px;">&nbsp;</th>
@@ -89,7 +89,7 @@
                             var cindex = 1;
                             <div class="side-content">
                                 <div id="sibling-column">
-                                    <h3 class="block font-blue-hoki"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Parent.Title</h3>
+                                    <h3 class="block blue-light"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Parent.Title</h3>
                                     <hr />
                                     <ul class="nav nav-pills nav-stacked">
                                         @foreach (var item in Model.Sibling)
@@ -102,6 +102,8 @@
                                         }
                                     </ul>
                                 </div>
+
+                                
                             </div>
                         }
                     </div>
