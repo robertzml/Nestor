@@ -43,7 +43,8 @@ body#front .page-header {
 }
 
 .page-header {
-	background: none #00a1f1;
+	/*background: none #00a1f1;*/
+	background: url("../Images/top-bg1.jpg") repeat-x scroll 0 0 #fff;
 }
 
 .page-header .page-header-top .page-logo .logo-default {
@@ -83,6 +84,7 @@ body#front .empty-row {
 
 body#front .home-container .col-md-4 {
 	padding: 0 5px;	
+	*width: 32%;
 }
 
 body#front .portlet.light {
