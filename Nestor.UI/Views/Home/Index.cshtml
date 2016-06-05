@@ -10,298 +10,372 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>江苏省食品安全基地 - @ViewBag.Title</title>
+    <title>信息与控制实验教学中心 - @ViewBag.Title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Global styles START -->
-    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <link href="~/Images/metinfo_ui.css" rel="stylesheet" type="text/css">
+    <link href="~/Images/metinfo.css" rel="stylesheet" type="text/css">
     <!-- Global styles END -->
-    <!-- Page level plugin styles START -->
-    <link href="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-    <!-- Page level plugin styles END -->
-    <!-- Theme styles START -->
-    <link href="/assets/global/css/components.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css">
-    <link href="/assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
-    <link href="/assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
-    <link href="/Content/site.css" rel="stylesheet" type="text/css" />
-    <!-- Theme styles END -->
+    <script src="~/Images/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="~/Images/metinfo_ui.js" type="text/javascript"></script>
 </head>
 <body id="front" class="page-header-fixed page-footer-fixed">
     <!-- BEGIN HEADER -->
-    <div class="page-header">
-        <!-- BEGIN HEADER TOP -->
-        <div class="page-header-top">
-            <div class="container">
-                <!-- BEGIN LOGO -->
-                <div class="page-logo">
-                    <a href="/"><img src="/Images/logo.png" alt="logo" class="logo-default"></a>
-                </div>
-                <!-- END LOGO -->
+    <herder>
+        <div class="HER--top">
+            <div class="HER--top-nav center width">
+                <div class="clear"></div>
             </div>
         </div>
-        <!-- END HEADER TOP -->
-        @Html.Action("Menu", "Home")
-    </div>
-    <!-- END HEADER -->
-    <!-- BEGIN PAGE CONTAINER -->
-    <div class="home-container container-fluid">
-        <div class="row empty-row">
-            <div class="col-md-12">
+        <div class="HER--cen position">
+            <div class="HER--cen-con width center position">
 
+                <div class="logo fl"><IMG style="margin: 15px 0px 0px;" src="images/1405493630.png"></div>
+
+                <div class="clear"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="meet-our-team">
-                    <h3 class="blue-light">张三 <small>首席专家</small></h3>
-                    <img src="/Images/zp.jpg" alt="" class="img-responsive" style="width: 255px; height: 180px;" />
-                    <div class="team-info">
-                        <p>
-                            男，江苏省南京市人，管理学硕士，高级经济师；担任一级支行行长、省分行国际业务部总经理等职务。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="portlet light bordered">
-                    <div class="portlet-title tabbable-line" style="margin-bottom: 0px;">
-                        <div class="caption">
-                            <i class="fa fa-weixin" style="color:#00a1f1;"></i>
-                            <span class="caption-subject bold blue-light uppercase">
-                                最新消息
-                            </span>
-                            <span class="caption-helper"></span>
-                        </div>
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#portlet_tab1" data-toggle="tab">
-                                    基地新闻
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#portlet_tab2" data-toggle="tab">
-                                    通知公告
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="portlet_tab1">
-                                <div class="scroller" style="height: 220px;">
-                                    <table class="table table-hover table-light table-recent">
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">首届太平洋优化国际学术会议召开</a>
-                                            </td>
-                                            <td style="width:80px;">
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">我校开展党员发展质量情况专题调研</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">江南大学举行2014年金秋体育节暨第十四届田径运动会</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">11月5日商学院“半月坛”</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">苏州市姑苏区科技镇长团一行赴我校考察</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">设计学院获国家自然科学基金资助</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="portlet_tab2">
-                                <div class="scroller" style="height: 220px;">
-                                    <table class="table table-hover table-light table-recent">
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">2014年全国胶体与界面化学博士生学术论坛在我校成功召开</a>
-                                            </td>
-                                            <td style="width:80px;">
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">我校首场2014级新生转型教育报告会成功举办</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="javascript:;" class="primary-link">2014年第六届全国发酵工程学术研讨会会议通知</a>
-                                            </td>
-                                            <td>
-                                                <span>10-15</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">王存玉院士报告会暨客座教授授聘仪式举行</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">11月5日商学院“半月坛”</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-angle-double-right blue-light"></span>
-                                                <a href="#" class="primary-link">设计学院获国家自然科学基金资助</a>
-                                            </td>
-                                            <td>
-                                                <span>10-10</span>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
+        <div class="HER--bot">
+            <NAV class="width center">
+                @Html.Action("Menu", "Home")
+            </NAV>
+        </div>
+    </herder>
+    <!-- END HEADER -->
+
+    <!-- BEGIN PAGE CONTAINER -->
+    <DIV class="CON--top width center">
+        <DIV class="CON--top-l fl">
+
+            <div class="HER--ban center position">
+                <div class="HER-ban-TOP"></div>
+                <div class="HER-banner center">
+                    <link rel='stylesheet' href='images/flexslider.css' type='text/css'>
+                    <script src='images/jquery.flexslider-min.js'></script>
+                    <div class='flash'>
+                        <div class='flexslider flexslider_flash flashfld'>
+                            <ul class='slides list-none'>
+                                <li><a href='#' target='_blank' title=''><img src='images/1405329829.jpg' alt='' width='500' height='260'></a></li>
+                                <li><a href='#' target='_blank' title=''><img src='images/1405388529.jpg' alt='' width='500' height='260'></a></li>
+                                <li><a href='#' target='_blank' title=''><img src='images/1405389021.jpg' alt='' width='500' height='260'></a></li>
+                            </ul>
                         </div>
                     </div>
+                    <script type='text/javascript'>$(document).ready(function(){ $('.flashfld').flexslider({ animation: 'slide',controlNav:false});});</script>
                 </div>
             </div>
-            <div class="col-md-4">
-                <ul class="home-news">
-                    <li class="news-block">
-                        <h4>
-                            最新会议
-                        </h4>
-                        <a href="#">重点实验室第一届学术委员第二次会议1024</a>
-                        <em>
-                            <i class="fa fa-calendar"></i>
-                            2014-10-15
-                        </em>
-                        <i class="fa fa-briefcase top-news-icon"></i>
-                    </li>
-                    <li class="news-block">
-                        <h4>
-                            最新成果
-                        </h4>
-                        <a href="#">大米蛋白研究</a>
-                        <em>
-                            <i class="fa fa-calendar"></i>
-                            2014-10-15
-                        </em>
-                        <i class="fa fa-graduation-cap top-news-icon"></i>
-                    </li>
-                    <li class="news-block last">
-                        <h4>
-                            最近活动
-                        </h4>
-                        <a href="#">交互媒体设计的新趋势</a>
-                        <em>
-                            <i class="fa fa-calendar"></i>
-                            2014-10-15
-                        </em>
-                        <i class="fa fa-globe top-news-icon"></i>
+
+            <DIV class="clear"></DIV>
+        </DIV>
+        <DIV class="CON--top-r fr">
+            <H3 class="CON--title position"><SPAN class="tubiao2"></SPAN>中心概况<A class="CON--title-more" title="中心概况" href="introduce.asp" target="_self">更多&gt;&gt;</A></H3>
+            <DIV class="CON--cen-pd clear CON--cen-listel">
+                <div class="editor clear CON--top-pd">
+                    江南大学信息与控制实验教学中心2012年被评为国家级实验教学示范中心，中心包括江苏省电工电子实验教学中心（2007）<br>、江苏省物联网工程综合训练中心（2011）、江苏省国际服务外包人才培训基地（2008）和江南大学物联网大学生创新实践基地。其中：<br>
+                    江苏省电工电子实验教学中心负责建设和管理以常规电气信息类学科基础实验为主的基础实验平台及以各不同学科工程需求为导向的专业实验平台。中心目前有电工学实验室、电路模电实验室、数字电子实验室、电子技术开放实验室、计算机基础实验室......<br>
+                    <div class="clear"></div>
+                </div>
+                <DIV class="clear"></DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+
+    <DIV class="clear"></DIV>
+
+    <div class="CON--cen width center">
+        <DIV class="CON--cen-l fl position CON--cen-dg">
+            <DIV class="CON--cen-top"></DIV>
+            <H3 class="CON--title position"><SPAN class="tubiao4"></SPAN>通知公告<A class="CON--title-more" title="通知公告" href="tongzhi1.asp" target="_self">更多&gt;&gt;</A></H3>
+            <DIV class="CON--cen-pd clear CON--cen-listel">
+                <OL class="list-none metlist">
+                    
+                    <LI class="list top">
+                       
+                    </LI>
+
+                  
+                </OL>
+            </DIV>
+            <DIV class="CON--cen-pot"></DIV>
+        </DIV>
+
+
+        <DIV class="CON--cen-c fl position CON--cen-dg">
+            <DIV class="CON--cen-top"></DIV>
+            <H3 class="CON--title position"><SPAN class="tubiao5"></SPAN>新闻资讯<A class="CON--title-more" title="新闻资讯" href="tongzhi2.asp" target="_self">更多&gt;&gt;</A></H3>
+            <DIV class="CON--cen-pd clear CON--cen-listel">
+                <OL class="list-none metlist">
+                    <LI class="list top">
+             
+                    </LI>
+                </OL>
+            </DIV>
+            <DIV class="CON--cen-pot"></DIV>
+        </DIV>
+
+
+        <DIV class="CON--cen-r fr position CON--cen-dg">
+            <DIV class="CON--cen-top"></DIV>
+            <H3 class="CON--title position"><SPAN class="tubiao6"></SPAN>实验课程<A class="CON--title-more" title="实验课程" href="shiyan2.asp" target="_self">更多&gt;&gt;</A></H3>
+            <DIV class="CON--cen-pd clear CON--cen-listel">
+
+                <a href="shiyan3.asp?SmallClassID=222">电气工程专业实验课程</a>　　　<a href="shiyan3.asp?SmallClassID=227">电子信息专业实验课程</a><br>
+                <a href="shiyan3.asp?SmallClassID=228">计算机专业实验课程</a>　　　　<a href="shiyan3.asp?SmallClassID=229">通信工程专业实验课程</a><br>
+                <a href="shiyan3.asp?SmallClassID=230">微电子专业实验课程</a>　　　　<a href="shiyan3.asp?SmallClassID=231">物联网专业实验课程</a><br>
+                <a href="shiyan3.asp?SmallClassID=232">自动化专业实验课程</a>
+
+                <center>
+                    <a href="http://140.207.154.14:8088/sytu-dlves/" target="_blank"><img src="images/xn.jpg" width="300" height="50" border="0" align="center" style="padding-top:7px;"></a>
+                </center>
+            </DIV>
+            <DIV class="CON--cen-pot"></DIV>
+        </DIV>
+
+        <DIV class="clear"></DIV>
+    </div>
+
+    <DIV class="CON--bot width center position">
+        <DIV class="CON--bot-top"></DIV>
+        <H3 class="CON--title position">
+            <DIV class="fl"><SPAN class="tubiao3"></SPAN>实验室导航</DIV>
+        </H3>
+        <DIV class="CON--cen-pd4 position clear">
+            <DIV id="indexcar" class="profld position" data-listnum="4">
+                <ul class="list-none">
+                    <li class="CON--top-rs" style="width:325px;">
+                        <dt class="fl" style="width:310px;">
+                            <img src="images/paizi1.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <a href="zhongxin1.asp">江苏省电工电子实验教学中心负责建设和管理以常规电气信息类学科基础实验为主的基础实验平台及以各个不同学科工程需求为导向的专业实验平台。中心目前拥有本科基础及专业教学实验室共42个：电工学实验室、电路模电实验室、数字电子实验室、电子技术开放实验室、计算机基础实验室、自控及检测实验室<br>、嵌入式系统实验室、电机拖动实验室。......</a>
+                        </dt>
+                        <div class="clear"></div>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <!-- BEGIN PAGE CONTENT INNER -->
-        <!-- END PAGE CONTENT INNER -->
-    </div>
+
+                <ul class="list-none">
+                    <li class="CON--top-rs" style="width:325px;">
+                        <dt class="fl" style="width:300px;">
+                            <img src="images/paizi2.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <a href="zhongxin2.asp">江苏省物联网工程综合训练中心负责建设和管理以信息与控制类工程应用为背景的综合实验平台及适应于多学科交叉融合的创新性实验平台。中心目前拥有12个多学科专业交叉的综合性实验室：RFID物联网技术应用、传感网综合实验室、机器人实验室、开放式惯性协同定位技术实验室、车联网应用研究实验室、光电传感器测试实验室等。......</a>
+                        </dt>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+
+                <ul class="list-none">
+                    <li class="CON--top-rs" style="width:325px;">
+                        <dt class="fl" style="width:300px;">
+                            <img src="images/paizi3.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <a href="http://202.195.144.141/creative/index.asp" target="_blank">江南大学物联网大学生创新实践基地负责建设管理和信息与控制相关的校内外实习实训基地。基地目前拥有光洋PLC实验室、信捷联合实验室、博创联合实验室、移动MM创新俱乐部等校企共建实验室；并在中国电子科技集团公司58研究所、中国移动江苏公司无锡分公司、无锡威克集团有限公司等60多家信息与控制类相关企业建有实习实训基地。......</a>
+                        </dt>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+            </DIV>
+        </DIV>
+        <DIV class="CON--bot-pot"></DIV>
+    </DIV>
+
+    <div class="clear"></div>
+
+    <DIV class="CON--bot width center position">
+        <DIV class="CON--bot-top"></DIV>
+        <H3 class="CON--title position">
+            <DIV class="fl"><SPAN class="tubiao3"></SPAN>实验室图片</DIV><A class="CON--title-more" title="实验室图片" href="#" target="_self">更多&gt;&gt;</A>
+        </H3>
+        <DIV class="CON--cen-pd3 position clear">
+            <DIV id="indexcar" class="profld position" data-listnum="4">
+
+                <div id=demo style="overflow:hidden;height:150px;width:960px;margin-top:0px;margin-left:0px;">
+                    <div align="center">
+                        <table cellspacing=0>
+                            <tr>
+                                <td height="180" id=demo1>
+                                    <table border="0" cellspacing=0 width="100%">
+                                        <tr align=center>
+                                            <td><IMG hspace=0 src="images/img/a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/t.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/s_1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/s_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/s_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/x.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/y.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/u.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_2a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_7a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/v.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z2.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z4.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/e.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/w.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/f.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/z6.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/g.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/h.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_8.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_13.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_15a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_16.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_18a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/i.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/j.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/k.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/l.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/m.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_19.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_21.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_24.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_26b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_27b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/n.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/o.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/p.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_29.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_30b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_30d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/1_31b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/2_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/2_1c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/q.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/r.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td><IMG hspace=0 src="images/img/s.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td id=demo2></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <script language="javascript">
+                   var speed=20
+                   demo2.innerHTML=demo1.innerHTML
+                   function Marquee(){
+                    if(demo2.offsetWidth-demo.scrollLeft<=0)
+                    demo.scrollLeft-=demo1.offsetWidth
+                    else{
+                   demo.scrollLeft++
+                    }
+                   }
+                   var MyMar=setInterval(Marquee,speed)
+                   demo.onmouseover=function() {clearInterval(MyMar)}
+                   demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+                </script>
+
+            </DIV>
+        </DIV>
+        <DIV class="CON--bot-pot"></DIV>
+    </DIV>
+
+    <DIV class="clear"></DIV>
+
+    <DIV class="URL width center position">
+        <DIV class="URL--url">
+            <DIV class="URL--url-url center">
+                <H3 class="URL--title position center"><SPAN>友情链接</SPAN><A class="URL-more" title="友情链接" href="#" target="_self">&nbsp;</A></H3>
+                <DIV class="URL--WBtxt">
+                    <UL class="list-none">
+                        <LI><A title="" href="http://www.jiangnan.edu.cn" target="_blank">江南大学</A></LI>
+                        <LI><A title="" href="http://www.cc.jiangnan.edu.cn" target="_blank">物联网工程学院</A></LI>
+                        <LI><A title="" href="http://www.nju.edu.cn/" target="_blank">南京大学</A></LI>
+                        <LI><A title="" href="http://www.seu.edu.cn/" target="_blank">东南大学</A></LI>
+                        <LI><A title="" href="http://www.njust.edu.cn/" target="_blank">南京理工大学</A></LI>
+                        <LI><A title="" href="http://www.suda.edu.cn/" target="_blank">苏州大学</A></LI>
+                        <LI><A title="" href="http://www.ujs.edu.cn/" target="_blank">江苏大学</A></LI>
+                        <LI><A title="" href="http://www.njnu.edu.cn/" target="_blank">南京师范大学</A></LI>
+                        <LI><A title="" href="http://www.hhu.edu.cn/" target="_blank">河海大学</A></LI>
+                        <LI><A title="" href="http://www.yzu.edu.cn/" target="_blank">扬州大学</A></LI>
+                    </UL>
+                </DIV>
+                <DIV class="clear"></DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+
+    <DIV class="clear"></DIV>
+
+
     <!-- END PAGE CONTAINER -->
     <!-- BEGIN PRE-FOOTER -->
-    <div class="page-prefooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12 footer-block">
-                    <h2>基地介绍</h2>
-                    <p>
-                        学校坐落于风景如画的太湖之滨、雪浪山麓——江苏省无锡市蠡湖大道1800号；
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 footer-block">
-                    <h2>关于我们</h2>
-                    <p>
-                        学校以“笃学尚行，止于至善”为校训精神；以“彰显轻工特色，服务国计民生；创新培养模
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 footer-block">
-                    <h2>联系我们</h2>
-                    <address class="margin-bottom-40">
-                        Phone: 800 123 3456<br>
-                        Email: info@jiangnan.edu.cn
-                    </address>
-                </div>
-            </div>
-        </div>
-    </div>
+    <FOOTER>
+        <DIV class="width center">
+            <DIV class="foot-text">
+                <P>
+                    江南大学信息与控制实验教学中心 2014 All Rights Reserved
+                    <SCRIPT src="images/metinfo.js"></SCRIPT>
+                </P>
+                <DIV id="metinfo_91mb_Powered"></DIV>
+                <P></P>
+            </DIV>
+        </DIV>
+    </FOOTER>
     <!-- END PRE-FOOTER -->
     <!-- BEGIN FOOTER -->
     <!-- END FOOTER -->
@@ -311,37 +385,9 @@
     <!--[if lt IE 9]>
     <script src="/assets/global/plugins/respond.min.js"></script>
     <![endif]-->
-    <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+
+    <script src="~/Images/metinfo.js" type="text/javascript"></script>
+    <script src="~/Images/fun.inc.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
-    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-    <script src="/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JAVASCRIPTS -->
-    <!-- BEGIN CORE PLUGINS -->
-    <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
-    <script src="/assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            Metronic.init(); // init metronic core componets
-            Layout.init(); // init layout
-        });
-    </script>
-    <script src="/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/nestor.js" type="text/javascript"></script>
-    <!-- END CORE JAVASCRIPTS -->
-    <script type="text/javascript">
-        $(function () {
-            //nestor.initCamera($('#camera_wrap'));
-            nestor.initBackstretch();
-        });
-    </script>
 </body>
 </html>
