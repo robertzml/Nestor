@@ -60,6 +60,9 @@
                                 @Html.DisplayNameFor(model => model.ShowTop)
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.IsAuth)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.Remark)
                             </th>
                             <th></th>
@@ -88,6 +91,9 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.ShowTop)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsAuth)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Remark)

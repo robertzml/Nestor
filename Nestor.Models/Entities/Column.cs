@@ -14,6 +14,7 @@ namespace Nestor.Models.Entities
     
     public partial class Column
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Column()
         {
             this.Articles = new HashSet<Article>();
@@ -24,14 +25,16 @@ namespace Nestor.Models.Entities
         public string Title { get; set; }
         public int Type { get; set; }
         public bool ShowTop { get; set; }
-        public string Remark { get; set; }
-        public int Status { get; set; }
         public Nullable<int> ParentId { get; set; }
         public string Link { get; set; }
-        public int Sort { get; set; }
         public bool IsAuth { get; set; }
+        public int Sort { get; set; }
+        public string Remark { get; set; }
+        public int Status { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Article> Articles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Column> ChildrenColumns { get; set; }
         public virtual Column ParentColumn { get; set; }
     }
