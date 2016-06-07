@@ -6,29 +6,7 @@
     var cindex = 1;
 }
 
-@section pagehead {
-    <div class="page-head">
-        <div class="container">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1><span class="fa fa-tree" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
-            </div>
-            <!-- END PAGE TITLE -->
-        </div>
-    </div>
-}
 
-@section breadcrumb {
-    <ul class="page-breadcrumb breadcrumb">
-        <li>
-            <i class="fa fa-home" style="font-size: 14px;"></i><a href="@Url.Action("Index", "Home")">主页</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        <li class="active">
-            @Model.Column.Title
-        </li>
-    </ul>
-}
 
 <div class="row">
     <div class="col-md-12">

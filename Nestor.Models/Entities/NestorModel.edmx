@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Summary" Type="nvarchar" MaxLength="500" Nullable="false" />
@@ -19,7 +19,7 @@
           <Property Name="ReadCount" Type="int" Nullable="false" />
           <Property Name="IsRecommend" Type="bit" Nullable="false" />
           <Property Name="AddTime" Type="datetime" Nullable="false" />
-          <Property Name="Status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Column">
           <Key>
@@ -88,77 +88,18 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NestorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Article">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Summary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MainContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ColumnId" Type="Int32" Nullable="false" />
-          <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ReadCount" Type="Int32" Nullable="false" />
-          <Property Name="IsRecommend" Type="Boolean" Nullable="false" />
-          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Column" Relationship="Self.FK_Article_Column" FromRole="Article" ToRole="Column" />
-        </EntityType>
-        <EntityType Name="Column">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="ShowTop" Type="Boolean" Nullable="false" />
-          <Property Name="ParentId" Type="Int32" />
-          <Property Name="Link" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="IsAuth" Type="Boolean" Nullable="false" />
-          <Property Name="Sort" Type="Int32" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Articles" Relationship="Self.FK_Article_Column" FromRole="Column" ToRole="Article" />
-          <NavigationProperty Name="ChildrenColumns" Relationship="Self.FK_Column_Column" FromRole="Column" ToRole="Column1" />
-          <NavigationProperty Name="ParentColumn" Relationship="Self.FK_Column_Column" FromRole="Column1" ToRole="Column" />
-        </EntityType>
-        <Association Name="FK_Article_Column">
-          <End Role="Column" Type="Self.Column" Multiplicity="1" />
-          <End Role="Article" Type="Self.Article" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Column">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Article">
-              <PropertyRef Name="ColumnId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Column_Column">
-          <End Role="Column" Type="Self.Column" Multiplicity="0..1" />
-          <End Role="Column1" Type="Self.Column" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Column">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Column1">
-              <PropertyRef Name="ParentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="NestorEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Articles" EntityType="Self.Article" />
-          <EntitySet Name="Columns" EntityType="Self.Column" />
-          <AssociationSet Name="FK_Article_Column" Association="Self.FK_Article_Column">
+          <EntitySet Name="Users" EntityType="NestorModel.User" />
+          <EntitySet Name="Articles" EntityType="NestorModel.Article" />
+          <EntitySet Name="Columns" EntityType="NestorModel.Column" />
+          <AssociationSet Name="FK_Article_Column" Association="NestorModel.FK_Article_Column">
             <End Role="Column" EntitySet="Columns" />
             <End Role="Article" EntitySet="Articles" />
           </AssociationSet>
-          <AssociationSet Name="FK_Column_Column" Association="Self.FK_Column_Column">
+          <AssociationSet Name="FK_Column_Column" Association="NestorModel.FK_Column_Column">
             <End Role="Column" EntitySet="Columns" />
             <End Role="Column1" EntitySet="Columns" />
           </AssociationSet>
-          <EntitySet Name="Users" EntityType="NestorModel.User" />
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -171,45 +112,71 @@
           <Property Name="UserType" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MainContent" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ColumnId" Type="Int32" Nullable="false" />
+          <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReadCount" Type="Int32" Nullable="false" />
+          <Property Name="IsRecommend" Type="Boolean" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Column" Relationship="NestorModel.FK_Article_Column" FromRole="Article" ToRole="Column" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="ShowTop" Type="Boolean" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Link" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsAuth" Type="Boolean" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Articles" Relationship="NestorModel.FK_Article_Column" FromRole="Column" ToRole="Article" />
+          <NavigationProperty Name="ChildrenColumns" Relationship="NestorModel.FK_Column_Column" FromRole="Column" ToRole="Column1" />
+          <NavigationProperty Name="ParentColumn" Relationship="NestorModel.FK_Column_Column" FromRole="Column1" ToRole="Column" />
+        </EntityType>
+        <Association Name="FK_Article_Column">
+          <End Type="NestorModel.Column" Role="Column" Multiplicity="1" />
+          <End Type="NestorModel.Article" Role="Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="ColumnId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Column_Column">
+          <End Type="NestorModel.Column" Role="Column" Multiplicity="0..1" />
+          <End Type="NestorModel.Column" Role="Column1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Column1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NestorModelStoreContainer" CdmEntityContainer="NestorEntities">
-          <EntitySetMapping Name="Articles">
-            <EntityTypeMapping TypeName="NestorModel.Article">
-              <MappingFragment StoreEntitySet="Article">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Author" ColumnName="Author" />
-                <ScalarProperty Name="Summary" ColumnName="Summary" />
-                <ScalarProperty Name="MainContent" ColumnName="MainContent" />
-                <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="ReadCount" ColumnName="ReadCount" />
-                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
-                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Columns">
-            <EntityTypeMapping TypeName="NestorModel.Column">
-              <MappingFragment StoreEntitySet="Column">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="ShowTop" ColumnName="ShowTop" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="IsAuth" ColumnName="IsAuth" />
-                <ScalarProperty Name="Sort" ColumnName="Sort" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="NestorModel.User">
               <MappingFragment StoreEntitySet="User">
@@ -218,6 +185,39 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="NestorModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="ReadCount" ColumnName="ReadCount" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
+                <ScalarProperty Name="MainContent" ColumnName="MainContent" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Columns">
+            <EntityTypeMapping TypeName="NestorModel.Column">
+              <MappingFragment StoreEntitySet="Column">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="IsAuth" ColumnName="IsAuth" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ShowTop" ColumnName="ShowTop" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

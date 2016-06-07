@@ -77,6 +77,10 @@ namespace Nestor.UI.Controllers
 
                 return View("List", data);
             }
+            else if (column.Type == (int)ColumnType.Outter)
+            {
+                Response.Redirect(column.Link);
+            }
 
             return HttpNotFound();
         }

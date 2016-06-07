@@ -120,8 +120,8 @@ namespace Nestor.Business
             var column = columnBusiness.Get(data.ColumnId);
             if (column.Type == (int)ColumnType.Link)
                 return ErrorCode.LinkColumnNoArticle;
-            if (column.Type == (int)ColumnType.Parent)
-                return ErrorCode.ParentColumnNoArticle;
+            //if (column.Type == (int)ColumnType.Parent)
+            //    return ErrorCode.ParentColumnNoArticle;
 
             return this.articleRepository.Update(data);
         }

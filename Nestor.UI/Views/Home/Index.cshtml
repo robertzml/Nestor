@@ -11,7 +11,6 @@
 <head>
     <meta charset="utf-8">
     <title>信息与控制实验教学中心 - @ViewBag.Title</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Global styles START -->
@@ -21,9 +20,9 @@
     <script src="~/Images/jquery-1.7.2.js" type="text/javascript"></script>
     <script src="~/Images/metinfo_ui.js" type="text/javascript"></script>
 </head>
-<body id="front" class="page-header-fixed page-footer-fixed">
+<body>
     <!-- BEGIN HEADER -->
-    <herder>
+    <header>
         <div class="HER--top">
             <div class="HER--top-nav center width">
                 <div class="clear"></div>
@@ -32,17 +31,17 @@
         <div class="HER--cen position">
             <div class="HER--cen-con width center position">
 
-                <div class="logo fl"><IMG style="margin: 15px 0px 0px;" src="images/1405493630.png"></div>
+                <div class="logo fl"><IMG style="margin: 15px 0px 0px;" src="/images/1405493630.png"></div>
 
                 <div class="clear"></div>
             </div>
         </div>
         <div class="HER--bot">
-            <NAV class="width center">
+            <NAV class="width center" style="width: 1100px;">
                 @Html.Action("Menu", "Home")
             </NAV>
         </div>
-    </herder>
+    </header>
     <!-- END HEADER -->
 
     <!-- BEGIN PAGE CONTAINER -->
@@ -52,14 +51,14 @@
             <div class="HER--ban center position">
                 <div class="HER-ban-TOP"></div>
                 <div class="HER-banner center">
-                    <link rel='stylesheet' href='images/flexslider.css' type='text/css'>
-                    <script src='images/jquery.flexslider-min.js'></script>
+                    <link rel='stylesheet' href='/images/flexslider.css' type='text/css'>
+                    <script src='/images/jquery.flexslider-min.js'></script>
                     <div class='flash'>
                         <div class='flexslider flexslider_flash flashfld'>
                             <ul class='slides list-none'>
-                                <li><a href='#' target='_blank' title=''><img src='images/1405329829.jpg' alt='' width='500' height='260'></a></li>
-                                <li><a href='#' target='_blank' title=''><img src='images/1405388529.jpg' alt='' width='500' height='260'></a></li>
-                                <li><a href='#' target='_blank' title=''><img src='images/1405389021.jpg' alt='' width='500' height='260'></a></li>
+                                <li><a href='#' target='_blank' title=''><img src='/images/1405329829.jpg' alt='' width='500' height='260'></a></li>
+                                <li><a href='#' target='_blank' title=''><img src='/images/1405388529.jpg' alt='' width='500' height='260'></a></li>
+                                <li><a href='#' target='_blank' title=''><img src='/images/1405389021.jpg' alt='' width='500' height='260'></a></li>
                             </ul>
                         </div>
                     </div>
@@ -127,7 +126,7 @@
                 <a href="shiyan3.asp?SmallClassID=232">自动化专业实验课程</a>
 
                 <center>
-                    <a href="http://140.207.154.14:8088/sytu-dlves/" target="_blank"><img src="images/xn.jpg" width="300" height="50" border="0" align="center" style="padding-top:7px;"></a>
+                    <a href="http://140.207.154.14:8088/sytu-dlves/" target="_blank"><img src="/images/xn.jpg" width="300" height="50" border="0" align="center" style="padding-top:7px;"></a>
                 </center>
             </DIV>
             <DIV class="CON--cen-pot"></DIV>
@@ -146,7 +145,7 @@
                 <ul class="list-none">
                     <li class="CON--top-rs" style="width:325px;">
                         <dt class="fl" style="width:310px;">
-                            <img src="images/paizi1.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <img src="/images/paizi1.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
                             <a href="zhongxin1.asp">江苏省电工电子实验教学中心负责建设和管理以常规电气信息类学科基础实验为主的基础实验平台及以各个不同学科工程需求为导向的专业实验平台。中心目前拥有本科基础及专业教学实验室共42个：电工学实验室、电路模电实验室、数字电子实验室、电子技术开放实验室、计算机基础实验室、自控及检测实验室<br>、嵌入式系统实验室、电机拖动实验室。......</a>
                         </dt>
                         <div class="clear"></div>
@@ -156,7 +155,7 @@
                 <ul class="list-none">
                     <li class="CON--top-rs" style="width:325px;">
                         <dt class="fl" style="width:300px;">
-                            <img src="images/paizi2.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <img src="/images/paizi2.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
                             <a href="zhongxin2.asp">江苏省物联网工程综合训练中心负责建设和管理以信息与控制类工程应用为背景的综合实验平台及适应于多学科交叉融合的创新性实验平台。中心目前拥有12个多学科专业交叉的综合性实验室：RFID物联网技术应用、传感网综合实验室、机器人实验室、开放式惯性协同定位技术实验室、车联网应用研究实验室、光电传感器测试实验室等。......</a>
                         </dt>
                         <div class="clear"></div>
@@ -166,7 +165,7 @@
                 <ul class="list-none">
                     <li class="CON--top-rs" style="width:325px;">
                         <dt class="fl" style="width:300px;">
-                            <img src="images/paizi3.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
+                            <img src="/images/paizi3.jpg" width="130" height="95" style="float: left; margin-right: 15px;">
                             <a href="http://202.195.144.141/creative/index.asp" target="_blank">江南大学物联网大学生创新实践基地负责建设管理和信息与控制相关的校内外实习实训基地。基地目前拥有光洋PLC实验室、信捷联合实验室、博创联合实验室、移动MM创新俱乐部等校企共建实验室；并在中国电子科技集团公司58研究所、中国移动江苏公司无锡分公司、无锡威克集团有限公司等60多家信息与控制类相关企业建有实习实训基地。......</a>
                         </dt>
                         <div class="clear"></div>
@@ -194,117 +193,117 @@
                                 <td height="180" id=demo1>
                                     <table border="0" cellspacing=0 width="100%">
                                         <tr align=center>
-                                            <td><IMG hspace=0 src="images/img/a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/t.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/t.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/s_1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/s_1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/s_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/s_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/s_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/s_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/x.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/x.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/y.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/y.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z1.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/u.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/u.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_2a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_2a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_7a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_7a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/v.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/v.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z2.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z2.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z3.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z4.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z4.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/e.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/e.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/w.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/w.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/f.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/f.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z5.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/z6.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/z6.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/g.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/g.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/h.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/h.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_8.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_8.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_13.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_13.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_15a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_15a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_16.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_16.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_18a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_18a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/i.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/i.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/j.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/j.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/k.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/k.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/l.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/l.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/m.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/m.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_19.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_19.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_21.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_21.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_24.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_24.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_26b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_26b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_27b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_27b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/n.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/n.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/o.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/o.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/p.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/p.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_29.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_29.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_30b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_30b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_30d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_30d.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/1_31b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/1_31b.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/2_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/2_1a.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/2_1c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/2_1c.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/q.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/q.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/r.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/r.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td><IMG hspace=0 src="images/img/s.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
+                                            <td><IMG hspace=0 src="/images/img/s.jpg" vspace=0 border=0 height=150 width=200>&nbsp;</td>
                                             <td>&nbsp;</td>
                                         </tr>
                                     </table>
@@ -369,7 +368,6 @@
             <DIV class="foot-text">
                 <P>
                     江南大学信息与控制实验教学中心 2014 All Rights Reserved
-                    <SCRIPT src="images/metinfo.js"></SCRIPT>
                 </P>
                 <DIV id="metinfo_91mb_Powered"></DIV>
                 <P></P>
@@ -385,7 +383,6 @@
     <!--[if lt IE 9]>
     <script src="/assets/global/plugins/respond.min.js"></script>
     <![endif]-->
-
     <script src="~/Images/metinfo.js" type="text/javascript"></script>
     <script src="~/Images/fun.inc.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
