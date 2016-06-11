@@ -681,8 +681,6 @@
     <Content Include="assets\global\scripts\metronic.js" />
     <Content Include="Content\admin.css" />
     <Content Include="Content\login-soft.css" />
-    <Content Include="Content\metinfo.css" />
-    <Content Include="Content\metinfo_ui.css" />
     <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -732,18 +730,14 @@
     <Content Include="assets\global\plugins\jquery-slimscroll\README.md" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\fun.inc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\login-soft.js" />
-    <Content Include="Scripts\metinfo.js" />
-    <Content Include="Scripts\metinfo_ui.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\nestor.js" />
     <Content Include="Scripts\_references.js" />

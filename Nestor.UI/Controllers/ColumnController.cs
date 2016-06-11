@@ -20,6 +20,8 @@ namespace Nestor.UI.Controllers
         /// 栏目业务
         /// </summary>
         private ColumnBusiness columnBusiness;
+
+        private int pageSize = 15;
         #endregion //Field
 
         #region Constructor
@@ -35,7 +37,7 @@ namespace Nestor.UI.Controllers
         /// </summary>
         /// <param name="id">栏目ID</param>
         /// <returns></returns>
-        public ActionResult Index(int id)
+        public ActionResult Index(int id, int page = 1)
         {
             var column = this.columnBusiness.Get(id);
             if (column == null)
@@ -44,10 +46,16 @@ namespace Nestor.UI.Controllers
             if (column.IsAuth && !User.Identity.IsAuthenticated)
                 return RedirectToAction("Login", "Account", new { returnUrl = "/Column/" + id.ToString() });
 
+            if (page < 1)
+                page = 1;
 
             if (column.Type == (int)ColumnType.Parent)
             {
+                if (column.ParentColumn == null)
+                    return HttpNotFound();
+
                 TopColumnModel data = new TopColumnModel();
+                data.Parent = column.ParentColumn;
                 data.Column = column;
                 data.Children = column.ChildrenColumns.ToList();
 
@@ -66,13 +74,19 @@ namespace Nestor.UI.Controllers
                 {
                     data.Parent = column.ParentColumn;
                     data.Sibling = data.Parent.ChildrenColumns.OrderBy(r => r.Sort).ToList();
-                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
+                    data.TotalCount = column.Articles.Count();
+                    data.CurrentPage = page;
+                    data.TotalPage = (data.TotalCount + pageSize - 1) / pageSize;
+                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).Skip((page - 1) * pageSize).Take(pageSize).ToList();
                 }
                 else
                 {
                     data.Parent = null;
                     data.Sibling = new List<Column>();
-                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).ToList();
+                    data.TotalCount = column.Articles.Count();
+                    data.CurrentPage = page;
+                    data.TotalPage = (data.TotalCount + pageSize - 1) / pageSize;
+                    data.Articles = column.Articles.OrderByDescending(r => r.PublishDate).OrderByDescending(r => r.AddTime).Skip((page - 1) * pageSize).Take(pageSize).ToList();
                 }
 
                 return View("List", data);

@@ -4,33 +4,16 @@
     Layout = null;
 }
 
-<div class="portlet light">
-    <div class="portlet-title" style="margin-bottom: 0px;">
-        <div class="caption caption-md">
-            <i class="fa fa-gift theme-font"></i>
-            <span class="caption-subject theme-font bold uppercase">@ViewBag.Title</span>
-        </div>
-        <div class="actions">
-            <a href="javascript:;" class="btn btn-circle btn-default">
-                <i class="fa fa-ellipsis-h"></i> 更多
-            </a>
-        </div>
-    </div>
-    <div class="portlet-body">
-        <div class="">
-            <table class="table table-hover table-light table-recent">
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td style="overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">
-                            <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })" title="@item.Title" class="primary-link">@item.Title</a>
-                        </td>
-                        <td style="width:80px;">
-                            <span class="bold theme-font">@item.PublishDate.ToDateString()</span>
-                        </td>
-                    </tr>
-                }
-            </table>
-        </div>
-    </div>
-</div>
+<DIV class="CON--cen-pd clear CON--cen-listel">
+    <OL class="list-none metlist">
+       @foreach (var item in Model)
+       {
+        <LI class="list top">
+            <SPAN class="time">@item.PublishDate.ToDateString()</SPAN>
+            <A href="@Url.Action("Index", new { controller = "Article", id = item.Id })" title="@item.Title" target="_blank">
+               @item.Title.Substring(0, 16) ...
+            </A>
+        </LI>
+       }
+    </OL>
+</DIV>

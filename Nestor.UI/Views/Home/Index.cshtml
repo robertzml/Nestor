@@ -69,7 +69,7 @@
             <DIV class="clear"></DIV>
         </DIV>
         <DIV class="CON--top-r fr">
-            <H3 class="CON--title position"><SPAN class="tubiao2"></SPAN>中心概况<A class="CON--title-more" title="中心概况" href="introduce.asp" target="_self">更多&gt;&gt;</A></H3>
+            <H3 class="CON--title position"><SPAN class="tubiao2"></SPAN>中心概况<A class="CON--title-more" title="中心概况" href="@Url.Action("Index", new { controller= "Article", id = 1 })" target="_self">更多&gt;&gt;</A></H3>
             <DIV class="CON--cen-pd clear CON--cen-listel">
                 <div class="editor clear CON--top-pd">
                     江南大学信息与控制实验教学中心2012年被评为国家级实验教学示范中心，中心包括江苏省电工电子实验教学中心（2007）<br>、江苏省物联网工程综合训练中心（2011）、江苏省国际服务外包人才培训基地（2008）和江南大学物联网大学生创新实践基地。其中：<br>
@@ -86,42 +86,27 @@
     <div class="CON--cen width center">
         <DIV class="CON--cen-l fl position CON--cen-dg">
             <DIV class="CON--cen-top"></DIV>
-            <H3 class="CON--title position"><SPAN class="tubiao4"></SPAN>通知公告<A class="CON--title-more" title="通知公告" href="tongzhi1.asp" target="_self">更多&gt;&gt;</A></H3>
-            <DIV class="CON--cen-pd clear CON--cen-listel">
-                <OL class="list-none metlist">
-                    
-                    <LI class="list top">
-                       
-                    </LI>
-
-                  
-                </OL>
-            </DIV>
+            <H3 class="CON--title position"><SPAN class="tubiao4"></SPAN>通知公告<A class="CON--title-more" title="通知公告" href="@Url.Action("Index", new { controller= "Column", id = 8 })" target="_self">更多&gt;&gt;</A></H3>
+            @Html.Action("HomeRecent", new { controller = "Article", columnId = 8, count = 5 })
             <DIV class="CON--cen-pot"></DIV>
         </DIV>
 
 
         <DIV class="CON--cen-c fl position CON--cen-dg">
             <DIV class="CON--cen-top"></DIV>
-            <H3 class="CON--title position"><SPAN class="tubiao5"></SPAN>新闻资讯<A class="CON--title-more" title="新闻资讯" href="tongzhi2.asp" target="_self">更多&gt;&gt;</A></H3>
-            <DIV class="CON--cen-pd clear CON--cen-listel">
-                <OL class="list-none metlist">
-                    <LI class="list top">
-             
-                    </LI>
-                </OL>
-            </DIV>
+            <H3 class="CON--title position"><SPAN class="tubiao5"></SPAN>新闻资讯<A class="CON--title-more" title="新闻资讯" href="@Url.Action("Index", new { controller= "Column", id = 13 })" target="_self">更多&gt;&gt;</A></H3>
+            @Html.Action("HomeRecent", new { controller = "Article", columnId = 13, count = 5 })
             <DIV class="CON--cen-pot"></DIV>
         </DIV>
 
 
         <DIV class="CON--cen-r fr position CON--cen-dg">
             <DIV class="CON--cen-top"></DIV>
-            <H3 class="CON--title position"><SPAN class="tubiao6"></SPAN>实验课程<A class="CON--title-more" title="实验课程" href="shiyan2.asp" target="_self">更多&gt;&gt;</A></H3>
+            <H3 class="CON--title position"><SPAN class="tubiao6"></SPAN>实验课程<A class="CON--title-more" title="实验课程" href="#" target="_self">更多&gt;&gt;</A></H3>
             <DIV class="CON--cen-pd clear CON--cen-listel">
 
-                <a href="shiyan3.asp?SmallClassID=222">电气工程专业实验课程</a>　　　<a href="shiyan3.asp?SmallClassID=227">电子信息专业实验课程</a><br>
-                <a href="shiyan3.asp?SmallClassID=228">计算机专业实验课程</a>　　　　<a href="shiyan3.asp?SmallClassID=229">通信工程专业实验课程</a><br>
+                <a href="#">电气工程专业实验课程</a>　　　<a href="shiyan3.asp?SmallClassID=227">电子信息专业实验课程</a><br>
+                <a href="#">计算机专业实验课程</a>　　　　<a href="shiyan3.asp?SmallClassID=229">通信工程专业实验课程</a><br>
                 <a href="shiyan3.asp?SmallClassID=230">微电子专业实验课程</a>　　　　<a href="shiyan3.asp?SmallClassID=231">物联网专业实验课程</a><br>
                 <a href="shiyan3.asp?SmallClassID=232">自动化专业实验课程</a>
 

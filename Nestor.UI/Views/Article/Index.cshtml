@@ -8,6 +8,8 @@
 
 <div class="sb_nav fl">
     <div class="sb_nav-top position">
+        @if (Model.Article.Column.ChildrenColumns.Count > 0)
+        {
         <h3 class='sb_nav-title'><span>@Model.Article.Column.Title</span></h3>
         <div class="sb_nav-nr" id="sidebar" data-csnow="1" data-class3="0" data-jsok="2">
             @foreach (var item in Model.Article.Column.ChildrenColumns)
@@ -16,6 +18,18 @@
             }
             <div class="clear"></div>
         </div>
+        }
+        else
+        {
+            <h3 class='sb_nav-title'><span>@Model.Article.Column.ParentColumn.Title</span></h3>
+            <div class="sb_nav-nr" id="sidebar" data-csnow="1" data-class3="0" data-jsok="2">
+                @foreach (var item in Model.Article.Column.ParentColumn.ChildrenColumns)
+                {
+                    <dl class="list-none navnow"><dt id='part2_8'><a href='@Url.Action("Index", new { controller = "Column", id = item.Id })' class="zm"><span>@item.Title</span></a></dt></dl>
+                }
+                <div class="clear"></div>
+            </div>
+        }
     </div>
     <div class="celer"></div>
     <div class="sb_nav-bot"></div>
@@ -38,12 +52,14 @@
     <div class="sb_box-box position">
         <h3 class="sb_box-title">
             <div class="sb_box-wz fr position">当前位置：<a href="#">@Model.Article.Column.Title</a></div>
-            <span>@Model.Article.Title</span>
+            <span style="max-width:600px;">@Model.Article.Title</span>
         </h3>
     </div>
     <div class="clear"></div>
 
     <div class="editor active" id="showtext">
+        <h1 style="font-size:22px;">@Model.Article.Title</h1>
+        <br />
         @Html.Raw(Model.Article.MainContent)
     </div>
 </div>

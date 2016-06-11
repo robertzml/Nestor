@@ -56,6 +56,7 @@ namespace Nestor.UI.Controllers
         /// <param name="columnId">栏目ID</param>
         /// <param name="count">数量</param>
         /// <returns></returns>
+        [ChildActionOnly]
         public ActionResult HomeRecent(int columnId, int count)
         {
             ColumnBusiness columnBusiness = new ColumnBusiness();

@@ -15,6 +15,11 @@ namespace Nestor.UI.Models
     public class TopColumnModel
     {
         /// <summary>
+        /// 父级栏目
+        /// </summary>
+        public Column Parent { get; set; }
+
+        /// <summary>
         /// 栏目对象
         /// </summary>
         public Column Column { get; set; }
@@ -52,5 +57,20 @@ namespace Nestor.UI.Models
         /// 文章列表
         /// </summary>
         public List<Article> Articles { get; set; }
+
+        /// <summary>
+        /// 当前页数
+        /// </summary>
+        public int CurrentPage { get; set; }
+
+        /// <summary>
+        /// 总页数
+        /// </summary>
+        public int TotalPage { get; set; }
+
+        /// <summary>
+        /// 文章总数
+        /// </summary>
+        public int TotalCount { get; set; }
     }
 }

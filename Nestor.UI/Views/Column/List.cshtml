@@ -5,129 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section styles {
-    <style type="text/css">
-        .table-scrollable {
-            border:none;
-        }
-        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-            border-top: none;
-        }
-    </style>
-}
 
-@section pagehead {
-    <div class="page-head">
-        <div class="container">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1><span class="fa fa-tree theme-font" style="font-size:24px;"></span> @Model.Column.Title <small>@Model.Column.Remark</small></h1>
-            </div>
-            <!-- END PAGE TITLE -->
+
+<div class="sb_nav fl">
+    <div class="sb_nav-top position">
+        <h3 class='sb_nav-title'><span>@Model.Parent.Title</span></h3>
+        <div class="sb_nav-nr" id="sidebar" data-csnow="1" data-class3="0" data-jsok="2">
+            @foreach (var item in Model.Sibling)
+            {
+                <dl class="list-none navnow"><dt id='part2_8'><a href='@Url.Action("Index", new { controller = "Column", id = item.Id })' class="zm"><span>@item.Title</span></a></dt></dl>
+            }
+            <div class="clear"></div>
         </div>
     </div>
-}
+    <div class="celer"></div>
+    <div class="sb_nav-bot"></div>
 
-@section breadcrumb {
-    <ul class="page-breadcrumb breadcrumb">
-        <li>
-            <i class="fa fa-home" style="font-size: 14px;"></i><a href="@Url.Action("Index", "Home")">主页</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        @if (Model.Parent != null)
-        {
-            <li>
-                <a href="/Column/@Model.Parent.Id">@Model.Parent.Title</a>
-                <i class="fa fa-circle"></i>
-            </li>
-        }
-        <li class="active">
-            @Model.Column.Title
-        </li>
-    </ul>
-}
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="portlet light bordered">
-            <div class="portlet-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <table class="table table-hover table-article" id="article-table">
-                            <thead>
-                                <tr>
-                                    <th style="font-size:18px;">
-                                        <i class="fa fa-bars" style="font-size:16px;"></i>&nbsp; @Model.Column.Title
-                                    </th>
-                                    <th style="width:40px;">&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Articles)
-                                {
-                                    <tr>
-                                        <td>
-                                            <span class="fa fa-angle-double-right"></span> <a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
-                                        </td>
-                                        <td class="text-right">
-                                            @item.PublishDate.ToDateString()
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="col-md-4 blog-sidebar">
-                        @if (Model.Column.IsAuth)
-                        {
-                            @Html.Action("Info", "Account")
-                        }
-
-                        @if (Model.Sibling.Count != 0)
-                        {                            
-                            var cindex = 1;
-                            <div class="side-content">
-                                <div id="sibling-column">
-                                    <h3 class="block blue-light"><i class="fa fa-ticket" style="font-size:20px;"></i>&nbsp;@Model.Parent.Title</h3>
-                                    <hr />
-                                    <ul class="nav nav-pills nav-stacked">
-                                        @foreach (var item in Model.Sibling)
-                                        {
-                                            <li @(item.Id == Model.Column.Id ? "class=active" : "")>
-                                                <a href="/Column/@item.Id">
-                                                    <span class="badge badge-success"> @(cindex++) </span> @item.Title
-                                                </a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </div>
-
-                                
-                            </div>
-                        }
-                    </div>
-                </div>
-            </div>
+    <div class="sb_us-top"></div>
+    <div class="sb_us-cen">
+        <div class="sb_us-wb editor">
+            信息与控制实验教学中心<br />
+            地&nbsp; 址：无锡市蠡湖大道1800号<br />
+            邮&nbsp; 编：214122<br />
+            电&nbsp; 话：0510-85910633<br />
+            传&nbsp; 真：0510-85910631<br />
+            Email：xkxy@jiangnan.edu.cn　<br /><div class="clear"></div>
         </div>
     </div>
+    <div class="sb_us-pot"></div>
 </div>
 
-@section scripts {
-    @if (Model.Parent != null)
-    {
-        <script type="text/javascript">
-            $(function () {
-                nestor.topNavActive('@Model.Parent.Id');               
-            });
-        </script>
-    }
 
-    <script type="text/javascript">
-        $(function () {
-            nestor.topNavActive('@Model.Column.Id');
-            nestor.initFrontTable($('#article-table'));
-        });
-    </script>
-}
+<div class="sb_box fr">
+    <div class="sb_box-box position">
+        <h3 class="sb_box-title">
+            <div class="sb_box-wz fr position">当前位置：<a href="#">@Model.Parent.Title</a> &gt; <a href="#">@Model.Column.Title</a>&nbsp;</div>
+            <span>@Model.Column.Title</span>
+        </h3>
+    </div>
+    <div class="clear"></div>
+
+    <div class="active" id="newslist">
+        <ul class='list-none metlist'>
+            @foreach (var item in Model.Articles)
+            {
+            <li class="list top">
+                <span>@item.PublishDate.ToDateString()</span><a href="@Url.Action("Index", new { controller = "Article", id = item.Id })">@item.Title</a>
+            </li>
+            }
+        </ul>
+
+        <br />
+        <TABLE align=center border=0 cellPadding=0 width=100% cellspacing=0 height=20>
+            <TR height="30">
+                <TD>
+                    &nbsp;&nbsp;<font color=#888888>
+                        共 @Model.TotalCount 条，当前第 @Model.CurrentPage / @Model.TotalPage 页
+                    </font>
+                </TD>
+                <TD align=right>
+                    <a href="@Url.Action("Index", new { controller = "Column", id = Model.Column.Id, page = 1 })">[首页]</a>&nbsp;
+                    @if (Model.CurrentPage > 1)
+                    {
+                    <a href="@Url.Action("Index", new { controller = "Column", id = Model.Column.Id, page = Model.CurrentPage - 1 })">[上一页]</a>
+                    }
+                    &nbsp;
+                    @if (Model.CurrentPage < Model.TotalPage)
+                    {
+                    <a href="@Url.Action("Index", new { controller = "Column", id = Model.Column.Id, page = Model.CurrentPage + 1 })">[下一页]</a>
+                    }
+                    &nbsp;
+                    <a href="@Url.Action("Index", new { controller = "Column", id = Model.Column.Id, page = Model.TotalPage })">[尾页]</a>
+                   
+                </TD>
+            </TR>
+        </TABLE>
+
+    </div>
+
+</div>
 
