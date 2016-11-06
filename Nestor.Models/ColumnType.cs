@@ -37,6 +37,12 @@ namespace Nestor.Models
         /// 外部链接
         /// </summary>
         [Display(Name = "外部链接")]
-        Outter = 4
+        Outter = 4,
+
+        /// <summary>
+        /// 大创栏目
+        /// </summary>
+        [Display(Name = "大创栏目")]
+        Creative = 5
     }
 }

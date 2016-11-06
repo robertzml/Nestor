@@ -128,6 +128,12 @@
     <Compile Include="Areas\Admin\Controllers\ColumnController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Creative\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Creative\Controllers\ColumnController.cs" />
+    <Compile Include="Areas\Creative\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Creative\CreativeAreaRegistration.cs" />
+    <Compile Include="Areas\Creative\Models\CreativeArticleModel.cs" />
+    <Compile Include="Areas\Creative\Models\CreativeColumnModel.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="HtmlHelpers\ContentHelper.cs" />
     <Compile Include="Models\ArticleModels.cs" />
@@ -728,6 +734,11 @@
     <Content Include="assets\global\plugins\bootstrap-hover-dropdown\LICENSE" />
     <Content Include="assets\global\plugins\bootstrap-hover-dropdown\README.md" />
     <Content Include="assets\global\plugins\jquery-slimscroll\README.md" />
+    <Content Include="Areas\Creative\Views\web.config" />
+    <Content Include="Areas\Creative\Views\Shared\_Layout_Creative.cshtml" />
+    <Content Include="Areas\Creative\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Creative\Views\Article\Index.cshtml" />
+    <Content Include="Areas\Creative\Views\Column\Index.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

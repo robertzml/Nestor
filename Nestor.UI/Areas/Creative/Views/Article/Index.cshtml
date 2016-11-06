@@ -1,0 +1,23 @@
+﻿@model Nestor.UI.Areas.Creative.Models.CreativeArticleModel
+
+@{
+    ViewBag.Title = Model.Article.Title;
+    Layout = "~/Areas/Creative/Views/Shared/_Layout_Creative.cshtml";
+}
+
+<div class="sb_box" style="margin: 0px auto;">
+    <div class="sb_box-box position">
+        <h3 class="sb_box-title">
+            <div class="sb_box-wz fr position">当前位置：<a href="#">@Model.Article.Column.Title</a></div>
+            <span style="max-width:600px;">@Model.Article.Title</span>
+        </h3>
+    </div>
+    <div class="clear"></div>
+
+    <div class="editor active" id="showtext">
+        <h1 style="font-size:22px;">@Model.Article.Title</h1>
+        <br />
+        @Html.Raw(Model.Article.MainContent)
+    </div>
+</div>
+

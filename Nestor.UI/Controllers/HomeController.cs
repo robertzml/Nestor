@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Nestor.Business;
+using Nestor.Models;
 using Nestor.Models.Entities;
 
 namespace Nestor.UI.Controllers
@@ -24,7 +25,7 @@ namespace Nestor.UI.Controllers
         public ActionResult Menu()
         {
             ColumnBusiness business = new ColumnBusiness();
-            var data = business.GetTop().Where(r => r.ShowTop == true);
+            var data = business.GetTop().Where(r => r.ShowTop == true && r.Type != (int)ColumnType.Creative);
             return View(data);
         }
         #endregion //Action
