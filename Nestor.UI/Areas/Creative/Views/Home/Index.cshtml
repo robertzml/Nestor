@@ -4,5 +4,12 @@
     Layout = "~/Areas/Creative/Views/Shared/_Layout_Creative.cshtml";
 }
 
-<h2>Index</h2>
+
+<div class="cr-news">
+    @Html.Action("HomeRecent", new { controller = "Home", columnId = 8, count = 8 })
+</div>
+<div class="cr-info">
+    @Html.Action("HomeRecent", new { controller = "Home", columnId = 13, count = 8 })
+</div>
+
 

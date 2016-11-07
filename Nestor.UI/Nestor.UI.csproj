@@ -739,6 +739,7 @@
     <Content Include="Areas\Creative\Views\Home\Index.cshtml" />
     <Content Include="Areas\Creative\Views\Article\Index.cshtml" />
     <Content Include="Areas\Creative\Views\Column\Index.cshtml" />
+    <Content Include="Areas\Creative\Views\Home\HomeRecent.cshtml" />
     <None Include="Properties\PublishProfiles\Nestor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

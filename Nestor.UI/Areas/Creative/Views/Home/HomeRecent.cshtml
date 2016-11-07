@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Nestor.Models.Entities.Article>
+
+@{
+    Layout = null;
+}
+
+<div class="cr-inner CON--cen-pd clear CON--cen-listel">
+    <ol class="list-none metlist">
+        @foreach (var item in Model)
+        {
+            <li class="list top">
+                <SPAN class="time">@item.PublishDate.ToDateString()</SPAN>
+                <A href="@Url.Action("Index", new { controller = "Article", id = item.Id })" title="@item.Title" target="_blank">
+                    @item.Title.Substring(0, item.Title.Length > 26 ? 26 item.Title.Length - 1) ...
+                </A>
+            </li>
+        }
+    </ol>
+</div>
